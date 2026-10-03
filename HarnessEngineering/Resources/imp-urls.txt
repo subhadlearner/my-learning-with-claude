@@ -1,0 +1,6 @@
+https://www.faros.ai/blog
+https://github.com/walkinglabs/learn-harness-engineering
+https://addyosmani.com/blog/good-spec/
+https://www.augmentcode.com/blog
+https://ven109.github.io/agent-harness-book-claude/
+https://walkinglabs.github.io/learn-harness-engineering/en/
