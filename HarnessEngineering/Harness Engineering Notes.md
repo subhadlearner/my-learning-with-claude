@@ -9,7 +9,7 @@ https://addyosmani.com/blog/good-spec/
 https://www.augmentcode.com/blog
 https://ven109.github.io/agent-harness-book-claude/
 https://walkinglabs.github.io/learn-harness-engineering/en/
-https://github.com/subhadlearner/my-learning-with-claude/HarnessEngineering/Resources
+https://github.com/subhadlearner/my-learning-with-claude/tree/main/HarnessEngineering/Resources
 
 ## How these notes work
 
