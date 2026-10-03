@@ -58,3 +58,50 @@ Fourteen days, one chain. Day 1 states the fact; each later day adds one link th
 14. Read backwards, the whole design is one argument, and anything that serves no link is ceremony.
 
 The daily nuggets follow below, newest at the bottom.
+
+### Day 1 · 4 Oct: The contractor with no memory
+
+**The gap**
+
+You spend an hour with a coding agent. It learns that your repository layer returns `Result<T>` and never throws, and it writes good code. Next morning you open a new session, ask for one more endpoint, and it throws exceptions from the repository as if yesterday never happened. Nothing broke. That is the system working exactly as built. Before we can design anything around the model, we need to say precisely what it is.
+
+**The consequence**
+
+Today has no "therefore". This is the axiom the other thirteen days stand on.
+
+A model call is a function: text in, text out. Two properties of that function matter.
+
+It is stateless. Nothing is kept between calls. There is no session inside the model, no project it "is working on". When a call returns, the model is exactly as it was before the call. So at any moment, everything it knows about your project is the text in the context window right now. Its training gives it general skill (how C# works, what a repository pattern is), but nothing about *your* code, *your* decisions, or what happened five minutes ago.
+
+It is probabilistic. The output is sampled, so the same input can give different outputs. Run the same prompt twice and you may get two different designs, one of them wrong, both written with the same confidence.
+
+The analogy we will keep for the whole course: the model is a brilliant contractor who wakes every morning with no memory of the site, and who sometimes reports work as finished when it is not. He is not lazy or dishonest; that is simply how he is built. Today he stands at the gate of an empty plot. He can build anything, but he knows only what is put in his hands this morning, and his word alone does not tell you what was built.
+
+Chain so far: **stateless, probabilistic function**
+
+**Concretely**
+
+What a chat API call actually looks like on turn 3 of a conversation:
+
+- Turn 1 request: system prompt + your message 1.
+- Turn 2 request: system prompt + message 1 + reply 1 + message 2.
+- Turn 3 request: system prompt + message 1 + reply 1 + message 2 + reply 2 + message 3.
+
+The client resends the entire transcript every time. Delete reply 1 from the list before sending turn 3 and, for the model, it was never said. The "conversation" exists in the caller, not in the model.
+
+**In your design**
+
+Architecture §1 (Vision) says SubhForge exists to take products from idea to trustworthy software "while minimizing: lost context; repeated explanation; …". Those are the first two items on the list, and they are the two direct symptoms of statelessness: context is lost because nothing keeps it, and you repeat yourself because the function has to be told again on every call.
+
+**Check yourself**
+
+If the model keeps nothing between calls, where does a coding agent's apparent memory of your project come from?
+
+**Tomorrow**
+
+One call is not an agent. What happens to that "sometimes different, sometimes wrong" when the function is called many times in a row?
+
+**Sources**
+
+- [Google, "Agents" whitepaper](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/22365_19_Agents_v8.pdf), p. 5 "What is an agent?" and p. 8 "Agents vs. models". The table on p. 8 puts today's point in one row: for a model, "Unless explicitly implemented for the model, there is no management of session history or continuous context", while an agent has "Managed session history (i.e. chat history)". Memory is something built around the model. The paper supports the stateless half; it does not discuss the probabilistic half.
+- [SubhForge V0.2-ARCHITECTURE.md §1 Vision](https://github.com/subhadlearner/SubhForge/blob/feature/v0.2.0/design/V0.2-ARCHITECTURE.md), read today; wording unchanged.
