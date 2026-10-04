@@ -15,93 +15,80 @@ https://github.com/subhadlearner/my-learning-with-claude/tree/main/HarnessEngine
 
 One nugget is added here every morning at about 7:15 am, from 4 October to 31 December 2026. Each one takes about five minutes to read.
 
-The whole course builds one idea: a language model is a stateless, probabilistic function, and every part of a reliable harness is a consequence of that fact. Each day derives one new consequence from the days before it, so the notes are meant to be read in order.
+The whole course builds one idea: a language model is a function that remembers nothing and whose output varies, and every part of a reliable harness is a consequence of those two facts. Each day adds one consequence to the days before it, so the notes are meant to be read in order.
 
-Every nugget has the same parts: the answer to yesterday's question, the gap still open, the new consequence, a concrete example, where it already lives in SubhForge, one question to check yourself, and the sources.
+Every nugget has the same shape: a scene with the builder, three to five small steps from basics, the idea stated only at the end, something to try yourself, where it lives in SubhForge, one question to check yourself, and one source. Each is 300 to 400 words.
 
 The notes are yours to edit. Add your own remarks under any nugget; the morning run only appends at the end and does not rewrite what is already here.
 
 ## The arc to 31 December
 
-Block 1 gives the reasons a harness must exist; every later block takes one part of it and goes deep. Only Block 1 is planned day by day. Each later block runs Monday to Sunday and is planned automatically on the Sunday evening before it starts, so it can respond to what the review and dogfoods show.
+Block 1 gives the reasons a harness must exist; every later block takes one part of it and goes deeper. Only Block 1 is planned day by day. Each later block runs Monday to Sunday and is planned automatically on the Sunday evening before it starts.
 
 | Block | Dates | Sub-topic | Lines up with (SubhForge timeline) | Planned |
 | --- | --- | --- | --- | --- |
-| 1 | 4–18 Oct | Why a harness exists: the chain of consequences | v0.1.1, Architecture Fitness Review | Yes |
-| 2 | 19–25 Oct | Instructions and context: what goes in the window, and when | Design freeze | Not yet |
-| 3 | 26 Oct–1 Nov | Decomposition and the work graph: dependencies, readiness | Start of rc1 work | Not yet |
-| 4 | 2–8 Nov | Verification in depth: test tiers, evidence, independent checking | rc1 | Not yet |
-| 5 | 9–15 Nov | Change and reconciliation: impact analysis, where propagation stops | Reconciliation readiness checkpoint | Not yet |
-| 6 | 16–22 Nov | Failure, recovery, observability, behaviour drift | rc3, scale dogfood | Not yet |
-| 7 | 23–29 Nov | Cost, model routing and multi-agent roles | Stable release | Not yet |
-| 8+ | 30 Nov–31 Dec | Open: chosen from what the dogfoods and the review exposed | Hardening and first real use | Not yet |
+| 1 | 4–21 Oct | Why a harness exists: the chain of consequences | v0.1.1, Architecture Fitness Review | Yes |
+| – | 22–25 Oct | Review days on Block 1 | Design freeze | Yes |
+| 2 | 26 Oct–1 Nov | Instructions and context: what goes in front of the model, and when | Start of rc1 work | Not yet |
+| 3 | 2–8 Nov | Decomposition and the work graph: dependencies, readiness | rc1 | Not yet |
+| 4 | 9–15 Nov | Verification in depth: test tiers, evidence, independent checking | rc2, reconciliation checkpoint | Not yet |
+| 5 | 16–22 Nov | Change and reconciliation: impact analysis, where propagation stops | rc3 | Not yet |
+| 6 | 23–29 Nov | Failure, recovery, observability, behaviour drift | Stable release, buffer | Not yet |
+| 7 | 30 Nov–6 Dec | Cost, model routing and multi-agent roles | First real use | Not yet |
+| 8+ | 7–31 Dec | Open: chosen from what your notes and repos show you need | | Not yet |
 
 Sub-topics for Blocks 2 to 7 are a proposal and can be changed by leaving a remark in these notes before Sunday evening.
 
-## Block 1: Why a harness exists (4–17 Oct)
+## Block 1: Why a harness exists (4–21 Oct)
 
-Fourteen days, one chain. Day 1 states the fact; each later day adds one link that follows from the ones before.
+Seventeen days, one chain. Each day asks one question and adds one link that follows from the ones before. The wrap-up is on 21 October.
 
-1. A model call is a function that keeps nothing and can answer differently each time.
-2. In a loop, small errors compound.
-3. So anything that must survive is written outside the model.
-4. So each fact needs exactly one home.
-5. So slow-changing truth, fast-changing work state and computed views are kept apart.
-6. The input is finite, so context is a budget.
-7. So work is cut into units that fit one context and can be checked alone.
-8. The output is a claim, so something else must check it and leave evidence.
-9. So whatever software can prove is checked by code, not by the model.
-10. Evidence is about one version, so it expires when the thing changes.
-11. The model has no stake, so consequential decisions stay with the human.
-12. When truth changes, finding what it invalidates is reconciliation.
-13. The loop can be cut at any moment, so changes must be safe to repeat and leave a trace.
-14. Read backwards, the whole design is one argument, and anything that serves no link is ceremony.
+1. Where does the model keep your project?
+2. Why does the same question get different answers?
+3. How does a text function get any work done?
+4. Why do long tasks go wrong even with a good model?
+5. If he forgets everything, where must the plan live?
+6. What happens when two documents disagree?
+7. Is "what we are building" the same kind of fact as "what is done"?
+8. Why not hand him everything?
+9. How big should one job be?
+10. When he says "done", what do you have?
+11. Who should the inspector be?
+12. Is yesterday's inspection still good today?
+13. Who decides?
+14. What breaks when the plan changes?
+15. What if he is interrupted halfway?
+16. How do you find out what happened?
+17. Can you rebuild the whole design from two facts?
 
 The daily nuggets follow below, newest at the bottom.
 
-### Day 1 · 4 Oct: The contractor with no memory
+### Day 1 · 4 Oct: Where does the model keep your project?
 
-**The gap**
+Imagine a master builder with forty years of skill and one strange condition: every morning he wakes with no memory of any site he has worked on. Hold that picture. Now let's see why it is exactly true of a model.
 
-You spend an hour with a coding agent. It learns that your repository layer returns `Result<T>` and never throws, and it writes good code. Next morning you open a new session, ask for one more endpoint, and it throws exceptions from the repository as if yesterday never happened. Nothing broke. That is the system working exactly as built. Before we can design anything around the model, we need to say precisely what it is.
+**Step 1. What is a model, physically?** A file of numbers on a disk. Training produced those numbers, and then training stopped. The file is frozen.
+*The builder's skill: learned once, fixed.*
 
-**The consequence**
+**Step 2. What happens when you use it?** A program reads your text, runs arithmetic through those numbers, and produces text. Then it stops. Compare the file before and after: identical, byte for byte. Using the model does not change it, the same way reading a book does not change the book.
+*The builder works a full day and goes home. Nothing about the day is stored in him.*
 
-Today has no "therefore". This is the axiom the other thirteen days stand on.
+**Step 3. So where could yesterday be?** There are only two places anything can live: in the file, or in the text you hand over. Step 2 rules out the file. So if something is not in the text you send right now, then for the model it does not exist.
+*He knows only the papers put in his hands this morning.*
 
-A model call is a function: text in, text out. Two properties of that function matter.
+**Step 4. But chat remembers what I said.** Look at what the app sends. On your third message it sends the first message, the first reply, the second message, the second reply, and then your third. The whole transcript, every time. The memory is in the app.
+*Someone hands him yesterday's site diary at the gate each morning.*
 
-It is stateless. Nothing is kept between calls. There is no session inside the model, no project it "is working on". When a call returns, the model is exactly as it was before the call. So at any moment, everything it knows about your project is the text in the context window right now. Its training gives it general skill (how C# works, what a repository pattern is), but nothing about *your* code, *your* decisions, or what happened five minutes ago.
+**Now it's obvious.** The model knows two things: the general skill frozen into it, and the text in front of it. Your project is never in the first, so it must always be put into the second, by something outside the model.
 
-It is probabilistic. The output is sampled, so the same input can give different outputs. Run the same prompt twice and you may get two different designs, one of them wrong, both written with the same confidence.
+**See it yourself (2 minutes).** Open a new chat and ask: "What did we decide yesterday about error handling?" Then paste yesterday's decision and ask again.
 
-The analogy we will keep for the whole course: the model is a brilliant contractor who wakes every morning with no memory of the site, and who sometimes reports work as finished when it is not. He is not lazy or dishonest; that is simply how he is built. Today he stands at the gate of an empty plot. He can build anything, but he knows only what is put in his hands this morning, and his word alone does not tell you what was built.
+**In SubhForge:** this is why your vision lists "lost context" and "repeated explanation" first among the things to minimise (Architecture §1).
 
-Chain so far: **stateless, probabilistic function**
+**Chain so far:** remembers nothing
 
-**Concretely**
+**Check yourself:** A coding agent "remembers" your coding conventions across sessions. What must be happening?
 
-What a chat API call actually looks like on turn 3 of a conversation:
+*Tomorrow:* ask him the same question on two mornings and you get two different answers. Why?
 
-- Turn 1 request: system prompt + your message 1.
-- Turn 2 request: system prompt + message 1 + reply 1 + message 2.
-- Turn 3 request: system prompt + message 1 + reply 1 + message 2 + reply 2 + message 3.
-
-The client resends the entire transcript every time. Delete reply 1 from the list before sending turn 3 and, for the model, it was never said. The "conversation" exists in the caller, not in the model.
-
-**In your design**
-
-Architecture §1 (Vision) says SubhForge exists to take products from idea to trustworthy software "while minimizing: lost context; repeated explanation; …". Those are the first two items on the list, and they are the two direct symptoms of statelessness: context is lost because nothing keeps it, and you repeat yourself because the function has to be told again on every call.
-
-**Check yourself**
-
-If the model keeps nothing between calls, where does a coding agent's apparent memory of your project come from?
-
-**Tomorrow**
-
-One call is not an agent. What happens to that "sometimes different, sometimes wrong" when the function is called many times in a row?
-
-**Sources**
-
-- [Google, "Agents" whitepaper](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/22365_19_Agents_v8.pdf), p. 5 "What is an agent?" and p. 8 "Agents vs. models". The table on p. 8 puts today's point in one row: for a model, "Unless explicitly implemented for the model, there is no management of session history or continuous context", while an agent has "Managed session history (i.e. chat history)". Memory is something built around the model. The paper supports the stateless half; it does not discuss the probabilistic half.
-- [SubhForge V0.2-ARCHITECTURE.md §1 Vision](https://github.com/subhadlearner/SubhForge/blob/feature/v0.2.0/design/V0.2-ARCHITECTURE.md), read today; wording unchanged.
+*Source:* [Google, "Agents" whitepaper](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/22365_19_Agents_v8.pdf), p. 8, "Agents vs. models".
