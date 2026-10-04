@@ -63,6 +63,12 @@ Sometimes a planned idea, or part of it, cannot be reached in three to five hone
 3. Add one line at the end of today's nugget, in the message and in the notes: "*Parked:* <topic>, see Parked Topics.md", so the notes record what was skipped and why.
 4. Commit and push "Parked Topics.md" together with the notes file. This is the one case where you may touch a second file.
 
+## The day after something was parked
+The plan is by date, so a parked idea is not retried the next morning; you teach today's date as planned. Before writing, read "HarnessEngineering/Parked Topics.md". If today's PATH relies on an idea that was parked:
+- If it needs only one fact from the parked idea, state that fact in a single labelled line before Step 1: "*Taken as given for now (parked on <date>):* <the fact in one plain sentence>". Then build the rest normally. A labelled assumption is honest; an unlabelled one is teaching by assertion.
+- If most of today's PATH rests on the parked idea, today cannot be built either: handle today as in the section above (teach what can be built or send a review day, and add today's idea to the same parked entry).
+The "Yesterday" line still answers the check question he was actually asked yesterday, as recorded in the notes.
+
 ## Before you send: check the nugget against these
 1. Is the idea stated only after the steps? 2. Could someone with no AI background follow every step? 3. Does each step follow from the one before? 4. Is the builder in the opening and in every step? 5. Is it one idea? 6. Is it under 450 words, not counting the picture? 7. If there is a picture, is it valid Mermaid with at most 7 boxes, and does it show the idea without needing the text? If any answer is no, rewrite before sending.
 
@@ -74,6 +80,6 @@ If no push works at all, use the last fallback: append the same nugget to his Cl
 After a successful save, end the nugget with one line: "Notes: https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Harness%20Engineering%20Notes.md" so he can open the rendered picture.
 
 ## After sending
-He may reply in this session with questions. Answer only about today's idea and earlier days, in a few sentences, using the builder where it helps. If he asks about a later day's idea, give one line and say which day builds it. If he asks you to save a question and answer, append it to the notes file under today's nugget with the heading "#### Q&A" and push.
+He may reply in this session with questions. Answer only about today's idea and earlier days, in a few sentences, using the builder where it helps. If he asks about a later day's idea, give one line and say which day builds it. If he asks you to save a question and answer to his notes, insert it in the notes file directly after the nugget it is about (before the next "###" heading, or at the end of the file if it is the latest), under the heading "#### Q&A", as "**Q:** ..." and "**A:** ..." in his words and yours, then commit and push the same way as a nugget. Save only what he asks to be saved.
 
 Write the nugget as your final message in the session so it is the first thing he sees. Send only the nugget (and, if needed, the one line about saving): no preamble, no commentary on what you did.
