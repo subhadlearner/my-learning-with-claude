@@ -12,3 +12,13 @@ What each file in this folder is. The daily nugget and weekly planning runs read
 | `book1-claude-code-en.pdf` | Agentway Harness Books, book 1: Claude Code (control plane, loop, recovery) | 108 |
 | `book2-comparing-en.pdf` | Agentway Comparative Harness Notes, book 2: Claude Code and Codex compared | 60 |
 | `imp-urls.txt` | Web links to follow | |
+
+## Web sources (links are in `imp-urls.txt`)
+
+| Link | What it is |
+|---|---|
+| ven109.github.io/agent-harness-book-claude | "Building an AI Agent Harness from Scratch", a 22-chapter book for Python engineers |
+| github.com/walkinglabs/learn-harness-engineering | Course: 14 lectures and 8 projects |
+| addyosmani.com/blog/good-spec | "How to write a good spec for AI agents" |
+| faros.ai/blog | Posts on harness engineering, why coding agents fail, context engineering, model routing |
+| augmentcode.com/blog | Posts on the Auggie CLI harness rebuild, loop engineering, the software factory, AGENTS.md |

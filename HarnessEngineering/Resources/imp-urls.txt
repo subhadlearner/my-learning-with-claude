@@ -4,3 +4,13 @@ https://addyosmani.com/blog/good-spec/
 https://www.augmentcode.com/blog
 https://ven109.github.io/agent-harness-book-claude/
 https://walkinglabs.github.io/learn-harness-engineering/en/
+https://www.faros.ai/blog/harness-engineering
+https://www.faros.ai/blog/why-do-ai-coding-agents-fail
+https://www.faros.ai/blog/context-engineering-for-developers
+https://www.faros.ai/blog/ai-route-optimization
+https://www.faros.ai/blog/is-intelligent-model-routing-enough
+https://www.faros.ai/blog/ai-model-routing-evaluation-framework
+https://www.augmentcode.com/blog/auggie-cli-harness-rebuild-53-percent-cheaper
+https://www.augmentcode.com/blog/what-is-loop-engineering-and-how-are-leading-software-engineering-teams-using-it
+https://www.augmentcode.com/blog/beyond-ai-coding-agents-how-we-built-augments-software-factory
+https://www.augmentcode.com/blog/how-to-write-good-agents-dot-md-files

@@ -13,22 +13,28 @@ Checked at chapter and section level on 4 October 2026 (the chapter lists and ab
 - **Skills guide**: Anthropic, "The Complete Guide to Building Skills for Claude"
 - **Agents**: Google "Agents" whitepaper
 
-Not yet checked: the blogs in `imp-urls.txt` (faros.ai, augmentcode.com) and the online book at ven109.github.io, which may be the web edition of Book 1.
+- **Scratch book**: "Building an AI Agent Harness from Scratch", ven109.github.io/agent-harness-book-claude (22 chapters; a different book from Book 1)
+- **Faros blog**: the posts on harness engineering, why coding agents fail, context engineering and model routing
+- **Augment blog**: the posts on the Auggie CLI harness rebuild, loop engineering, the software factory and writing AGENTS.md
+
+The two blogs keep publishing. Only the posts listed in `../Resources/imp-urls.txt` on 4 October were checked; the weekly planner looks at each blog's index again when it plans a block.
 
 ## Topics
 | Topic the sources treat as important | Where the sources cover it | Where this course covers it | Status |
 |---|---|---|---|
 | What a harness is and why models need one | Study 2; Paper; Book 1 ch. 1; Course L01–L02 | Block 1, days 1–4 and 17 | Covered |
 | The agent loop | Study 6; Book 1 ch. 3; Book 2 ch. 3 | Block 1, day 3; Block 2 | Covered, deepened in Block 2 |
-| Loop control: stop conditions, interrupts, reflection loops | Study 6.3; Book 1 ch. 3.5–3.7 | Block 2 | Planned |
-| Tools and actions: interface design, how many tools, deferred loading, file editing | Study 8, 16.3–16.4; Paper (tool access); Book 1 ch. 4 | Block 3 | Planned (gap found 4 Oct) |
-| Permissions and sandboxing | Study 10, 15.3, 16.6; Paper (permissions); Book 1 ch. 4; Book 2 ch. 4 | Block 4 | Planned (gap found 4 Oct) |
+| Loop control: stop conditions, interrupts, reflection loops | Study 6.3; Book 1 ch. 3.5–3.7; Scratch book ch. 2, 5; Augment loop engineering | Block 2 | Planned |
+| Tools and actions: interface design, how many tools, deferred loading, file editing | Study 8, 16.3–16.4; Paper (tool access); Book 1 ch. 4; Scratch book ch. 4, 11, 12 | Block 3 | Planned (gap found 4 Oct) |
+| Permissions and sandboxing | Study 10, 15.3, 16.6; Paper (permissions); Book 1 ch. 4; Book 2 ch. 4; Scratch book ch. 6, 14 | Block 4 | Planned (gap found 4 Oct) |
 | Human authority and approval | Book 2 ch. 4; Study 10 | Block 1, day 13; Block 4 | Covered, deepened in Block 4 |
-| Instructions: layering, precedence, why one big file fails | Book 1 ch. 2; Book 2 ch. 2; OpenAI; Course L04; Study 7.2–7.3 | Block 5 | Planned |
+| Instructions: layering, precedence, why one big file fails | Book 1 ch. 2; Book 2 ch. 2; OpenAI; Course L04; Study 7.2–7.3; Augment AGENTS.md post | Block 5 | Planned |
 | Context as a budget; context selection | Study 9; Paper (context selection); Book 1 ch. 5; OpenAI | Block 1, day 8; Block 5 | Covered, deepened in Block 5 |
+| Retrieval: how the right code and text get found and brought into the window | Scratch book ch. 10; Study 9.7, 13.2; Faros context engineering | Block 5 | Planned, needs its own day (gap found 4 Oct from the Scratch book) |
+| Messages, turns and the transcript | Scratch book ch. 3 | Block 2 | Planned, needs its own day |
 | Durable state and the repository as the source of truth | Course L03, L05; OpenAI; Book 2 ch. 3; Paper (task state) | Block 1, days 5–7; Block 6 | Covered, deepened in Block 6 |
-| Compaction and summarisation when the window fills | Study 9.3–9.5; Book 1 ch. 5.5–5.6 | Block 6 | Planned, needs its own day |
-| Session memory and persistent memory | Study 9.6; Paper (project memory); Book 1 ch. 5.3–5.4 | Block 6 | Planned, needs its own day |
+| Compaction and summarisation when the window fills | Study 9.3–9.5; Book 1 ch. 5.5–5.6; Scratch book ch. 7, 8 | Block 6 | Planned, needs its own day |
+| Session memory and persistent memory | Study 9.6; Paper (project memory); Book 1 ch. 5.3–5.4; Scratch book ch. 9, 21 | Block 6 | Planned, needs its own day |
 | Task specification; cutting work into units; feature lists | Paper (task specification); Course L07–L08 | Block 1, day 9; Block 7 | Covered, deepened in Block 7 |
 | Verification and evidence | Paper (verification); Course L09–L10; Book 2 ch. 6; Book 1 ch. 7 | Block 1, days 10–12; Block 8 | Covered, deepened in Block 8 |
 | Mechanical enforcement of architecture (linters, structural tests) | OpenAI | Block 1, day 11; Block 8 | Covered, deepened in Block 8 |
@@ -36,10 +42,10 @@ Not yet checked: the blogs in `imp-urls.txt` (faros.ai, augmentcode.com) and the
 | Entropy: auditing and cleaning up drift in an agent-written codebase | Paper (entropy auditing); OpenAI | Block 9 | Planned, needs its own day |
 | Errors and recovery | Book 1 ch. 6; Course L12 | Block 1, day 15; Block 10 | Covered, deepened in Block 10 |
 | Observability, failure attribution, recording human interventions | Paper; Course L11; OpenAI | Block 1, day 16; Block 10 | Covered, deepened in Block 10 |
-| Multi-agent orchestration and delegation | Study 11, 16.7; Book 1 ch. 7; Book 2 ch. 6; Course L14 | Block 11 | Planned |
-| Cost and model routing; provider abstraction; model–harness co-design | Study 7.1, 7.5, 15.4, 16.2; Book 1 ch. 2.5 | Block 12 | Planned |
-| Extensibility: skills, hooks, plugins, MCP | Study 12, 16.8; Book 2 ch. 5; Skills guide | Block 13 | Planned (gap found 4 Oct) |
-| Judging a harness: maturity levels, trace-based evaluation, ablation | Paper (H0–H3 ladder, episode packages); Course project 6; Study 4 | Block 14 | Planned (gap found 4 Oct) |
+| Multi-agent orchestration, parallelism and shared state | Study 11, 16.7; Book 1 ch. 7; Book 2 ch. 6; Course L14; Scratch book ch. 15, 17 | Block 11 | Planned |
+| Cost and model routing; provider abstraction; model–harness co-design | Study 7.1, 7.5, 15.4, 16.2; Book 1 ch. 2.5; Scratch book ch. 20; Faros routing posts; Augment harness rebuild | Block 12 | Planned |
+| Extensibility: skills, hooks, plugins, MCP | Study 12, 16.8; Book 2 ch. 5; Skills guide; Scratch book ch. 13 | Block 13 | Planned (gap found 4 Oct) |
+| Judging a harness: maturity levels, trace-based evaluation, evals, ablation | Paper (H0–H3 ladder, episode packages); Course project 6; Study 4; Scratch book ch. 19 | Block 14 | Planned (gap found 4 Oct) |
 | Making the application legible to the agent | OpenAI | Block 14 | Planned (gap found 4 Oct) |
 | What not to build; designing your own harness | Study 15.2, 16.9; Book 2 ch. 7–8; Book 1 ch. 9 | Block 14 | Planned (gap found 4 Oct) |
 
