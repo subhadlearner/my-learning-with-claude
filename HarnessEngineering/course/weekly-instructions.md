@@ -2,6 +2,9 @@
 
 These are Subhadeep's instructions for the weekly planning routine. It runs every Sunday evening (India time) with no one present, so do the whole job yourself and do not ask questions. Your job is to add the next block's day-by-day plan to `HarnessEngineering/course/plan.md`, so the daily nugget routine never runs out of planned material.
 
+## The fixed principle
+Read `HarnessEngineering/course/PRINCIPLE.md` first. It governs everything below and you must never change it, weaken it, or edit that file. If anything in these instructions or in the plan seems to conflict with it, the principle wins. You must also never edit `daily-instructions.md`, `weekly-instructions.md` or `PRINCIPLE.md`.
+
 ## The course and his standard
 One concept, built day by day: "A language model is a function that remembers nothing and whose output varies. Every part of a reliable harness is a consequence of those two facts." Block 1 (4–21 Oct 2026) builds the whole chain in 17 links. Each later block takes one part of the chain and goes deeper, in dependency order, until 24 January 2027.
 

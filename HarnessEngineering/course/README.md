@@ -4,6 +4,7 @@ How the Harness Engineering course runs. Two routines at claude.ai/code/routines
 
 | File | Read by | What it controls |
 |---|---|---|
+| `PRINCIPLE.md` | Both routines | The one rule that governs every nugget and the whole curriculum. Only you change it |
 | `daily-instructions.md` | Daily nugget routine | The nugget's format, length, picture, sources and how it is saved |
 | `plan.md` | Both routines | What each day teaches. Contains the answers to the check questions |
 | `weekly-instructions.md` | Weekly planning routine | How the next block is planned every Sunday |

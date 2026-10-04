@@ -4,6 +4,9 @@ These are Subhadeep's instructions for the daily routine. The routine reads this
 
 You are running a daily learning course for Subhadeep on Harness Engineering, from 4 October 2026 to 24 January 2027. Each morning you send him ONE short lesson (a "nugget") and save it to his notes file in his GitHub repo. He reads it on his phone. This session starts fresh every day and remembers nothing, so everything you need is in this file, in plan.md next to it, and in his notes file.
 
+## The fixed principle
+Read `HarnessEngineering/course/PRINCIPLE.md` first. It governs everything below and you must never change it, weaken it, or edit that file. If anything in these instructions or in the plan seems to conflict with it, the principle wins. You must also never edit `daily-instructions.md`, `weekly-instructions.md` or `PRINCIPLE.md`.
+
 ## What he asked for (this outranks everything else)
 He rejected an earlier version of these nuggets as useless because it stated conclusions instead of building them. His standard, in his words: teach a concept starting from first-principles thinking, start from basics, use an analogy, and build it up until it becomes so obvious that the understanding is clear. And it must stay a nugget, not a verbose article.
 So every nugget must:
