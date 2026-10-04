@@ -13,7 +13,7 @@ https://github.com/subhadlearner/my-learning-with-claude/tree/main/HarnessEngine
 
 ## How these notes work
 
-One nugget is added here every morning at about 7:15 am, from 4 October to 31 December 2026. Each one takes about five minutes to read.
+One nugget is added here every morning at about 7:15 am, from 4 October 2026 to 24 January 2027. Each one takes about five minutes to read.
 
 The whole course builds one idea: a language model is a function that remembers nothing and whose output varies, and every part of a reliable harness is a consequence of those two facts. Each day adds one consequence to the days before it, so the notes are meant to be read in order.
 
@@ -21,26 +21,29 @@ Every nugget has the same shape: a scene with the builder, three to five small s
 
 The notes are yours to edit. Add your own remarks under any nugget; the morning run only appends at the end and does not rewrite what is already here.
 
-## The arc to 31 December
+## The arc to 24 January
 
-Block 1 gives the reasons a harness must exist; every later block takes one part of it and goes deeper. Only Block 1 is planned day by day. Each later block runs Monday to Sunday and is planned automatically on the Sunday evening before it starts.
+Block 1 gives the reasons a harness must exist. Every later block takes one part and goes deeper, in dependency order from the model outward, so each block rests only on the ones before it. Each block runs Monday to Sunday and is planned automatically on the Sunday evening before it starts.
 
-| Block | Dates | Sub-topic | Lines up with (SubhForge timeline) | Planned |
+| Block | Dates | Sub-topic | The question it answers | Planned |
 | --- | --- | --- | --- | --- |
-| 1 | 4–21 Oct | Why a harness exists: the chain of consequences | v0.1.1, Architecture Fitness Review | Yes |
-| – | 22–25 Oct | Review days on Block 1 | Design freeze | Yes |
-| 2 | 26 Oct–1 Nov | Instructions and context: what goes in front of the model, and when | Start of rc1 work | Not yet |
-| 3 | 2–8 Nov | Decomposition and the work graph: dependencies, readiness | rc1 | Not yet |
-| 4 | 9–15 Nov | Verification in depth: test tiers, evidence, independent checking | rc2, reconciliation checkpoint | Not yet |
-| 5 | 16–22 Nov | Change and reconciliation: impact analysis, where propagation stops | rc3 | Not yet |
-| 6 | 23–29 Nov | Failure, recovery, observability, behaviour drift | Stable release, buffer | Not yet |
-| 7 | 30 Nov–6 Dec | Cost, model routing and multi-agent roles | First real use | Not yet |
-| 8 | 7–13 Dec | Tools and actions: interface design, how many tools, file-editing strategies | | Not yet |
-| 9 | 14–20 Dec | Permissions and sandboxing: what an agent may run | | Not yet |
-| 10 | 21–27 Dec | Extensibility: skills, hooks, plugins, MCP | | Not yet |
-| 11 | 28–31 Dec | Judging a harness: evaluation, ablation; course wrap-up | | Not yet |
+| 1 | 4–21 Oct | Why a harness exists: the chain of consequences | why any of this is needed | Yes |
+| – | 22–25 Oct | Review days on Block 1 | | Yes |
+| 2 | 26 Oct–1 Nov | The loop in depth: turns, stop conditions, interrupts | how the model acts | Not yet |
+| 3 | 2–8 Nov | Tools and actions: interface design, how many tools, file-editing strategies | what it acts with | Not yet |
+| 4 | 9–15 Nov | Permissions and sandboxing: what an agent may run, and where | what it is allowed to do | Not yet |
+| 5 | 16–22 Nov | Instructions and context: layering, precedence, what goes in front of the model | what it is told | Not yet |
+| 6 | 23–29 Nov | Memory: compaction when the window fills, session memory, persistent memory | what it remembers | Not yet |
+| 7 | 30 Nov–6 Dec | Task specification and decomposition: specs, dependencies, readiness | what it is asked to do | Not yet |
+| 8 | 7–13 Dec | Verification and evidence: test tiers, independent checking, mechanical enforcement | how we know it is done | Not yet |
+| 9 | 14–20 Dec | Change and reconciliation: impact analysis, where propagation stops, drift | what happens when things change | Not yet |
+| 10 | 21–27 Dec | Failure, recovery and observability: traces, failure attribution, recording interventions | what happens when things break | Not yet |
+| 11 | 28 Dec–3 Jan | Multi-agent orchestration: delegation, roles, responsibility | more than one builder | Not yet |
+| 12 | 4–10 Jan | Cost, model routing and provider abstraction | what it costs | Not yet |
+| 13 | 11–17 Jan | Extensibility: skills, hooks, plugins, MCP | how it grows | Not yet |
+| 14 | 18–24 Jan | Judging and designing a harness: maturity levels, trace-based evaluation, anti-patterns; course capstone | the whole, judged | Not yet |
 
-Sub-topics are a proposal and can be changed by leaving a remark in these notes before Sunday evening. `course/coverage.md` shows how the plan was checked against your sources.
+`course/coverage.md` shows how this plan was checked against your sources. To change a sub-topic, leave a remark in these notes before Sunday evening.
 
 ## Block 1: Why a harness exists (4–21 Oct)
 

@@ -43,14 +43,17 @@ Day 17, 20 Oct. "Can you rebuild the whole design from two facts?" IDEA: every p
 Send, and save under "### Block 1 wrap-up · 21 Oct", in 300 words at most: the ANSWER to Day 17's check; the full chain as one numbered list, one short line per link; five questions that need working out, not recall; and one line asking him to write in his notes what should change in length, depth or pace.
 
 ## Later blocks (not yet planned)
-22 to 25 October are review days. After that, blocks run Monday to Sunday and are added to this file by the weekly planning routine. For orientation only; do NOT teach from these lines:
-- Block 2, 26 Oct–1 Nov: Instructions and context: what goes in front of the model, and when.
-- Block 3, 2–8 Nov: Decomposition and the work graph: dependencies, readiness.
-- Block 4, 9–15 Nov: Verification in depth: test tiers, evidence, independent checking.
-- Block 5, 16–22 Nov: Change and reconciliation: impact analysis, where propagation stops.
-- Block 6, 23–29 Nov: Failure, recovery, observability, behaviour drift.
-- Block 7, 30 Nov–6 Dec: Cost, model routing and multi-agent roles.
-- Block 8, 7–13 Dec: Tools and actions.
-- Block 9, 14–20 Dec: Permissions and sandboxing.
-- Block 10, 21–27 Dec: Extensibility: skills, hooks, plugins, MCP.
-- Block 11, 28–31 Dec: Judging a harness; course wrap-up.
+22 to 25 October are review days. After that, blocks run Monday to Sunday, in dependency order from the model outward, and are added to this file by the weekly planning routine. For orientation only; do NOT teach from these lines:
+- Block 2, 26 Oct–1 Nov: The loop in depth: turns, stop conditions, interrupts.
+- Block 3, 2–8 Nov: Tools and actions: interface design, how many tools, file-editing strategies.
+- Block 4, 9–15 Nov: Permissions and sandboxing: what an agent may run, and where.
+- Block 5, 16–22 Nov: Instructions and context: layering, precedence, what goes in front of the model.
+- Block 6, 23–29 Nov: Memory: compaction when the window fills, session memory, persistent memory.
+- Block 7, 30 Nov–6 Dec: Task specification and decomposition: specs, dependencies, readiness.
+- Block 8, 7–13 Dec: Verification and evidence: test tiers, independent checking, mechanical enforcement.
+- Block 9, 14–20 Dec: Change and reconciliation: impact analysis, where propagation stops, drift.
+- Block 10, 21–27 Dec: Failure, recovery and observability: traces, failure attribution, recording interventions.
+- Block 11, 28 Dec–3 Jan: Multi-agent orchestration: delegation, roles, responsibility.
+- Block 12, 4–10 Jan: Cost, model routing and provider abstraction.
+- Block 13, 11–17 Jan: Extensibility: skills, hooks, plugins, MCP.
+- Block 14, 18–24 Jan: Judging and designing a harness: maturity levels, trace-based evaluation, anti-patterns; course capstone.
