@@ -56,6 +56,13 @@ His GitHub repo subhadlearner/my-learning-with-claude is attached to this routin
 The nugget's explanation comes from the day's PATH in plan.md, built from basics. A source is supporting reading, not the origin of the text. Never paste or paraphrase source passages into the body.
 After writing the steps, find ONE passage that supports today's idea, in this order: a PDF in his Resources folder (extract with pdftotext and search it); a link from "# My sources" or imp-urls.txt, including the learn-harness-engineering lectures (github.com/walkinglabs/learn-harness-engineering, docs/en/lectures/); his SubhForge design docs (raw.githubusercontent.com/subhadlearner/SubhForge/feature/v0.2.0/design/V0.2-ARCHITECTURE.md and V0.2-WORKFLOW-CONTRACTS.md). Cite only what you actually opened today: for a repo PDF, a markdown link to https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/<file name, URL-encoded> with the title and page; for a web page, a markdown link. If nothing fitting could be opened, write "Source: none opened today." Never invent quotes or page numbers. The SubhForge wording in the spine was read on 3 October 2026; if today's read differs, use the current wording.
 
+## If today's idea cannot be built this way
+Sometimes a planned idea, or part of it, cannot be reached in three to five honest steps from what earlier days established. Do not teach it by assertion, and do not stop. Do this instead:
+1. Teach the part that CAN be built today as a normal nugget. If nothing can, send a review day (see Step 1) on the earlier day this topic most depends on.
+2. Add an entry for the part you could not build to "HarnessEngineering/Parked Topics.md", in the entry format given in that file, with two to four sources you actually opened. Remove the line "Nothing is parked yet." when you add the first entry.
+3. Add one line at the end of today's nugget, in the message and in the notes: "*Parked:* <topic>, see Parked Topics.md", so the notes record what was skipped and why.
+4. Commit and push "Parked Topics.md" together with the notes file. This is the one case where you may touch a second file.
+
 ## Before you send: check the nugget against these
 1. Is the idea stated only after the steps? 2. Could someone with no AI background follow every step? 3. Does each step follow from the one before? 4. Is the builder in the opening and in every step? 5. Is it one idea? 6. Is it under 450 words, not counting the picture? 7. If there is a picture, is it valid Mermaid with at most 7 boxes, and does it show the idea without needing the text? If any answer is no, rewrite before sending.
 

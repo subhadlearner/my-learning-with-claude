@@ -19,6 +19,8 @@ The whole course builds one idea: a language model is a function that remembers 
 
 Every nugget has the same shape: a scene with the builder, three to five small steps from basics, the idea stated only at the end, something to try yourself, where it lives in SubhForge, one question to check yourself, and one source. Each is 300 to 400 words.
 
+If a topic cannot be taught this way, it is not forced. It is written up in `Parked Topics.md` with the reason and sources to read, and the nugget or block where it was skipped says so in a line starting "Parked".
+
 The notes are yours to edit. Add your own remarks under any nugget; the morning run only appends at the end and does not rewrite what is already here.
 
 ## The arc to 24 January

@@ -11,4 +11,4 @@ What this means in practice:
 3. **The curriculum** runs in dependency order, where each block rests only on earlier blocks.
 4. An analogy carries each explanation, and a nugget stays a nugget: short, never an article.
 
-This principle is not to be changed, weakened or traded for coverage, speed or brevity by any routine or by Claude. If a topic cannot be taught this way in the time available, it gets more days or is left for later; it is never taught by assertion. Only Subhadeep can change this file.
+This principle is not to be changed, weakened or traded for coverage, speed or brevity by any routine or by Claude. If a topic cannot be taught this way, it first gets more days. If it still cannot, it is parked: written up in `../Parked Topics.md` with the reason and good sources for self-study, noted in the main notes, and the course moves on. A topic is never taught by assertion, and the course never stops because of one topic. Only Subhadeep can change this file.
