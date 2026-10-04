@@ -35,9 +35,12 @@ Block 1 gives the reasons a harness must exist; every later block takes one part
 | 5 | 16–22 Nov | Change and reconciliation: impact analysis, where propagation stops | rc3 | Not yet |
 | 6 | 23–29 Nov | Failure, recovery, observability, behaviour drift | Stable release, buffer | Not yet |
 | 7 | 30 Nov–6 Dec | Cost, model routing and multi-agent roles | First real use | Not yet |
-| 8+ | 7–31 Dec | Open: chosen from what your notes and repos show you need | | Not yet |
+| 8 | 7–13 Dec | Tools and actions: interface design, how many tools, file-editing strategies | | Not yet |
+| 9 | 14–20 Dec | Permissions and sandboxing: what an agent may run | | Not yet |
+| 10 | 21–27 Dec | Extensibility: skills, hooks, plugins, MCP | | Not yet |
+| 11 | 28–31 Dec | Judging a harness: evaluation, ablation; course wrap-up | | Not yet |
 
-Sub-topics for Blocks 2 to 7 are a proposal and can be changed by leaving a remark in these notes before Sunday evening.
+Sub-topics are a proposal and can be changed by leaving a remark in these notes before Sunday evening. `course/coverage.md` shows how the plan was checked against your sources.
 
 ## Block 1: Why a harness exists (4–21 Oct)
 

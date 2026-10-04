@@ -50,4 +50,7 @@ Send, and save under "### Block 1 wrap-up · 21 Oct", in 300 words at most: the 
 - Block 5, 16–22 Nov: Change and reconciliation: impact analysis, where propagation stops.
 - Block 6, 23–29 Nov: Failure, recovery, observability, behaviour drift.
 - Block 7, 30 Nov–6 Dec: Cost, model routing and multi-agent roles.
-- 7–31 Dec: open, chosen from what his notes and repos show he needs.
+- Block 8, 7–13 Dec: Tools and actions.
+- Block 9, 14–20 Dec: Permissions and sandboxing.
+- Block 10, 21–27 Dec: Extensibility: skills, hooks, plugins, MCP.
+- Block 11, 28–31 Dec: Judging a harness; course wrap-up.
