@@ -125,15 +125,7 @@ Monday: you ask the builder where the drain goes. "North wall," he says calmly. 
 
 **Picture.**
 
-```mermaid
-flowchart LR
-    A["question and papers"] --> B["likelihood list"]
-    B -->|"dice roll"| C["one word"]
-    C -->|"added to text"| A
-    C -->|"many rolls"| D["fluent answer"]
-    D -->|"sounds sure"| E["could be right"]
-    D -->|"sounds sure"| F["could be wrong"]
-```
+![Day 2: from question to a fluent answer that could be right or wrong](diagrams/day-02.png)
 
 **See it yourself (2 minutes).** Ask the same design question, word for word, in two fresh chats, such as "Should retry logic live in the caller or the service?" Compare the answers and how sure each sounds.
 
