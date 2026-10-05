@@ -100,3 +100,49 @@ Imagine a master builder with forty years of skill and one strange condition: ev
 *Tomorrow:* ask him the same question on two mornings and you get two different answers. Why?
 
 *Source:* [Google, "Agents" whitepaper](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/22365_19_Agents_v8.pdf), p. 8, "Agents vs. models".
+
+### Day 2 · 5 Oct: Why does the same question get different answers?
+
+**Day 2: Why does the same question get different answers?**
+
+*Yesterday:* Something outside the model saved your conventions as text and puts them back in front of it every session.
+
+Monday: you ask the builder where the drain goes. "North wall," he says calmly. Tuesday, same question, same papers: "South wall," just as calmly. His skill has not changed. So where did the difference come from?
+
+**Step 1. What does the arithmetic actually produce?** Not a word. It produces a score for every possible next piece of text (a "token", a few letters long): "north" 60%, "south" 30%, "east" 10%.
+*His skill tells him which answers are likely, not which is right.*
+
+**Step 2. So how does one word get chosen?** The program rolls a weighted dice over that list. "North" comes up most often, but "south" still comes up about one time in three.
+*Each morning his pick has some chance in it.*
+
+**Step 3. Why does one roll change the whole answer?** The chosen word is added to the text and the model runs again, now reading "south". Every later word builds on it, so one different early pick gives a different paragraph.
+*Once he has said "south wall", he plans the pipes and trench to match.*
+
+**Step 4. Does anything mark a bad roll?** No. The same arithmetic and dice made both answers; no step checks facts or softens the tone when unsure. A wrong answer is built exactly like a right one, so it reads just as sure.
+*Both mornings sound equally certain: the certainty is in how he talks, not in what he knows.*
+
+**Now it's obvious.** The same input can give different outputs, because each word is a weighted roll that shapes the next. And how confident the wording sounds tells you nothing about whether it is right.
+
+**Picture.**
+
+```mermaid
+flowchart LR
+    A["question and papers"] --> B["likelihood list"]
+    B -->|"dice roll"| C["one word"]
+    C -->|"added to text"| A
+    C -->|"many rolls"| D["fluent answer"]
+    D -->|"sounds sure"| E["could be right"]
+    D -->|"sounds sure"| F["could be wrong"]
+```
+
+**See it yourself (2 minutes).** Ask the same design question, word for word, in two fresh chats, such as "Should retry logic live in the caller or the service?" Compare the answers and how sure each sounds.
+
+**In SubhForge:** your cost rules already assume runs vary: "repeated semantically identical failures stop instead of burning budget" (Architecture §22).
+
+**Chain so far:** remembers nothing → output varies
+
+**Check yourself:** An agent writes "all tests pass" in a confident sentence. What does the confidence tell you?
+
+*Tomorrow:* the builder only ever writes words on paper. So how does anything on the site get built?
+
+*Source:* [Agentway Harness Books, book 1: Claude Code](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book1-claude-code-en.pdf), ch. 1 §1.5, p. 10: "External systems do not forgive bad execution just because model tone sounds confident."
