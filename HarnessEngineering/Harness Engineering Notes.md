@@ -138,3 +138,41 @@ Monday: you ask the builder where the drain goes. "North wall," he says calmly. 
 *Tomorrow:* the builder only ever writes words on paper. So how does anything on the site get built?
 
 *Source:* [Agentway Harness Books, book 1: Claude Code](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book1-claude-code-en.pdf), ch. 1 §1.5, p. 10: "External systems do not forgive bad execution just because model tone sounds confident."
+
+### Day 3 · 6 Oct: How does a text function get any work done?
+
+**Day 3: How does a text function get any work done?**
+
+*Yesterday:* Nothing. Fluent wording comes from the same dice process whether the statement is true or not.
+
+The builder never leaves the site office; he has only a pen. Yet by evening a wall is up. Who built it?
+
+**Step 1. What can the model actually produce?** Only text (Day 1). Text cannot run a test or save a file; "run the tests" is just words on a page.
+*He can write "lay bricks on the north wall", but writing it lays nothing.*
+
+**Step 2. So how does anything happen?** An ordinary program reads the text the model wrote. When the text is a request in an agreed form, such as "run command: dotnet test", the program runs that command on your machine. These agreed actions are called "tools".
+*A runner picks up his slip, walks out, and does exactly what it says.*
+
+**Step 3. How does the model learn what happened?** It can't watch. So the program writes down the result ("12 passed, 1 failed: OrderTests") as text, adds it to the transcript, and calls the model again with all of it.
+*The runner comes back with a note, and it goes on the pile of papers in front of him.*
+
+**Step 4. When does it stop?** The program repeats this until the model's text says the job is finished. That is a claim too (Day 2), but it ends the loop.
+*Slip, note, slip, note, until he writes "done" and the runner stops.*
+
+**Now it's obvious.** An agent is the model called in a loop by a program: the program does every action and feeds each result back as text. The model never touches your files; the program does.
+
+**Picture.**
+
+![Day 3: the loop of model slip, program action and result note, until the model says finished](diagrams/day-03.png)
+
+**See it yourself (2 minutes).** Open one finished task in Kilo and look at its step list. Each tool call is a slip; each result shown under it is the runner's note.
+
+**In SubhForge:** your execution plane already separates the writer from the doers: "Execution combines: SubhForge lifecycle rules; specialized agents; deterministic utilities" (Architecture §4.3).
+
+**Chain so far:** remembers nothing → output varies → works through a loop
+
+**Check yourself:** When an agent "edits a file", who actually edits it?
+
+*Tomorrow:* twenty slips in a row, and one misread measurement on slip 3. What happens to the other seventeen?
+
+*Source:* [Google, "Agents" whitepaper](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/22365_19_Agents_v8.pdf), p. 18: "A model outputs a Function and its arguments, but doesn't make a live API call."
