@@ -176,3 +176,44 @@ The builder never leaves the site office; he has only a pen. Yet by evening a wa
 *Tomorrow:* twenty slips in a row, and one misread measurement on slip 3. What happens to the other seventeen?
 
 *Source:* [Google, "Agents" whitepaper](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/22365_19_Agents_v8.pdf), p. 18: "A model outputs a Function and its arguments, but doesn't make a live API call."
+
+### Day 4 · 7 Oct: Why do long tasks go wrong even with a good model?
+
+**Day 4: Why do long tasks go wrong even with a good model?**
+
+*Yesterday:* The program around the model edits it, following text the model wrote.
+
+Today the builder sends twenty slips, one after another, to put up a room. He is very good: almost every slip is right. Yet by evening the room is crooked. How does a very good builder end up with a bad room?
+
+**Step 1. Can any single step be wrong?** Yes. Each word is a weighted roll (Day 2), so every step has some small chance of being off, however good the model.
+*Even forty years of skill misreads a measurement now and then.*
+
+**Step 2. What happens to an error made on step 3?** In the loop (Day 3), each call reads the whole transcript, which now holds step 3's output. Step 4 builds on it as if it were true, and so does step 5. The error is carried forward, not averaged away.
+*He misreads the wall height on slip 3; slips 4 to 20 set the window, lintel and roof faithfully to the wrong height.*
+
+**Step 3. So what are the odds of a clean run?** Every step must be right. Say each is right 95% of the time. Over twenty steps that is 0.95 multiplied by itself twenty times: about 0.36. A clean run happens roughly one time in three.
+*Twenty good slips in a row is far rarer than one good slip.*
+
+**Step 4. Does a better model fix this?** It raises the per-step number: at 99%, twenty steps gives about 82%. But the multiplying remains, and real tasks run longer: 99% over fifty steps is about 60%.
+*A finer builder misreads less often, but nothing on his slips marks the one he misread.*
+
+**Step 5. What changes the odds?** Looking at the work after a step, from outside the loop, before the next step builds on it. A caught error costs one step, not seventeen.
+*Someone measures the wall after slip 3, before the window goes in.*
+
+**Now it's obvious.** Small error rates multiply across steps, so a long task fails often even with a good model. Only something outside the loop that catches errors along the way stops one bad step spoiling the rest.
+
+**Picture.**
+
+![Day 4: one misread slip either carried through every later slip, or caught at once and redone](diagrams/day-04.png)
+
+**See it yourself (2 minutes).** On a calculator, work out 0.9^10, 0.95^20 and 0.99^50. Then count roughly how many steps your last agent task in Kilo took.
+
+**In SubhForge:** your failure rules already assume errors will happen mid-run: "Failures should be: detected → contained → diagnosable → recoverable" (Architecture §3.8).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound
+
+**Check yourself:** Why does a smarter model not remove the need for checks on long tasks?
+
+*Tomorrow:* the builder forgets everything overnight. So where must tomorrow's plan live?
+
+*Source:* [learn-harness-engineering, Lecture 9](https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md): "every transformation can introduce bias, and every skipped verification compounds the information asymmetry."
