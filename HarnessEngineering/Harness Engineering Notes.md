@@ -217,3 +217,41 @@ Today the builder sends twenty slips to put up one room. Almost every slip is ri
 *Tomorrow:* he forgets everything overnight. So where must tomorrow's plan live?
 
 *Source:* [learn-harness-engineering, Lecture 9](https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md): "every skipped verification compounds the information asymmetry."
+
+### Day 5 · 8 Oct: If he forgets everything, where must the plan live?
+
+**Day 5: If he forgets everything, where must the plan live?**
+
+*Yesterday:* A smarter model raises each step's odds, but the odds still multiply; only a check outside the loop stops an error being carried forward.
+
+Yesterday the builder put up one room in twenty slips. Tonight he goes home, and tomorrow he wakes remembering nothing. Yet the site must carry on from exactly where it stopped. Where does "where it stopped" live?
+
+**Step 1. What must outlive today?** Three things: what was decided (the wall is 2.7 m high), what is done (north wall up), and what is next (the window). Lose any one and tomorrow repeats or contradicts today.
+*The height he agreed, the walls he finished, the job planned for morning.*
+
+**Step 2. Where could they be kept?** Only three places. In the model: ruled out, since its file of numbers never changes (Day 1). In the text of today's session, the transcript the loop builds (Day 3): it ends when the session ends. Or outside both, in a file.
+*Not in his head, not on today's pile of slips, so in the site office.*
+
+**Step 3. Is writing it down enough?** No. The model sees only the text put in front of it (Day 1), so a file nobody hands over is as good as lost. It must sit in a known place, and the harness (the program around the model) must read it back at the start, every time.
+*A diary left in a drawer helps no one; it is handed to him at the gate each morning.*
+
+**Step 4. Isn't the chat history already such a record?** It looks like one, but nobody chose what it keeps. It holds every false start and wrong guess (Day 2), it exists only because the talk happened, and long ones get cut to fit.
+*Yesterday's pile of slips, crossed-out ones included, is not a diary.*
+
+**Now it's obvious.** Anything that must survive a session is written on purpose to a durable place outside the model, and read back on purpose at the start of the next one.
+
+**Picture.**
+
+![Day 5: Monday writes the site diary on purpose, Tuesday is handed it at the gate, the chat transcript is simply gone](diagrams/day-05.png)
+
+**See it yourself (2 minutes).** For your current project, ask: if every chat were deleted today, what would be lost? Whatever is on that list lives nowhere durable.
+
+**In SubhForge:** your recovery rule already says this: "Interrupted work must resume from durable authority, not model memory" (Architecture §3.8).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside
+
+**Check yourself:** What separates durable state from a chat history?
+
+*Tomorrow:* two sets of drawings sit in the site office, and only one was revised. Which does he build from?
+
+*Source:* [OpenAI, "Harness engineering: leveraging Codex in an agent-first world"](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf), p. 6: "anything it can't access in-context while running effectively doesn't exist."
