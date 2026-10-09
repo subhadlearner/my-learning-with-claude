@@ -255,3 +255,44 @@ Tonight the builder goes home; tomorrow he wakes remembering nothing. Yet the si
 *Tomorrow:* two sets of drawings sit in the site office, and only one was revised. Which does he build from?
 
 *Source:* [OpenAI, "Harness engineering: leveraging Codex in an agent-first world"](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf), p. 6: "anything it can't access in-context while running effectively doesn't exist."
+
+### Day 6 · 9 Oct: What happens when two documents disagree?
+
+**Day 6: What happens when two documents disagree?**
+
+*Yesterday:* Durable state is written on purpose, in a known place, and read back on purpose.
+
+The site office keeps two sets of drawings, one on the wall, one in a drawer. The owner changes the window height; someone revises the wall set. Next morning the builder is handed the drawer set. What gets built?
+
+**Step 1. How does a fact end up in two places?** Copying is cheap: a rule from the design notes gets pasted into a task description. Both copies start identical.
+*A spare set for the drawer, matching the wall set the day it was made.*
+
+**Step 2. What happens when the fact changes?** Someone updates the copy in front of them. The other copy is not visibly wrong, just old. Now they disagree, and nothing marks which is current.
+*Wall set: 1.2 m. Drawer set: 1.0 m. Both look official.*
+
+**Step 3. Which copy does the model use?** Whichever text is put in front of it (Day 1). It cannot see the other copy, so it cannot know a conflict exists.
+*He builds from the set in his hands. He has never seen the wall.*
+
+**Step 4. Wouldn't someone catch it?** A person might ask "which is right?" The model has no such moment. It carries on, and its report sounds as sure as ever (Day 2).
+*He fits the window at 1.0 m and says "window done" with full assurance.*
+
+**Step 5. So what removes the danger?** Not more care; sooner or later a copy gets missed. Remove the copy. The fact lives in one place; anything else says "see there".
+*One set of drawings. The work order says "window per drawing 3", not "1.0 m".*
+
+**Now it's obvious.** Each fact needs exactly one home; everything else points to it. Copies drift apart, and the model builds from whichever it is handed.
+
+**Picture.**
+
+![Day 6: two drawing sets, one revised and one missed so the old height gets built, against one drawing that the work order points to](diagrams/day-06.png)
+
+**See it yourself (2 minutes).** Find one fact written twice in a repo of yours, such as a version number. Do the copies still agree?
+
+**In SubhForge:** your design folder rests on this: "Every decision has one authoritative home. Other documents reference it; they do not redefine it." (design/README.md).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact
+
+**Check yourself:** Why is a duplicated fact more dangerous for an agent than for a team of people?
+
+*Tomorrow:* the drawings change rarely, the job board hourly. Should they share one sheet?
+
+*Source:* [OpenAI, "Harness engineering: leveraging Codex in an agent-first world"](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf), p. 4: "Agents can't tell what's still true."
