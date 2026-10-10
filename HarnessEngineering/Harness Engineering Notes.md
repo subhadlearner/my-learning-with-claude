@@ -296,3 +296,41 @@ The site office keeps two sets of drawings, one on the wall, one in a drawer. Th
 *Tomorrow:* the drawings change rarely, the job board hourly. Should they share one sheet?
 
 *Source:* [OpenAI, "Harness engineering: leveraging Codex in an agent-first world"](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf), p. 4: "Agents can't tell what's still true."
+
+### Day 7 · 10 Oct: Is "what we are building" the same kind of fact as "what is done"?
+
+**Day 7: Is "what we are building" the same kind of fact as "what is done"?**
+
+*Yesterday:* People notice when two copies disagree and ask; the model builds from the copy in front of it and carries on.
+
+Every fact now has one home: one big sheet with the drawings, and today's jobs pencilled on top. By noon it is a smudge. Is one sheet the problem?
+
+**Step 1. How often does each fact change?** "The kitchen faces east" holds for months, and changing it deserves the owner's review. "Plastering in progress" changes several times a day.
+*Drawings are revised rarely and signed; today's jobs move hourly.*
+
+**Step 2. What happens when both share one place?** The hourly edits bury the rare ones. A real design change hides among fifty "started" and "finished" marks.
+*Rub out "plastering" for the tenth time and the window height beside it smudges too.*
+
+**Step 3. So keep them apart?** Yes: one place for what we are building, changed with care; one for the state of the work, updated freely. Each fact still has one home (Day 6).
+*The drawings on the wall; a job board beside them, cards moved all day.*
+
+**Step 4. And "how far along are we?"** A third kind: not decided by anyone, but worked out by reading the other two. Keep it as an edited document and it becomes a second copy of facts that live elsewhere (Day 6). It drifts, and the model builds from whatever it is handed (Day 1).
+*The foreman reads the board each evening and writes a summary. Next evening he does not edit it; he reads the board afresh.*
+
+**Now it's obvious.** Slow-changing meaning and fast-changing work state live apart, and a view computed from them is never stored as truth: it is worked out again when needed.
+
+**Picture.**
+
+![Day 7: drawings change rarely with review, the job board hourly, and the foreman's summary is read off both and worked out afresh each evening](diagrams/day-07.png)
+
+**See it yourself (2 minutes).** Find one status document in a project of yours. Could it be regenerated from the code and the issue tracker?
+
+**In SubhForge:** your design splits all three: Product Truth in Git (Architecture §4.1), an Operational Work Graph (§4.2), and status views that "are read-only projections" (§4.3).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart
+
+**Check yourself:** Why must a status report never be edited by hand?
+
+*Tomorrow:* the office holds drawings, a board and a diary. Why not hand him all of it?
+
+*Source:* [OpenAI, "Harness engineering: leveraging Codex in an agent-first world"](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf), p. 5: the repository layout keeps `product-specs/`, `exec-plans/active/` and `generated/` in separate folders.
