@@ -334,3 +334,41 @@ Every fact now has one home: one big sheet with the drawings, and today's jobs p
 *Tomorrow:* the office holds drawings, a board and a diary. Why not hand him all of it?
 
 *Source:* [OpenAI, "Harness engineering: leveraging Codex in an agent-first world"](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf), p. 5: the repository layout keeps `product-specs/`, `exec-plans/active/` and `generated/` in separate folders.
+
+### Day 8 · 11 Oct: Why not hand him everything?
+
+**Day 8: Why not hand him everything?**
+
+*Yesterday:* A status report is computed from the real stores, so an edited copy becomes a second home for those facts and drifts.
+
+The office holds drawings, a job board and a diary. Why not hand him the whole filing cabinet at the gate, just to be safe?
+
+**Step 1. How much text can the model take in at once?** There is a hard limit, the context window, counted in tokens (word-pieces, about three-quarters of a word each). Every model's documentation states it; past it, text is cut off or the call fails.
+*His desk holds only so many sheets.*
+
+**Step 2. Below that limit, is more text harmless?** No. Each next word is worked out by weighing all the text in front of the model (Day 2). One vital line among thousands gets a smaller share, so quality falls well before the limit.
+*Bury "no nails in the oak floor" on page 600 and he reads straight past it.*
+
+**Step 3. Does the extra text cost anything else?** Yes. The loop calls the model on every turn (Day 3), and each call reads all of it again: you pay per token, every turn, and wait longer.
+*Rereading the cabinet before every slip takes all morning.*
+
+**Step 4. So who decides what goes in?** Not the model: it cannot ask for a page it does not know exists (Day 1). The truth lives outside (Day 5), so the program around it must choose what to bring in.
+*The clerk picks today's three sheets and leaves the rest filed.*
+
+**Now it's obvious.** What goes in front of the model is a budget: limited space, limited attention, real cost. Choosing what fills it is a design decision.
+
+**Picture.**
+
+![Day 8: handing over the whole filing cabinet crowds the desk and the key line is missed; the clerk choosing three sheets keeps it seen](diagrams/day-08.png)
+
+**See it yourself (2 minutes).** In one recent Kilo task, look at how much text it loaded before its first step.
+
+**In SubhForge:** working context targets roughly 20–40k tokens with a 100k ceiling, to "stop rather than silently overflow" (§21.1), and says "Do not load broad project history by default" (§21.2).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget
+
+**Check yourself:** Why is "give it the whole repo to be safe" the wrong instinct?
+
+*Tomorrow:* if the desk holds only a few sheets, how big should one job be?
+
+*Source:* [OpenAI, "Harness engineering: leveraging Codex in an agent-first world"](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf), p. 4: "Context is a scarce resource. A giant instruction file crowds out the task, the code, and the relevant docs."
