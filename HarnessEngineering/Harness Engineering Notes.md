@@ -372,3 +372,41 @@ The office holds drawings, a job board and a diary. Why not hand him the whole f
 *Tomorrow:* if the desk holds only a few sheets, how big should one job be?
 
 *Source:* [OpenAI, "Harness engineering: leveraging Codex in an agent-first world"](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf), p. 4: "Context is a scarce resource. A giant instruction file crowds out the task, the code, and the relevant docs."
+
+### Day 9 · 12 Oct: How big should one job be?
+
+**Day 9: How big should one job be?**
+
+*Yesterday:* More text thins the model's attention and raises the cost, so the lines that matter are more likely to be missed.
+
+The owner wants a house, and the builder's desk holds only a few sheets (Day 8). Is "build the house" one job, or fifty?
+
+**Step 1. What must fit on the desk for one job?** The job plus everything it needs: drawings, rules, progress so far. All of it must fit the context window (the text the model takes in at once, Day 8).
+*"Build the house" needs every drawing at once; "fit out the downstairs bathroom" needs three sheets.*
+
+**Step 2. Does a smaller job help in another way?** Yes. Errors carry forward (Day 4): at 95% right per step, 20 steps succeed about 36% of the time, 5 steps about 77%.
+*Twenty slips for a whole floor; five for one bathroom.*
+
+**Step 3. Is "small" enough?** No. Take "lay the bathroom pipes", testable only once the kitchen mains are in. Nobody can tell whether it is finished, so a hidden leak waits and the next job builds on it (Day 4).
+*He reports the bathroom done; nobody can test its joints for a week.*
+
+**Step 4. So what decides the size?** Two tests: everything it needs fits on the desk, and you can tell it is finished by checking that job alone. A written description of one such job, saying what to build and how to tell it is done, is a spec.
+*The work order: "Downstairs bathroom: tiles, taps, drain. Done when water runs and drains with no leak."*
+
+**Now it's obvious.** A good unit of work fits in one context and can be checked on its own. The work order that passes both tests is a spec.
+
+**Picture.**
+
+![Day 9: one big job overflows the desk; cut into rooms, a job that fits on the desk and can be checked by itself becomes the work order](diagrams/day-09.png)
+
+**See it yourself (2 minutes).** Take a recent agent task. Did everything it needed fit in one load? Could you tell it was done without checking any other task?
+
+**In SubhForge:** your design sizes a Spec artifact at roughly 5–15k tokens (§21.1) and describes specs as "implementation-ready behavioral slices" (§3.6).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit
+
+**Check yourself:** Name the two properties of a good unit of work for an agent.
+
+*Tomorrow:* the bathroom has a test. When he says "done", what do you actually have?
+
+*Source:* [learn-harness-engineering, Lecture 07: "Why agents overreach and under-finish"](https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/en/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md): "Done is not 'code is written' — it's 'behavior verification passes.' In your feature list, every entry needs a verification command."
