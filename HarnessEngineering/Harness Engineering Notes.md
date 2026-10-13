@@ -410,3 +410,44 @@ The owner wants a house, and the builder's desk holds only a few sheets (Day 8).
 *Tomorrow:* the bathroom has a test. When he says "done", what do you actually have?
 
 *Source:* [learn-harness-engineering, Lecture 07: "Why agents overreach and under-finish"](https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/en/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md): "Done is not 'code is written' — it's 'behavior verification passes.' In your feature list, every entry needs a verification command."
+
+### Day 10 · 13 Oct: When he says "done", what do you have?
+
+**Day 10: When he says "done", what do you have?**
+
+*Yesterday:* It fits in one bounded context, and its completion can be checked on its own.
+
+The bathroom work order says "done when water runs and drains with no leak" (Day 9). At five o'clock his slip arrives: "Bathroom finished, no leaks." What is in your hand?
+
+**Step 1. Where did that sentence come from?** Like every sentence he writes: one likely word after another, picked by a weighted dice roll (Day 2). Nothing in that process looks at the pipes.
+*The slip was written in the site office, not under the sink.*
+
+**Step 2. Would a false "done" look any different?** No. A wrong answer is made the same way and reads just as smoothly (Day 2). Side by side, you cannot tell which bathroom leaks.
+*The same steady hand, whether or not the joint drips.*
+
+**Step 3. So what can tell them apart?** Only the work itself: run the tap and watch the drain, the test the work order names (Day 9).
+*Someone has to walk into the bathroom.*
+
+**Step 4. Can the builder go and check it himself?** His check is one more output of the same process, with the same blind spots. If he misread the drawing when fitting the pipe, he misreads it again when inspecting.
+*The builder who fitted the wrong pipe will also pass the wrong pipe.*
+
+**Step 5. Is "someone checked it" enough?** Not if it is only said. Tomorrow nobody remembers (Day 1), and "the inspector said fine" is another claim. The check must leave a record: what was tested, the result, by whom.
+*The inspector's signed sheet: "Tap run five minutes. Drain clear. No drip."*
+
+**Now it's obvious.** His "done" is a claim. It becomes a fact only when something other than him checks the work itself and leaves a record.
+
+**Picture.**
+
+![Day 10: the builder's "done" is only a claim; his own recheck is another claim; the inspector checks the work and signs a sheet, which makes it a fact](diagrams/day-10.png)
+
+**See it yourself (2 minutes).** Recall the last time an agent said something was finished. What did you actually check, and is there a record?
+
+**In SubhForge:** your contracts keep "verification facts are separate from judgement" and treat "verification reports are immutable evidence" (Contracts §23.1).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence
+
+**Check yourself:** Why can the agent that wrote the code not certify it?
+
+*Tomorrow:* if not the builder, who should the inspector be?
+
+*Source:* [AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents, p. 5](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/AI%20Harness%20Engineering-A%20Runtime%20Substrate%20for%20Foundation-Model%20Software%20Agents.pdf): "Task completion is bound to evidence ... rather than to a natural-language assertion."
