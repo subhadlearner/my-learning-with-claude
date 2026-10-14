@@ -451,3 +451,41 @@ The bathroom work order says "done when water runs and drains with no leak" (Day
 *Tomorrow:* if not the builder, who should the inspector be?
 
 *Source:* [AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents, p. 5](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/AI%20Harness%20Engineering-A%20Runtime%20Substrate%20for%20Foundation-Model%20Software%20Agents.pdf): "Task completion is bound to evidence ... rather than to a natural-language assertion."
+
+### Day 11 · 14 Oct: Who should the inspector be?
+
+**Day 11: Who should the inspector be?**
+
+*Yesterday:* Its certificate is another output of the same process, with the same blind spots; it adds confidence, not evidence.
+
+The builder cannot inspect his own bathroom (Day 10). At the gate wait a second master builder and a toolbox with a tape measure. The sheet asks: "Does the drain clear in a minute?" and "Is the layout sensible?" Who answers which?
+
+**Step 1. Are those two questions the same kind?** No. The first has one right answer, found by fixed steps: run the tap, time the drain. The second has no recipe; it needs judgement.
+*One line is for the stopwatch, the other for the architect's eye.*
+
+**Step 2. What does ordinary code do with the first kind?** A test or a linter (a program that checks code against fixed rules) runs the same steps every time: same input, same answer.
+*The tape measure reads 2.38 m every time.*
+
+**Step 3. What if a model answered the first kind instead?** Its answer is another dice roll (Day 2): asked twice, it can say "pass" then "fail". And it adds one more step that can be wrong (Day 4).
+*Asking the second builder to eyeball the wall while the tape measure sits in the box.*
+
+**Step 4. Then what are the model and the human for?** The second kind: does this design fit what the owner meant? Code has nothing to compute there, so judgement is the only tool, recorded as an opinion with reasons, not as proof.
+*The architect writes: "Basin too close to the door; move it."*
+
+**Now it's obvious.** Whatever software can prove is checked by ordinary code, because code gives the same answer every time. The model and the human are kept for the questions that need judgement.
+
+**Picture.**
+
+![Day 11: an inspection question with one right answer goes to code, which gives the same answer every time; one that needs judgement goes to the model or human, recorded as a reasoned opinion](diagrams/day-11.png)
+
+**See it yourself (2 minutes).** Mark three checks in your workflow "computable" or "judgement". Is a model answering a computable one?
+
+**In SubhForge:** your design says "Use deterministic code for things software can prove reliably" (§3.3), and tags each invariant DETERMINISTIC, SEMANTIC or MIXED (§5.3).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove
+
+**Check yourself:** What is the test for whether a check belongs in code?
+
+*Tomorrow:* Tuesday's sheet is signed; on Wednesday the wall changes. Is the sheet still good?
+
+*Source:* [Harness engineering: leveraging Codex in an agent-first world (OpenAI), p. 7](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf): "These constraints are enforced mechanically via custom linters ... and structural tests."
