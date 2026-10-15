@@ -489,3 +489,41 @@ The builder cannot inspect his own bathroom (Day 10). At the gate wait a second 
 *Tomorrow:* Tuesday's sheet is signed; on Wednesday the wall changes. Is the sheet still good?
 
 *Source:* [Harness engineering: leveraging Codex in an agent-first world (OpenAI), p. 7](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf): "These constraints are enforced mechanically via custom linters ... and structural tests."
+
+### Day 12 · 15 Oct: Is yesterday's inspection still good today?
+
+**Day 12: Is yesterday's inspection still good today?**
+
+*Yesterday:* If the right answer can be computed without judgement, it belongs in code.
+
+On Tuesday the inspector signs a sheet for the kitchen wall: passed (Day 10). On Wednesday the owner moves a doorway, and the builder cuts the wall to suit. On Thursday someone waves Tuesday's sheet. What is it worth?
+
+**Step 1. What does a sheet actually say?** It reports what was found on one thing at one moment: "this wall, built to drawing revision 3, checked Tuesday, passed." A revision is a numbered version of a drawing; in code, a commit ID names an exact version the same way.
+*The inspector writes the date and the drawing revision at the top.*
+
+**Step 2. After Wednesday's cut, is the sheet false?** No. It is still true, but about Tuesday's wall, and that wall no longer exists.
+*An accurate sheet about a wall you can no longer stand in front of.*
+
+**Step 3. So what do you know about today's wall?** Only what the builder says: "small cut, nothing else touched." That is a claim (Day 10). The cut may have hit a pipe, and no sheet has seen the cut.
+*Nobody has run the tape measure over the new opening.*
+
+**Step 4. How do you stop an old sheet passing for a new one?** Every sheet must name the exact version it checked, and counts only while that version is what stands. When the version differs, the sheet stops counting and the work is checked again, by code wherever code can prove it (Day 11).
+*No revision number matching the wall, no sign-off.*
+
+**Now it's obvious.** Evidence is about one exact version of the work. When the work changes, the evidence stops applying, and what remains is a claim until it is checked again.
+
+**Picture.**
+
+![Day 12: a sheet names the wall revision it checked; once the wall changes to a new revision, the old sheet no longer applies and the new wall is an unproven claim until inspected again](diagrams/day-12.png)
+
+**See it yourself (2 minutes).** Recall a time you trusted a green test run after more code had changed. Which commit had the tests actually seen?
+
+**In SubhForge:** your contracts say "evidence freshness must match the implementation identity it claims to prove" (Contracts §23.1).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires
+
+**Check yourself:** Tests passed yesterday and the code changed today. What exactly do you know?
+
+*Tomorrow:* the next room's materials are on site and the builder could start. Does that mean he should?
+
+*Source:* [Agentway Harness Books, book 1: Claude Code, §7.7, p. 63](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book1-claude-code-en.pdf): "before users act on outputs, someone must return to current reality and revalidate."

@@ -1,0 +1,6 @@
+flowchart TD
+    A["Tuesday wall rev 3"] -->|"inspected"| B["sheet: rev 3 passed"]
+    A -->|"changed Wednesday"| C["wall now rev 4"]
+    B -->|"names rev 3 only"| D["rev 4 unproven claim"]
+    C --> D
+    D -->|"inspect again"| E["sheet: rev 4 passed"]
