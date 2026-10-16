@@ -1,0 +1,5 @@
+flowchart TD
+    A["earlier rooms passed"] -->|"computed by code"| B["next room ready"]
+    B -->|"not permission"| C["owner decides"]
+    C -->|"approves"| D["builder starts"]
+    C -->|"not yet"| E["room waits"]

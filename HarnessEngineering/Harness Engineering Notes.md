@@ -527,3 +527,41 @@ On Tuesday the inspector signs a sheet for the kitchen wall: passed (Day 10). On
 *Tomorrow:* the next room's materials are on site and the builder could start. Does that mean he should?
 
 *Source:* [Agentway Harness Books, book 1: Claude Code, §7.7, p. 63](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book1-claude-code-en.pdf): "before users act on outputs, someone must return to current reality and revalidate."
+
+### Day 13 · 16 Oct: Who decides?
+
+**Day 13: Who decides?**
+
+*Yesterday:* Only that yesterday's version passed; about today's code you have a claim until it is checked again.
+
+The kitchen passed inspection. Bathroom tiles are on site, scaffolding up. He could start tiling now and pick the colour himself. Should he?
+
+**Step 1. What does he know about what the owner wants?** Only what is on the papers handed to him at the gate (Day 1). The owner wants more than any drawing says: colours they hate, delay they will accept, what "finished" means.
+*The drawing says "tiled wall". It does not say "never grey".*
+
+**Step 2. When he fills that gap himself, what has he produced?** A guess about the owner's wishes. His report of it is a claim (Day 10), as sure-sounding as a correct one (Day 2).
+*He tiles in grey and reports "bathroom done" in the same calm voice.*
+
+**Step 3. Who lives with the result if the guess is wrong?** Not him: tomorrow he remembers nothing and loses nothing. The owner lives in the house and pays to redo it. So what is wanted, what risk is acceptable and whether work is accepted are choices for the person who bears the result.
+*The owner signs off, because the owner has to live there.*
+
+**Step 4. The tiles are here and the kitchen passed. Isn't that a "go"?** That is readiness: everything this job depends on is done, a fact code can work out (Day 11). Starting is a choice, and Step 3 says whose.
+*Scaffolding standing ready is not an instruction to build.*
+
+**Now it's obvious.** Decisions about meaning, risk and acceptance stay with the person who bears the consequences. "This is ready" or "this is possible" is never "this is permitted".
+
+**Picture.**
+
+![Day 13: earlier rooms passing makes the next room ready, computed by code; ready is not permission, so the owner decides whether the builder starts or the room waits](diagrams/day-13.png)
+
+**See it yourself (2 minutes).** Recall a time an agent did something because it could, not because you asked.
+
+**In SubhForge:** when it cannot classify an ambiguity "it does not guess" (§3.4), and a dependency is "never permission to act" (§3.5).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides
+
+**Check yourself:** What is the difference between work being ready and work being authorised?
+
+*Tomorrow:* the owner changes a drawing after three rooms are finished. Which of them must be redone?
+
+*Source:* [Agentway Harness Books, book 1: Claude Code, Chapter 4, p. 32](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book1-claude-code-en.pdf): "Intent understanding is not authorization… Systems must split 'can do' from 'may do.'"
