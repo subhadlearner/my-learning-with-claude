@@ -565,3 +565,44 @@ The kitchen passed inspection. Bathroom tiles are on site, scaffolding up. He co
 *Tomorrow:* the owner changes a drawing after three rooms are finished. Which of them must be redone?
 
 *Source:* [Agentway Harness Books, book 1: Claude Code, Chapter 4, p. 32](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book1-claude-code-en.pdf): "Intent understanding is not authorization… Systems must split 'can do' from 'may do.'"
+
+### Day 14 · 17 Oct: What breaks when the plan changes?
+
+**Day 14: What breaks when the plan changes?**
+
+*Yesterday:* Ready is a fact about dependencies that code can work out; authorised is a decision that belongs to the person.
+
+Kitchen and bathroom are finished and inspected; the bathroom, built second, runs off the kitchen's plumbing. Now the owner moves the kitchen window. What must be redone?
+
+**Step 1. Where does the window's position live?** In one drawing (Day 6). Each sheet names the revision it checked (Day 12).
+*The kitchen sheet says "revision A". The drawing is now revision B.*
+
+**Step 2. Which sheets stop counting?** Only those that checked something the change touched. The window wall is different now; its sheet describes a wall that no longer exists.
+*Kitchen: sheet void.*
+
+**Step 3. The bathroom came later. Is it affected too?** Later is not the same as dependent. Ask: did it use what moved? It used the plumbing, which did not move. A room the change does not reach passes nothing on, so tracing stops there.
+*He follows what the window touched, not the order of building.*
+
+**Step 4. Why not redo everything after it, to be safe?** Each redo costs money, adds steps that can go wrong (Day 4), and discards sheets still true.
+*Tearing out the good bathroom is waste; keeping the old wall is a hidden defect.*
+
+**Step 5. Who says "go" on the redo?** The list of affected rooms is a finding; tearing out is a costly choice (Day 13).
+*The change order lists the rooms; the owner signs before anything is torn out.*
+
+**Now it's obvious.** When the truth changes, trace exactly which finished work rested on what changed, void only that evidence, and stop where the change stops mattering. Finding that set, approving, then redoing: that is reconciliation.
+
+**Picture.**
+
+![Day 14: moving the kitchen window is traced to what used it; the kitchen wall changed so its sheet is void and, after the owner approves, it is rebuilt; the bathroom plumbing did not change so its sheet stands and tracing stops there](diagrams/day-14.png)
+
+**See it yourself (2 minutes).** Trace what would need redoing if one of your requirements changed.
+
+**In SubhForge:** reconciliation runs "analyse → human approve → apply", and "propagation stops at the first unaffected branch" (Contracts §16).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled
+
+**Check yourself:** Why not simply mark everything downstream as affected?
+
+*Tomorrow:* he is called away halfway through the new wall. What state is the site in tomorrow?
+
+*Source:* [OpenAI, Harness engineering: leveraging Codex in an agent-first world, p. 5](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf): an agent "scans for stale or obsolete documentation that does not reflect the real code behavior."

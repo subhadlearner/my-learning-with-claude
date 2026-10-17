@@ -1,0 +1,7 @@
+flowchart TD
+    A["kitchen window moved"] -->|"trace what used it"| B["kitchen wall"]
+    A -->|"trace what used it"| C["bathroom plumbing"]
+    B -->|"changed"| D["sheet void"]
+    C -->|"unchanged"| E["sheet stands, stop"]
+    D --> F["owner approves redo"]
+    F --> G["kitchen rebuilt"]
