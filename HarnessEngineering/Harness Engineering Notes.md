@@ -606,3 +606,41 @@ Kitchen and bathroom are finished and inspected; the bathroom, built second, run
 *Tomorrow:* he is called away halfway through the new wall. What state is the site in tomorrow?
 
 *Source:* [OpenAI, Harness engineering: leveraging Codex in an agent-first world, p. 5](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf): an agent "scans for stale or obsolete documentation that does not reflect the real code behavior."
+
+### Day 15 · 18 Oct: What if he is interrupted halfway?
+
+**Day 15: What if he is interrupted halfway?**
+
+*Yesterday:* Marking everything downstream throws away evidence that is still valid and creates work that has no cause.
+
+The kitchen wall's work order has three lines: brick up the old window, paint the wall, mark it done on the job board. He finishes two and is called away. Tomorrow he remembers nothing. What should he do?
+
+**Step 1. How often does work stop partway?** Often. The loop is a program (Day 3); programs crash, hit a spending limit, or stop when a laptop closes. Stopping between any two actions is normal.
+*He can be called away between any two slips.*
+
+**Step 2. What does a three-line job look like after two lines?** The wall is painted; the job board still says "in progress". The outside truth is half-changed.
+*Fresh paint on the wall; "in progress" on the board.*
+
+**Step 3. Can the next session tell which lines ran?** No. It remembers nothing (Day 1), and the board says "not done". The only sensible move is to run the work order again from the top.
+*He reads "rebuild the kitchen wall" and starts at line one.*
+
+**Step 4. What happens when a line runs twice?** "Paint this wall white" run twice still leaves one white wall. "Add one more coat" run twice leaves an extra coat each time. The first is safe to repeat; the second is not.
+*Same builder, same skill: one instruction survives a restart, the other does not.*
+
+**Now it's obvious.** Any operation can be cut off and rerun by someone who cannot know where it stopped. So every change to the outside truth must be built so that doing it twice leaves the same result as doing it once.
+
+**Picture.**
+
+![Day 15: a work order cut off halfway is rerun next morning by a builder with no memory; "paint wall white" gives the same wall however often it runs, "add one more coat" adds a coat each time](diagrams/day-15.png)
+
+**See it yourself (2 minutes).** Find one script of yours that would do damage if run twice.
+
+**In SubhForge:** reconciliation APPLY operations are idempotent, meaning safe to repeat (Contracts §16.3) and "never emit a success token first" (Contracts §2.4).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat
+
+**Check yourself:** In one sentence, what does "safe to repeat" mean?
+
+*Tomorrow:* something still went wrong on the rerun. He remembers nothing; how does anyone find out what happened?
+
+*Source:* [learn-harness-engineering, Lecture 12: Why every session must leave a clean state](https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md): cleanup must "produce the same result regardless of how many times they run".
