@@ -651,19 +651,19 @@ The kitchen wall's work order has three lines: brick up the old window, paint th
 
 *Yesterday:* Running an operation twice leaves the world exactly as running it once would.
 
-The kitchen wall was rerun this morning, and it came out wrong: the old window is bricked up, but the wall is two shades of white. The owner asks what happened, in what order, and where it went off. The builder remembers nothing. Who can answer?
+This morning's rerun of the kitchen wall came out two shades of white. The owner asks what happened, and in what order. The builder remembers nothing. Who can answer?
 
-**Step 1. What do you need to know after a failure?** What was done, to which item, in what order, what each step changed, and where it stopped. Without the order you cannot tell cause from effect.
-*Was the wall painted yesterday, again today, or both?*
+**Step 1. What do you need to know after a failure?** What was done, to which item, in what order, and where it stopped. Without the order you cannot tell cause from effect.
+*Was the wall painted yesterday, today, or both?*
 
-**Step 2. Can the builder tell you?** No. He remembers nothing (Day 1). If you ask anyway, he answers fluently, but the answer is made fresh by the dice (Day 2): a claim, not a record (Day 10).
-*Ask him and you get a confident story he has just made up.*
+**Step 2. Can the builder tell you?** No. He remembers nothing (Day 1). Ask anyway and he answers fluently, but the answer is made fresh by the dice (Day 2): a claim, not a record (Day 10).
+*You get a confident story he has just made up.*
 
-**Step 3. Who saw every action happen?** The program running the loop (Day 3). Every instruction passes through it before anything is touched. So it can write each one down as it happens: what was done, to what, the state before and after, which checks ran, and when.
-*Every slip goes through the site office, which notes it in the site log before the runner leaves.*
+**Step 3. Who saw every action happen?** The program running the loop (Day 3): every instruction passes through it. So it can write each one down as it happens: what, to which item, the state before and after, which checks ran.
+*Every slip passes through the site office, which notes it in the site log.*
 
-**Step 4. Yesterday's cut-off run and today's rerun sit in the same log. How do you follow just one problem?** Give every entry the number of the work order it belongs to. Pull all entries with that number, read them in order, and walk back to the first step that went wrong.
-*Every line in the log names its work order: you can see "painted" twice for the kitchen wall, with a fresh tin today.*
+**Step 4. Yesterday's run and today's rerun share one log. How do you follow one problem?** Tag every entry with its work order number. Read that number's entries in order, back to the first step that went wrong.
+*The log shows the kitchen wall painted twice, today from a fresh tin.*
 
 **Now it's obvious.** The model cannot tell you what it did, and anything it says is only a claim. So the harness, which sees every action pass through it, records each one as it happens, tagged so a failure can be followed back to where it began.
 
