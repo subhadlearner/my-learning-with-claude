@@ -644,3 +644,41 @@ The kitchen wall's work order has three lines: brick up the old window, paint th
 *Tomorrow:* something still went wrong on the rerun. He remembers nothing; how does anyone find out what happened?
 
 *Source:* [learn-harness-engineering, Lecture 12: Why every session must leave a clean state](https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md): cleanup must "produce the same result regardless of how many times they run".
+
+### Day 16 · 19 Oct: How do you find out what happened?
+
+**Day 16: How do you find out what happened?**
+
+*Yesterday:* Running an operation twice leaves the world exactly as running it once would.
+
+The kitchen wall was rerun this morning, and it came out wrong: the old window is bricked up, but the wall is two shades of white. The owner asks what happened, in what order, and where it went off. The builder remembers nothing. Who can answer?
+
+**Step 1. What do you need to know after a failure?** What was done, to which item, in what order, what each step changed, and where it stopped. Without the order you cannot tell cause from effect.
+*Was the wall painted yesterday, again today, or both?*
+
+**Step 2. Can the builder tell you?** No. He remembers nothing (Day 1). If you ask anyway, he answers fluently, but the answer is made fresh by the dice (Day 2): a claim, not a record (Day 10).
+*Ask him and you get a confident story he has just made up.*
+
+**Step 3. Who saw every action happen?** The program running the loop (Day 3). Every instruction passes through it before anything is touched. So it can write each one down as it happens: what was done, to what, the state before and after, which checks ran, and when.
+*Every slip goes through the site office, which notes it in the site log before the runner leaves.*
+
+**Step 4. Yesterday's cut-off run and today's rerun sit in the same log. How do you follow just one problem?** Give every entry the number of the work order it belongs to. Pull all entries with that number, read them in order, and walk back to the first step that went wrong.
+*Every line in the log names its work order: you can see "painted" twice for the kitchen wall, with a fresh tin today.*
+
+**Now it's obvious.** The model cannot tell you what it did, and anything it says is only a claim. So the harness, which sees every action pass through it, records each one as it happens, tagged so a failure can be followed back to where it began.
+
+**Picture.**
+
+![Day 16: every slip passes through the site office, which carries it out and writes each step in the site log; reading the log in order shows what really happened, while asking the builder only gets a fresh story, a claim](diagrams/day-16.png)
+
+**See it yourself (2 minutes).** After your next agent failure, try to rebuild the order of events from its logs alone, without asking the agent.
+
+**In SubhForge:** "Kilo owns harness/runtime telemetry. SubhForge owns lifecycle observability." (§23A)
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept
+
+**Check yourself:** Why not ask the agent what went wrong?
+
+*Tomorrow:* sixteen links so far. Could the whole site be rebuilt from just the builder's two traits?
+
+*Source:* [Zhong & Zhu, AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents, p. 5](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/AI%20Harness%20Engineering-A%20Runtime%20Substrate%20for%20Foundation-Model%20Software%20Agents.pdf): "The harness records how the agent selects context, invokes tools, attempts verification, recovers from failure, and incurs intervention."
