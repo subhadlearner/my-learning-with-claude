@@ -682,3 +682,44 @@ This morning's rerun of the kitchen wall came out two shades of white. The owner
 *Tomorrow:* sixteen links so far. Could the whole site be rebuilt from just the builder's two traits?
 
 *Source:* [Zhong & Zhu, AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents, p. 5](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/AI%20Harness%20Engineering-A%20Runtime%20Substrate%20for%20Foundation-Model%20Software%20Agents.pdf): "The harness records how the agent selects context, invokes tools, attempts verification, recovers from failure, and incurs intervention."
+
+### Day 17 · 20 Oct: Can you rebuild the whole design from two facts?
+
+**Day 17: Can you rebuild the whole design from two facts?**
+
+*Yesterday:* He has no memory of what he did, and anything he says about it is a claim, not a record.
+
+Overnight the site is cleared to bare ground. You are given only the builder's two traits: he wakes remembering nothing, and he sometimes reports work finished when it is not. Can you put back everything that stood there, and nothing else?
+
+**Step 1. What follows from "remembers nothing"?** The plan cannot live in him, so it is written outside (Day 5). Copies drift, so each fact gets one home (Day 6), and kinds of fact are kept apart (Day 7). He can take in only so much (Day 8), so jobs are cut to fit (Day 9).
+*Back come the diary, the drawings, the job board, the one-room work orders.*
+
+**Step 2. What follows from "sometimes says done wrongly"?** His "done" is a claim (Day 10). What can be measured is measured by tools (Day 11). Each sheet names the version it checked (Day 12). He bears no consequence, so the owner decides (Day 13).
+*Back come the inspector, the tape measure, the dated sheet, the owner's signature.*
+
+**Step 3. What follows when both meet a moving world?** Drawings change, so finished work is reconciled (Day 14). He is called away and cannot recall where he stopped, so every job is safe to repeat (Day 15) and the office logs every slip, because his account is only a claim (Day 16).
+*Back come the change order, the repeatable instructions, the site log.*
+
+**Step 4. So what lives in the builder himself?** Only his skill. Every paper, rule and record sits in the office, so a different builder could start tomorrow and the site would run on.
+*The site belongs to the office, not to him.*
+
+**Step 5. What if something on the old site traces to neither trait?** Say, a rule that every slip is signed twice. It guards against nothing he lacks.
+*Point at anything on site and ask: which trait put this here?*
+
+**Now it's obvious.** Every part of a harness exists because the model remembers nothing or because its output varies. A rule that traces to neither is ceremony.
+
+**Picture.**
+
+![Day 17: "remembers nothing" leads to papers kept outside, "says done wrongly" leads to work being inspected, both together lead to the log and safe repeats; a rule from neither trait is only ceremony](diagrams/day-17.png)
+
+**See it yourself (2 minutes).** Pick one rule in your design and trace it back to one of the two traits.
+
+**In SubhForge:** §3.1 asks of everything whether it "materially help[s] Subhadeep design, build, verify, reconcile or resume his own projects", the same test of whether a part earns its place.
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument
+
+**Check yourself:** Pick any rule in your design: which of the two facts does it exist because of?
+
+*Tomorrow:* the wrap-up. Reading the chain is easy; can you use it to work out answers you were never told?
+
+*Source:* [Zhong & Zhu, AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents, p. 13](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/AI%20Harness%20Engineering-A%20Runtime%20Substrate%20for%20Foundation-Model%20Software%20Agents.pdf): repositories assume a reader who can "remember testing practices"; "None of these assumptions hold for a foundation-model agent."
