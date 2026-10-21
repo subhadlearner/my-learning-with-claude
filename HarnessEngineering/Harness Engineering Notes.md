@@ -723,3 +723,37 @@ Overnight the site is cleared. You keep only the builder's two traits: he rememb
 *Tomorrow:* the wrap-up. Reading the chain is easy; can you use it to work out answers you were never told?
 
 *Source:* [Zhong & Zhu, AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents, p. 13](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/AI%20Harness%20Engineering-A%20Runtime%20Substrate%20for%20Foundation-Model%20Software%20Agents.pdf): repositories assume a reader who can "remember testing practices"; "None of these assumptions hold for a foundation-model agent."
+
+### Block 1 wrap-up · 21 Oct
+
+**Block 1 wrap-up: Can you use the chain to work out what you were never told?**
+
+*Yesterday:* Every necessary rule traces to "remembers nothing", to "output varies", or both. A rule that traces to neither is a candidate for removal.
+
+**The chain**
+1. Remembers nothing: only skill plus the papers in hand.
+2. Output varies: a dice roll; confidence proves nothing.
+3. Works through a loop: he writes slips, the runner acts.
+4. Errors compound: small odds multiply over many slips.
+5. Truth written outside: the diary, written and read back on purpose.
+6. One home per fact: two drawings drift apart.
+7. Kinds of truth kept apart: drawings, job board, summary.
+8. Context is a budget: three sheets, not the cabinet.
+9. Work cut to fit: one room, inspectable alone.
+10. Claims need evidence: "done" is a claim until inspected.
+11. Code checks what code can prove: tape measure first.
+12. Evidence expires: the sheet names the drawing revision.
+13. The human decides: ready is not permitted.
+14. Change is reconciled: stop where it stops mattering.
+15. Safe to repeat: "paint it white", not "add a coat".
+16. A trace is kept: the office keeps the log.
+17. One argument: every link comes from the two traits.
+
+**Work these out**
+1. A new builder starts tomorrow. Which papers must already exist for him to carry on?
+2. The inspector is the same builder, asked next morning. Which two links make his sign-off worthless?
+3. The foreman's summary and the job board disagree. Which do you correct, and which link says so?
+4. A crash hits halfway through a change order. Which three links decide what happens next?
+5. Someone proposes double-signing every slip. Which trait does it guard against? If neither, what is it?
+
+Write in your notes what should change in length, depth or pace before Block 2.
