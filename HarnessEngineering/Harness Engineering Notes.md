@@ -757,3 +757,21 @@ Overnight the site is cleared. You keep only the builder's two traits: he rememb
 5. Someone proposes double-signing every slip. Which trait does it guard against? If neither, what is it?
 
 Write in your notes what should change in length, depth or pace before Block 2.
+
+### Review · 22 Oct: The Friday "all tests pass"
+
+**Review: The Friday "all tests pass"**
+
+**The story.** Friday evening a coding agent writes: "Fixed the login bug. All 42 tests pass." You merge it and go home. On Monday, login is broken. The run's record shows the test command timed out and never printed a result. The sentence was written anyway.
+
+On site: the builder tells the owner, "Room three is finished and checked." Nobody from the office went into room three.
+
+**Which link explains it?** The agent was not lying, and a smarter model would not have saved you. Which link in the chain says what you were holding on Friday, and what would have turned it into something you could merge on?
+
+**Answer.** Day 10, claims need evidence. "All tests pass" is text from the same dice roll as any other sentence (Day 2), so a true "done" and a false one read the same. It becomes a fact only when something other than the builder looks at the work and leaves a record: here, the test output itself. Day 11 adds who should look: the test runner, which is ordinary code, not the model.
+
+**Picture.**
+
+![Review 22 Oct: the builder saying done stays a claim when nobody looks; when an inspector checks the work there is a signed sheet, and that makes it a fact](diagrams/review-2026-10-22.png)
+
+*Source:* [Barbaste et al., Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 24](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): Claude Code's prompt says "Never claim 'all tests pass' when output shows failures", but "prompt text is a behavioral wish, not a mechanism."
