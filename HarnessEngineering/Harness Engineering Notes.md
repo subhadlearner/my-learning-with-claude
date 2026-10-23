@@ -775,3 +775,21 @@ On site: the builder tells the owner, "Room three is finished and checked." Nobo
 ![Review 22 Oct: the builder saying done stays a claim when nobody looks; when an inspector checks the work there is a signed sheet, and that makes it a fact](diagrams/review-2026-10-22.png)
 
 *Source:* [Barbaste et al., Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 24](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): Claude Code's prompt says "Never claim 'all tests pass' when output shows failures", but "prompt text is a behavioral wish, not a mechanism."
+
+### Review · 23 Oct: The Friday migration that went backwards
+
+**Review: The Friday migration that went backwards**
+
+**The story.** On Thursday, over a long chat, you and the agent agree to move from SQLite to Postgres. It converts four modules. On Friday you open a new session and type "continue the migration". It reconverts two finished modules and writes a new one against SQLite, explaining its choices confidently.
+
+On site: the builder spent Thursday agreeing a change with the owner, standing by the wall. Friday morning he arrives with no memory of it, and nothing about it is in the papers handed to him at the gate.
+
+**Which link explains it?** The model is the same one that did good work on Thursday. Which link in the chain says where Thursday's decision should have been, and what that requires?
+
+**Answer.** Day 5, truth written outside. Day 1 explains why the decision was lost: the model keeps nothing between sessions. Day 5 says what to do about it: write the decision to a durable place on purpose, and hand it back on purpose at the start of the next session. A chat history does neither.
+
+**Picture.**
+
+![Review 23 Oct: Thursday's decision left in chat is lost when the session ends, so Friday guesses again; written in the diary and handed over at the gate, Friday carries on](diagrams/review-2026-10-23.png)
+
+*Source:* [OpenAI, Harness engineering: leveraging Codex in an agent-first world, p. 6](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf): "Knowledge that lives in Google Docs, chat threads, or people's heads are not accessible to the system."
