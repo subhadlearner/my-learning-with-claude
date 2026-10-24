@@ -1,0 +1,5 @@
+flowchart TD
+    A["rule in two files"] -->|"only one updated"| B["guide still says unittest"]
+    B -->|"handed at gate"| C["unittest tests written"]
+    D["rule in one file"] -->|"guide points there"| E["AGENTS.md says pytest"]
+    E -->|"handed at gate"| F["pytest tests written"]

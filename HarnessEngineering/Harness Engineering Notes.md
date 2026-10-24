@@ -793,3 +793,21 @@ On site: the builder spent Thursday agreeing a change with the owner, standing b
 ![Review 23 Oct: Thursday's decision left in chat is lost when the session ends, so Friday guesses again; written in the diary and handed over at the gate, Friday carries on](diagrams/review-2026-10-23.png)
 
 *Source:* [OpenAI, Harness engineering: leveraging Codex in an agent-first world, p. 6](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf): "Knowledge that lives in Google Docs, chat threads, or people's heads are not accessible to the system."
+
+### Review · 24 Oct: The test style that went backwards
+
+**Review: The test style that went backwards**
+
+**The story.** Last month your team moved from unittest to pytest and updated AGENTS.md. The older docs/testing.md still shows unittest examples. You ask an agent to add tests for the payments module and link it the testing guide. It writes unittest classes and notes, confidently, that it "followed the project's testing guide."
+
+On site: two sets of drawings, one revised. The builder is handed the old set at the gate and builds from it, sure he is right.
+
+**Which link explains it?** A person who saw both files would stop and ask which is current. Which link says why the agent did not, and what would have prevented it?
+
+**Answer.** Day 6, one home per fact. The model sees only the text it is handed (Day 1), so it cannot know the other file exists, and it carries on sounding sure (Day 2). The fix is not a smarter model but one home for the rule: the testing guide points to AGENTS.md instead of repeating it.
+
+**Picture.**
+
+![Review 24 Oct: with the rule in two files, only one is updated and the stale guide handed at the gate produces unittest tests; with the rule in one file that the guide points to, the agent writes pytest tests](diagrams/review-2026-10-24.png)
+
+*Source:* [OpenAI, Harness engineering: leveraging Codex in an agent-first world, p. 4](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf): a monolithic manual "turns into a graveyard of stale rules. Agents can't tell what's still true."
