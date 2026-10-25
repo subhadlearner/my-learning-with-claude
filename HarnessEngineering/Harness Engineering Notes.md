@@ -811,3 +811,21 @@ On site: two sets of drawings, one revised. The builder is handed the old set at
 ![Review 24 Oct: with the rule in two files, only one is updated and the stale guide handed at the gate produces unittest tests; with the rule in one file that the guide points to, the agent writes pytest tests](diagrams/review-2026-10-24.png)
 
 *Source:* [OpenAI, Harness engineering: leveraging Codex in an agent-first world, p. 4](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf): a monolithic manual "turns into a graveyard of stale rules. Agents can't tell what's still true."
+
+### Review · 25 Oct: The twenty-step refactor that was wrong from step three
+
+**Review: The twenty-step refactor that was wrong from step three**
+
+**The story.** You ask an agent to switch a service's timeouts from seconds to milliseconds, in one long run with no tests until the end. Early on it misreads the config loader and treats the old values as milliseconds already. Every later edit, across eighteen files, is made to agree with that loader. At the end, nineteen tests fail, and fixing the last file fixes nothing.
+
+On site: twenty slips in a row. One misread measurement on slip 3, and seventeen more are built faithfully on it.
+
+**Which link explains it?** Each edit, read alone, looks careful and consistent. Which link says why the whole job went wrong, and why a better model would only make it rarer, not fix it?
+
+**Answer.** Day 4, errors compound. Each step builds on the last one's output (Day 3), so an early error is carried forward, not averaged away. At 95% right per step, twenty steps succeed about 36% of the time. A better model raises the 95%; only a check outside the loop, after each small step, stops slip 3 reaching slip 20.
+
+**Picture.**
+
+![Review 25 Oct: a misread on slip 3 with nothing checking is built on by seventeen more slips and the whole job is wrong; checked right away, it is caught at slip 3 and only one slip is redone](diagrams/review-2026-10-25.png)
+
+*Source:* [Barbaste et al., Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 39](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): Aider's reflection loop with three-stage linting provides safety "by catching errors before they propagate."
