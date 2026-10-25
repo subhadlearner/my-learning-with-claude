@@ -31,7 +31,7 @@ Block 1 gives the reasons a harness must exist. Every later block takes one part
 | --- | --- | --- | --- | --- |
 | 1 | 4–21 Oct | Why a harness exists: the chain of consequences | why any of this is needed | Yes |
 | – | 22–25 Oct | Review days on Block 1 | | Yes |
-| 2 | 26 Oct–1 Nov | The loop in depth: turns, stop conditions, interrupts | how the model acts | Not yet |
+| 2 | 26 Oct–1 Nov | The loop in depth: turns, stop conditions, interrupts | how the model acts | Yes |
 | 3 | 2–8 Nov | Tools and actions: interface design, how many tools, file-editing strategies | what it acts with | Not yet |
 | 4 | 9–15 Nov | Permissions and sandboxing: what an agent may run, and where | what it is allowed to do | Not yet |
 | 5 | 16–22 Nov | Instructions and context: layering, precedence, what goes in front of the model | what it is told | Not yet |
@@ -829,3 +829,14 @@ On site: twenty slips in a row. One misread measurement on slip 3, and seventeen
 ![Review 25 Oct: a misread on slip 3 with nothing checking is built on by seventeen more slips and the whole job is wrong; checked right away, it is caught at slip 3 and only one slip is redone](diagrams/review-2026-10-25.png)
 
 *Source:* [Barbaste et al., Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 39](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): Aider's reflection loop with three-stage linting provides safety "by catching errors before they propagate."
+
+## Block 2: The loop in depth (26 Oct–1 Nov)
+
+This block opens up the loop from Day 3: what it carries from turn to turn, how it stops, and what it must leave behind when it does. The recap is on 1 November.
+
+18. What exactly is handed to him each time he is asked "what next?"
+19. How does the loop know when to stop?
+20. What if he never stops writing slips?
+21. How do you notice he is going round in circles before the allowance runs out?
+22. What should a failed check do to the loop?
+23. What must be on the clipboard when work stops?
