@@ -840,3 +840,41 @@ This block opens up the loop from Day 3: what it carries from turn to turn, how 
 21. How do you notice he is going round in circles before the allowance runs out?
 22. What should a failed check do to the loop?
 23. What must be on the clipboard when work stops?
+
+### Day 18 · 26 Oct: What exactly is handed to him each time he is asked "what next?"
+
+**Day 18: What exactly is handed to him each time he is asked "what next?"**
+
+*Yesterday:* Day 4, errors compound: each slip builds on the last, so only a check after each small step stops slip 3's mistake reaching slip 20.
+
+On turn 3 the runner's note says "the port in config.json is 5432." On turn 9 the builder writes a slip using 5432. He remembers nothing between calls. So where did turn 9 get the number?
+
+**Step 1. What does the program actually send the model?** A list of messages, each labelled with who wrote it: the standing instructions, your request, the model's replies (slips), the program's results (notes). This list is the transcript.
+*On his desk lies a clipboard: every paper so far, in order, each marked with whose hand wrote it.*
+
+**Step 2. What is one turn?** One call. The whole list goes in; one new message comes out. If it is a slip, the program runs it and appends the result as a note. So the list grows every turn.
+*Asked "what next?", he is handed the whole clipboard, writes one slip, and the runner pins the note on.*
+
+**Step 3. Why must the whole list go in every time?** The model remembers nothing between calls (Day 1). Turn 9 knows what turn 3 found only because turn 3's note is still in the list.
+*He does not recall the port; he reads it off page three.*
+
+**Step 4. What if a note is missing?** Then, for the next call, that action never happened. Nothing else carries over, not even what the program saw but did not write in.
+*Unpin page three and, as far as he can tell, nobody ever opened config.json.*
+
+**Now it's obvious.** The loop's whole state is the transcript: an ordered list of messages, sent in full every turn and growing by each slip and note. Whatever is not in it does not exist for the next turn.
+
+**Picture.**
+
+![Day 18: the whole clipboard is handed to the builder, he writes one slip, the runner brings a note, and the note is pinned on so the list grows each turn](diagrams/day-18.png)
+
+**See it yourself (2 minutes).** Open one finished Kilo task and count its messages. Check that each tool call added one slip and one note.
+
+**In SubhForge:** the transcript lives only inside a run: "No vector database or long chat transcript is needed for normal reconstruction" (Architecture §21).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state
+
+**Check yourself:** The agent read a config file on turn 3. Why can it still use the value on turn 9, and what would make it lose it?
+
+*Tomorrow:* he stops writing slips and goes home. Does that mean the room is built?
+
+*Source:* [Google, "Agents" whitepaper, p. 8](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/22365_19_Agents_v8.pdf): for a bare model, "Unless explicitly implemented for the model, there is no management of session history or continuous context."
