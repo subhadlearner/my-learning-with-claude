@@ -1,0 +1,7 @@
+flowchart TD
+    A["clipboard handed over"] --> B["builder writes reply"]
+    B -->|"asks for action"| C["runner acts, note pinned"]
+    C --> A
+    B -->|"asks for nothing"| D["loop ends"]
+    D --> E["you know: he stopped"]
+    D -.->|"not yet known"| F["room built and right"]

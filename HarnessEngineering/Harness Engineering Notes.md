@@ -878,3 +878,44 @@ On turn 3 the runner's note says "the port in config.json is 5432." On turn 9 th
 *Tomorrow:* he stops writing slips and goes home. Does that mean the room is built?
 
 *Source:* [Google, "Agents" whitepaper, p. 8](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/22365_19_Agents_v8.pdf): for a bare model, "Unless explicitly implemented for the model, there is no management of session history or continuous context."
+
+### Day 19 · 27 Oct: How does the loop know when to stop?
+
+**Day 19: How does the loop know when to stop?**
+
+*Yesterday:* Turn 3's note is still in the transcript sent on turn 9; remove it and, for the model, the file was never read.
+
+Late afternoon, the builder hands back the clipboard with no new slip on it and goes home. Nobody told him to stop. Who decided, and what does his leaving tell you?
+
+**Step 1. What does the program do with each reply?** If the reply asks for an action, the program runs it, appends the result as a note, and calls the model again (Day 18).
+*Each slip goes to the runner; the note comes back and is pinned on.*
+
+**Step 2. What if the reply asks for nothing?** Then there is nothing to run and no note to send back. The loop has no next step, so it ends. This is the ordinary stop.
+*He hands back the clipboard with no slip, and the runner has no errand.*
+
+**Step 3. So who decided to stop?** The model, inside its reply. The program did not look at the work; it simply found no request.
+*The site did not close; he chose to put down his pen.*
+
+**Step 4. How sure is that choice?** It is text from the same dice process as any other reply (Day 2). A reply saying "all done" can come out whether the work is done or not.
+*He goes home as cheerfully after a half-built wall as after a finished one.*
+
+**Step 5. What, then, does the stop tell you?** Three statements are in play: "the turn ended", "the task is finished", "the work is right". The stop proves only the first, and offers the second as a claim (Day 10).
+*His leaving tells you he stopped, not that the room is built, nor built well.*
+
+**Now it's obvious.** The ordinary stop is a reply that asks for no action: the model chose to stop. That is a claim about the task, not evidence that it is done.
+
+**Picture.**
+
+![Day 19: a reply asking for an action loops back through the runner; a reply asking for nothing ends the loop, which tells you he stopped but not that the room is built and right](diagrams/day-19.png)
+
+**See it yourself (2 minutes).** Take the last message of a finished Kilo task. What in the record, other than that message, shows the work is done?
+
+**In SubhForge:** the Spec loop does not end where the builder stops: "READY Spec → Implement → focused tests → Verify → Review → Complete" (PRD FR-010).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim
+
+**Check yourself:** The loop ended because the model sent a reply with no tool request. What do you know?
+
+*Tomorrow:* what if he never puts down his pen, and keeps writing slips forever?
+
+*Source:* [Agentway Harness Books, book 1: Claude Code, p. 32](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book1-claude-code-en.pdf): "In one session, 'this turn ended' does not equal 'task completed,' and does not equal 'system succeeded.'"
