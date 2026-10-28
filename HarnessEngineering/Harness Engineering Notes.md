@@ -932,7 +932,7 @@ Yesterday the builder put down his pen. Today he doesn't: slip after slip, and t
 *Nothing in his nature makes him put the pen down.*
 
 **Step 2. Does each extra turn cost the same?** No. Every turn resends the whole transcript, which grows by a slip and a note each time (Day 18).
-*Each morning the clipboard he carries is thicker than yesterday's.*
+*Each time he is asked "what next?", the clipboard handed to him is thicker than the last.*
 
 **Step 3. So who must end it?** The program, holding a limit that fires whatever the reply says. A rule in the instructions is just more text the dice may ignore.
 *The office, not the builder, decides when work stops.*
