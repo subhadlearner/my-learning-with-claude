@@ -919,3 +919,45 @@ Late afternoon, the builder hands back the clipboard with no new slip on it and 
 *Tomorrow:* what if he never puts down his pen, and keeps writing slips forever?
 
 *Source:* [Agentway Harness Books, book 1: Claude Code, p. 32](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book1-claude-code-en.pdf): "In one session, 'this turn ended' does not equal 'task completed,' and does not equal 'system succeeded.'"
+
+### Day 20 · 28 Oct: What if he never stops writing slips?
+
+**Day 20: What if he never stops writing slips?**
+
+*Yesterday:* You know only that the model chose to stop asking for actions; whether the task is finished, and right, is still a claim until something checks it.
+
+Yesterday the builder put down his pen. Today he doesn't: slip after slip, and the clipboard keeps getting heavier. Who ends this, and on what count?
+
+**Step 1. Is he certain to stop on his own?** No. The ordinary stop happens only when a reply asks for nothing (Day 19), and that reply comes from the dice (Day 2). A confused model can always ask for one more action.
+*Nothing in his nature makes him put the pen down.*
+
+**Step 2. Does each extra turn cost the same?** No. Every turn resends the whole transcript, which grows by a slip and a note each time (Day 18).
+*Each morning the clipboard he carries is thicker than yesterday's.*
+
+**Step 3. So who must end it?** The program, holding a limit that fires whatever the reply says. A rule in the instructions is just more text the dice may ignore.
+*The office, not the builder, decides when work stops.*
+
+**Step 4. Limit on what: the number of turns?** Turns are a stand-in: forty tiny turns can be cheap; five that each read a huge file can be ruinous. What actually runs out is tokens (the chunks of text the model reads and writes, which you pay for), time and money.
+*The office doesn't count his trips to the wall; it counts bricks, hours and wages.*
+
+**Step 5. When is it checked?** Before each call, so the call that would overspend never goes out.
+*Before the runner sets off, the office checks what is left in the allowance.*
+
+**Now it's obvious.** Every loop needs a limit held by the program that the model cannot override. The honest limit is on what the run spends (tokens, time, money), not on how many turns it takes.
+
+**Picture.**
+
+![Day 20: each slip passes the office, which checks the allowance; while some is left the runner goes and the clipboard grows heavier; when it is used up work stops, whatever he says. If he writes no slip, he goes home](diagrams/day-20.png)
+
+**See it yourself (2 minutes).** A run starts at 10k tokens and each turn adds 2k. What does turn 30 send, and what do thirty turns send in total?
+
+**In SubhForge:** limits are checked before dispatch, and "An absent limit stops preflight; it is not read as unlimited" (Architecture §22).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside
+
+**Check yourself:** Why can stopping not be left to the model, even a very good one?
+
+*Tomorrow:* how do you notice he is going round in circles long before the allowance runs out?
+
+*Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 39](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): "Mini-SWE-Agent implements only resource limits as safety mechanisms—step_limit, cost_limit, and … a wall-clock limit".
+
