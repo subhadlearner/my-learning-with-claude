@@ -961,3 +961,44 @@ Yesterday the builder put down his pen. Today he doesn't: slip after slip, and t
 
 *Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 39](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): "Mini-SWE-Agent implements only resource limits as safety mechanisms—step_limit, cost_limit, and … a wall-clock limit".
 
+
+### Day 21 · 29 Oct: How do you notice he is going round in circles before the allowance runs out?
+
+**Day 21: How do you notice he is going round in circles before the allowance runs out?**
+
+*Yesterday:* Stopping is a choice made by the dice that the model may never make, and each extra turn costs more because the whole transcript is resent; only a limit held by the program is certain to fire.
+
+The runner's slip says "read config.yaml". So did the last four, and each came back "file not found". Must the site wait for the allowance to run out?
+
+**Step 1. When does the allowance stop him?** Only once it is used up (Day 20), so a run going nowhere spends everything first.
+*The allowance protects the budget, not the morning.*
+
+**Step 2. What does going nowhere look like?** Often the same action with the same arguments (its exact inputs), hitting the same error, again and again. The model picks by dice (Day 2) and keeps no sense of its own habits (Day 1), so it can pick the same move each time and nothing inside it notices.
+*He doesn't feel he is repeating himself; every slip seems fresh to him.*
+
+**Step 3. Can anything else notice?** Yes. Every slip is in the transcript (Day 18), so the program can record each action with its exact arguments and count repeats. Counting is computable, so it belongs in code (Day 11).
+*The runner keeps a tally of the slips he has carried.*
+
+**Step 4. Count exact repeats, or ask whether two attempts are "basically the same"?** Exact. "Read lines 1–50" then "read lines 1–51" is real progress, and a model judging sameness is one more dice roll. Exact comparison gives the same answer every time.
+*He compares slips word for word, not by how they feel.*
+
+**Step 5. Then what?** After a few identical repeats, the program warns or stops the loop.
+*On the fifth identical slip, with the same failed note in his pocket, the runner takes it to the office instead of the wall.*
+
+**Now it's obvious.** Going round in circles shows up in the record as the same action with the same arguments, repeated. Ordinary code can count those exact repeats and stop the loop long before the budget would.
+
+**Picture.**
+
+![Day 21: each slip passes the runner's tally; a new slip goes to the wall and its note comes back; the fifth identical slip goes to the office instead, and work stops early](diagrams/day-21.png)
+
+**See it yourself (2 minutes).** In a failed agent run, look for one tool call repeated with identical arguments.
+
+**In SubhForge:** the PRD already says "Repeated semantically equivalent failures stop visibly" (NFR-004).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting
+
+**Check yourself:** Why compare actions exactly rather than ask a model whether two attempts are really the same?
+
+*Tomorrow:* what should a failed check do to the loop?
+
+*Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 15](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in Gemini CLI, "SHA-256 hashing catches the common failure modes cheaply (five identical tool calls or ten identical content chunks abort the loop)".
