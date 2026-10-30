@@ -1,0 +1,6 @@
+flowchart TD
+    A["builder builds wall"] -->|"wall up"| B["spirit level check"]
+    B -->|"passes"| C["next job"]
+    B -->|"fails"| D["third failure?"]
+    D -->|"no, reading pinned on"| A
+    D -->|"yes"| E["office is called"]

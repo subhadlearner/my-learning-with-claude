@@ -1002,3 +1002,44 @@ The runner's slip says "read config.yaml". So did the last four, and each came b
 *Tomorrow:* what should a failed check do to the loop?
 
 *Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 15](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in Gemini CLI, "SHA-256 hashing catches the common failure modes cheaply (five identical tool calls or ten identical content chunks abort the loop)".
+
+### Day 22 · 30 Oct: What should a failed check do to the loop?
+
+**Day 22: What should a failed check do to the loop?**
+
+*Yesterday:* Exact comparison is ordinary code that gives the same answer every time and never mistakes a small real step for a repeat; a model judging "sameness" is one more output that varies.
+
+The builder finishes a wall. It leans. Found next week, three floors already sit on it. What should happen the minute the wall is up?
+
+**Step 1. When should the check run?** Right after each change, since an error found late has already been built on (Day 4). "Do the lint and tests pass?" is computable, so the program runs it unasked (Day 11).
+*The inspector puts the spirit level on each wall as soon as it is built.*
+
+**Step 2. Where does the result go?** Into the transcript as the next note (Day 18): the exact failure output, which line and why. Only what is in the transcript exists for the next turn.
+*He pins the reading to the clipboard, numbers and all, not "looks a bit off".*
+
+**Step 3. What happens then?** The model reads it and tries a fix; the program checks again. The loop has become fix-and-recheck.
+*The builder rebuilds the wall; the level goes on again.*
+
+**Step 4. Will yesterday's repeat counter stop a hopeless case?** Not reliably. A model that cannot fix the error keeps making new attempts, each a little different (Day 2), so exact repeats (Day 21) may never appear. Only the spend limit (Day 20) would end it, after everything is spent.
+*Each rebuilt wall leans a different way; the runner's tally never sees the same slip twice.*
+
+**Step 5. So what bounds it?** A small limit of its own, a few rounds. Reaching it is a visible stop handed to a person, not one more retry.
+*After three failed attempts on the same wall, the inspector calls the office.*
+
+**Now it's obvious.** A check the program runs after each change is fed straight back as the next note, turning the loop into fix-and-recheck. That inner loop needs its own small repeat limit, after which it stops and hands over.
+
+**Picture.**
+
+![Day 22: each wall gets the spirit level as soon as it is up; a pass goes on to the next job, a failure is pinned on and the wall rebuilt, and the third failure calls the office instead](diagrams/day-22.png)
+
+**See it yourself (2 minutes).** When tests fail in an agent run, check whether the exact failure text reached the model's next turn, or only a summary.
+
+**In SubhForge:** "The Fix → Verify and Diagnose → Fix loops are bounded by the configured repeat limit", and "the loop is not retried until green" (Workflow §12).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit
+
+**Check yourself:** Why does the fix-and-recheck loop need its own limit when the run already has a spend limit?
+
+*Tomorrow:* when work stops, mid-errand or at a limit, what must be on the clipboard for whoever comes next?
+
+*Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 15](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in Aider, after each response it "checks for lint errors … test failures" and re-invokes the model "with corrective context, up to a configurable maximum (default: 3 reflections)".
