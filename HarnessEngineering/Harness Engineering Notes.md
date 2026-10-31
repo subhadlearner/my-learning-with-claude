@@ -1043,3 +1043,44 @@ The builder finishes a wall. It leans. Found next week, three floors already sit
 *Tomorrow:* when work stops, mid-errand or at a limit, what must be on the clipboard for whoever comes next?
 
 *Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 15](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in Aider, after each response it "checks for lint errors … test failures" and re-invokes the model "with corrective context, up to a configurable maximum (default: 3 reflections)".
+
+### Day 23 · 31 Oct: What must be on the clipboard when work stops?
+
+**Day 23: What must be on the clipboard when work stops?**
+
+*Yesterday:* An unfixable error makes the loop spend the whole budget on different-looking attempts the repeat check cannot catch; a small cap of its own turns that into an early, visible stop for a person to look at.
+
+The whistle blows mid-afternoon. The runner is out with a slip that says "pour the basement slab". Tomorrow the builder wakes with no memory and reads only the clipboard. Was the slab poured?
+
+**Step 1. When can the loop stop?** At any moment, from outside: you press stop, the allowance runs out, the laptop closes (Days 15, 20). Nothing waits for a tidy point.
+*The whistle does not wait for the runner to come back.*
+
+**Step 2. What is in the transcript at that moment?** Possibly a request with no result. The model asked for an action, the program started it, and no note has come back yet (Day 18).
+*A slip is on the clipboard; its note is not.*
+
+**Step 3. Why does a missing note matter?** The next turn or session remembers nothing (Day 1). It sees "pour the slab" and nothing after. It cannot tell "never started" from "done" from "half done", and may run it again or skip it.
+*Tomorrow he either pours a second slab on top or builds walls on wet concrete.*
+
+**Step 4. So what does the program do?** It closes every open request with a note, even "stopped before the result came back; outcome unknown". An honest "unknown" tells the next session to check before acting.
+*The runner comes back with a note for every slip in his hand, even "left when the whistle blew".*
+
+**Step 5. Is that enough?** No. The stop itself needs a label. "Finished by its own claim", "allowance used up", "going in circles", "too many failed fixes" and "stopped by you" each need a different next step, so they must not look alike.
+*The office writes on the clipboard why work stopped.*
+
+**Now it's obvious.** Whenever the loop stops, every action already started gets a closing note, even "interrupted, outcome unknown", and the stop records why it happened. The next session knows only what the record says.
+
+**Picture.**
+
+![Day 23: when the whistle blows, any slip still out gets an "outcome unknown" note, then the office writes why work stopped, and the next morning reads the clipboard](diagrams/day-23.png)
+
+**See it yourself (2 minutes).** Stop an agent once while a command is running, and look at what its record shows for that command.
+
+**In SubhForge:** at a stop, "Persist established safe progress and report the precise reason and next invocation" (Workflow §17.4).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled
+
+**Check yourself:** You stop an agent while a database migration command is running. What must the record show, and why?
+
+*Tomorrow:* the Block 2 recap: can you rebuild the whole loop, from clipboard to whistle, from the two facts?
+
+*Source:* [Agentway Harness Books 1: Claude Code, pp. 23–24](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book1-claude-code-en.pdf): on interrupt, missing results are filled so "issued tool_use blocks are not left without paired results"; "Started actions need closure, even if closure says 'not finished.'"
