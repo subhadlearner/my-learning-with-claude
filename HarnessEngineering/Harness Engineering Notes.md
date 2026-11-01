@@ -1084,3 +1084,26 @@ The whistle blows mid-afternoon. The runner is out with a slip that says "pour t
 *Tomorrow:* the Block 2 recap: can you rebuild the whole loop, from clipboard to whistle, from the two facts?
 
 *Source:* [Agentway Harness Books 1: Claude Code, pp. 23–24](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book1-claude-code-en.pdf): on interrupt, missing results are filled so "issued tool_use blocks are not left without paired results"; "Started actions need closure, even if closure says 'not finished.'"
+
+### Block 2 recap · 1 Nov
+
+**Block 2 recap: Can you rebuild the loop, from clipboard to whistle, from the two facts?**
+
+*Yesterday:* The record must show that the migration was started and its outcome is unknown, and that the run stopped because you stopped it. Without that, the next session may assume it never ran, or that it finished.
+
+**The chain**
+18. The transcript is the loop's state: the whole clipboard, handed over every turn.
+19. Stopping is the model's claim: he went home; the room may not be built.
+20. The loop is bounded from outside: the office's allowance, set on spend, not turns.
+21. Circling is caught by counting: the same slip a fifth time goes to the office.
+22. Checks feed back, within a limit: the level reading pinned on; three tries, then call the office.
+23. Every stop is closed and labelled: a note for every slip, and why work stopped.
+
+All six hang off Block 1's link 3 (works through a loop) and lean on links 1, 2, 4, 10, 11 and 15.
+
+**Work these out**
+1. After twelve turns, well inside its budget, the loop ends with "All done, tests pass" and no tool request. Which links say what you know, and what could the loop itself do before accepting that stop?
+2. Turn 25 of a run cost far more than turn 2, though each made one small edit. Why, and which link limits the damage?
+3. You stopped a run while "git push" was out with the runner. A fresh session resumes next morning. What must it find on the clipboard, and what must it do before pushing again?
+
+Write in your notes what should change in length, depth or pace before Block 3.
