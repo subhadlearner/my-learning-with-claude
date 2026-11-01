@@ -21,13 +21,15 @@ The two blogs keep publishing. Only the posts listed in `../Resources/imp-urls.t
 
 On 25 October (Block 2 planning) the blog indexes and the Scratch book site could not be opened from the planning environment (network policy refused them). The Scratch book was read from its source repository (github.com/ven109/agent-harness-book-claude) instead; the blogs were not rechecked.
 
+On 1 November (Block 3 planning) the blog indexes and the Scratch book site again could not be opened (no response through the network policy). The Scratch book chapters 4, 6, 11 and 12 were read from its source repository; the blogs were not rechecked. No new files had been added to `../Resources/` or links to `imp-urls.txt` since 4 October.
+
 ## Topics
 | Topic the sources treat as important | Where the sources cover it | Where this course covers it | Status |
 |---|---|---|---|
 | What a harness is and why models need one | Study 2; Paper; Book 1 ch. 1; Course L01–L02 | Block 1, days 1–4 and 17 | Covered |
 | The agent loop | Study 6; Book 1 ch. 3; Book 2 ch. 3 | Block 1, day 3; Block 2, days 18–23 | Covered in Block 1, day 3; deepened in Block 2, days 18–23 |
 | Loop control: stop conditions, interrupts, reflection loops | Study 6.3; Book 1 ch. 3.5–3.7; Scratch book ch. 2, 5; Augment loop engineering | Block 2, days 19–23 | Covered in Block 2: stopping day 19, limits day 20, stuck detection day 21, reflection (fix-and-recheck) day 22, interrupts day 23; refusing a stop without fresh evidence is a recap question; outer loops moved to Block 11 (see below) |
-| Tools and actions: interface design, how many tools, deferred loading, file editing | Study 8, 16.3–16.4; Paper (tool access); Book 1 ch. 4; Scratch book ch. 4, 11, 12 | Block 3 | Planned (gap found 4 Oct) |
+| Tools and actions: interface design, how many tools, deferred loading, file editing | Study 8, 16.3–16.4; Paper (tool access); Book 1 ch. 4; Scratch book ch. 4, 6, 11, 12 | Block 3, days 24–28 | Covered in Block 3: the tool as a contract day 24, checking calls before they run day 25, bounded and labelled results day 26, how many tools and deferred loading day 27, file editing day 28; execution sandboxing (Study 8.5) is left to Block 4 |
 | Permissions and sandboxing | Study 10, 15.3, 16.6; Paper (permissions); Book 1 ch. 4; Book 2 ch. 4; Scratch book ch. 6, 14 | Block 4 | Planned (gap found 4 Oct) |
 | Human authority and approval | Book 2 ch. 4; Study 10 | Block 1, day 13; Block 4 | Covered, deepened in Block 4 |
 | Instructions: layering, precedence, why one big file fails | Book 1 ch. 2; Book 2 ch. 2; OpenAI; Course L04; Study 7.2–7.3; Augment AGENTS.md post | Block 5 | Planned |
@@ -44,7 +46,7 @@ On 25 October (Block 2 planning) the blog indexes and the Scratch book site coul
 | Entropy: auditing and cleaning up drift in an agent-written codebase | Paper (entropy auditing); OpenAI | Block 9 | Planned, needs its own day |
 | Errors and recovery | Book 1 ch. 6; Course L12 | Block 1, day 15; Block 10 | Covered, deepened in Block 10 |
 | Observability, failure attribution, recording human interventions | Paper; Course L11; OpenAI | Block 1, day 16; Block 10 | Covered, deepened in Block 10 |
-| Concurrent tool calls: which actions in one reply may run in parallel | Study 6.2, Table 5; Book 1 ch. 1.4 | Block 3 | Planned (found 25 Oct while planning Block 2; tools must be taught first) |
+| Concurrent tool calls: which actions in one reply may run in parallel | Study 6.2, Table 5; Book 1 ch. 1.4 | Block 3, day 29 | Covered in Block 3, day 29 |
 | Outer loops (loop engineering): a trigger, a goal and stopping condition, and a separate checker that re-run the agent without a person typing each turn | Course L13; Study 6.1; Augment loop engineering | Block 11 | Planned (moved from Block 2 on 25 Oct: it needs delegation and maker/checker roles first) |
 | Multi-agent orchestration, parallelism and shared state | Study 11, 16.7; Book 1 ch. 7; Book 2 ch. 6; Course L14; Scratch book ch. 15, 17 | Block 11 | Planned |
 | Cost and model routing; provider abstraction; model–harness co-design | Study 7.1, 7.5, 15.4, 16.2; Book 1 ch. 2.5; Scratch book ch. 20; Faros routing posts; Augment harness rebuild | Block 12 | Planned |

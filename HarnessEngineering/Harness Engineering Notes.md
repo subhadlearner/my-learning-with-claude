@@ -32,7 +32,7 @@ Block 1 gives the reasons a harness must exist. Every later block takes one part
 | 1 | 4–21 Oct | Why a harness exists: the chain of consequences | why any of this is needed | Yes |
 | – | 22–25 Oct | Review days on Block 1 | | Yes |
 | 2 | 26 Oct–1 Nov | The loop in depth: turns, stop conditions, interrupts | how the model acts | Yes |
-| 3 | 2–8 Nov | Tools and actions: interface design, how many tools, file-editing strategies | what it acts with | Not yet |
+| 3 | 2–8 Nov | Tools and actions: interface design, how many tools, file-editing strategies | what it acts with | Yes |
 | 4 | 9–15 Nov | Permissions and sandboxing: what an agent may run, and where | what it is allowed to do | Not yet |
 | 5 | 16–22 Nov | Instructions and context: layering, precedence, what goes in front of the model | what it is told | Not yet |
 | 6 | 23–29 Nov | Memory: compaction when the window fills, session memory, persistent memory | what it remembers | Not yet |
@@ -1107,3 +1107,14 @@ All six hang off Block 1's link 3 (works through a loop) and lean on links 1, 2,
 3. You stopped a run while "git push" was out with the runner. A fresh session resumes next morning. What must it find on the clipboard, and what must it do before pushing again?
 
 Write in your notes what should change in length, depth or pace before Block 3.
+
+## Block 3: Tools and actions (2–8 Nov)
+
+This block opens up the slips and the runner from Day 3: how the model learns what actions exist, what happens to a slip before and after it is carried out, how many kinds of slip there should be, how a file is changed safely, and which slips may be carried at once. The recap is on 8 November.
+
+24. How does he know what jobs the runner can do?
+25. What should the runner do with a slip that is filled in wrong?
+26. How much should the runner bring back?
+27. How many kinds of job should be on the list?
+28. How should a slip say which part of a file to change?
+29. Can the runner carry several slips at once?
