@@ -1118,3 +1118,41 @@ This block opens up the slips and the runner from Day 3: how the model learns wh
 27. How many kinds of job should be on the list?
 28. How should a slip say which part of a file to change?
 29. Can the runner carry several slips at once?
+
+### Day 24 · 2 Nov: How does he know what jobs the runner can do?
+
+**Day 24: How does he know what jobs the runner can do?**
+
+*Yesterday:* "All done" is only a claim (19, 10), so the loop can run the tests itself and feed failures back (22); late turns cost more because the whole transcript is resent (18), capped by the outside budget (20); and an interrupted push is marked "outcome unknown" (23), so the next session asks the remote before pushing again (15, 12).
+
+The builder writes a slip: "runner, fetch the drawing for room 4." But he woke today with no memory of this site. How does he know which jobs the runner can do, and what each needs?
+
+**Step 1. What does the model actually receive?** Only text: the transcript, handed over in full every turn (Day 18). So any list of tools must be written into that text, every turn. Each entry has a name, a short description, and a schema: a description of the arguments, giving their names, their types, which are required and which values are allowed.
+*A job list is pinned in the site office, and he reads it every morning.*
+
+**Step 2. Can he learn more than the list says?** No. He remembers nothing (Day 1). He cannot read the code behind a tool or ask what it does. The list is all he has.
+*He has never seen how the runner digs. He sees only the line on the wall.*
+
+**Step 3. So how does he choose?** By how the wording reads. Output varies (Day 2), so where wording is vague, the dice decide. "send_message" and "send_email" will get mixed up. A free-text field where only three values work will, sooner or later, get a fourth.
+*If the list says "trench: any depth", one day he orders a trench nine metres deep.*
+
+**Step 4. What makes an entry good?** It says what the tool does, what it needs, what it changes and what it leaves alone. Its schema is as tight as the truth: "one of shallow, standard, deep", not "any text".
+*A good line on the wall: "Trench. Needs: line, depth (shallow, standard or deep). Moves soil. Does not touch drains."*
+
+**Now it's obvious.** The model picks a tool and fills its arguments only from the name, description and schema it is sent each turn. So a tool is a written contract, and its wording is as much a part of the harness as its code.
+
+**Picture.**
+
+![Day 24: the builder never sees how jobs are done, only the job list on the wall, which he reads every turn to choose and fill in a slip](diagrams/day-24.png)
+
+**See it yourself (2 minutes).** Open the tool list your Kilo setup, or one MCP server, sends to the model. For one tool, ask: does this text alone tell me whether it changes anything?
+
+**In SubhForge:** agents see named capabilities that say whether they read or propose: "get target/ancestors/declared dependencies, query eligible children, propose create/link/state change" (Architecture §6.2).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract
+
+**Check yourself:** A tool is called "update" and takes one free-text argument, "data". What goes wrong, and why can a better model not fully fix it?
+
+*Tomorrow:* what should the runner do with a slip that is filled in wrong?
+
+*Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 7](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): Anthropic's "Writing Effective Tools for AI Agents" "reports SWE-Bench gains from prompt-engineered tool descriptions".
