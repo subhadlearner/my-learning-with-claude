@@ -1156,3 +1156,44 @@ The builder writes a slip: "runner, fetch the drawing for room 4." But he woke t
 *Tomorrow:* what should the runner do with a slip that is filled in wrong?
 
 *Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 7](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): Anthropic's "Writing Effective Tools for AI Agents" "reports SWE-Bench gains from prompt-engineered tool descriptions".
+
+### Day 25 · 3 Nov: What should the runner do with a slip that is filled in wrong?
+
+**Day 25: What should the runner do with a slip that is filled in wrong?**
+
+*Yesterday:* The model has to guess what "update" changes and what "data" should look like; it sees only the name, description and schema, so whatever the contract leaves open is filled in by the dice, however skilled the model.
+
+The builder hands the runner a slip: "Build wall. Height: tall." The job list says height is in metres. Should the runner guess, start, or come back?
+
+**Step 1. Can a slip be filled in wrong?** Yes. The model writes a slip by the same dice process as any other text (Day 2). Sometimes it names a tool that does not exist, misspells an argument, or leaves one out.
+*Some mornings he writes "tall" in the height box.*
+
+**Step 2. What if the program passes it straight to the tool?** At best it crashes with a message written for a programmer. At worst a half-right call changes something, then fails.
+*The runner digs the footing, then stops because he cannot read "tall". The site is now half-changed.*
+
+**Step 3. Can the program tell in advance?** Yes. "Does this call match its schema?" has a yes-or-no answer: known name, every required argument, right types, allowed values. Ordinary code checks it, the same way every time (Day 11).
+*At the office door, the runner holds the slip against the job list before picking up a shovel.*
+
+**Step 4. What happens to a slip that fails?** Nothing runs. The failure becomes the note for that slip in the transcript (Day 18), in the contract's own words: "calc needs 'expression' (text); you sent 'expr'."
+*The slip comes back marked "height: must be metres". Nothing on site is touched.*
+
+**Step 5. Does that fix it?** Usually: the next turn reads the note and corrects the slip. Repeated bad slips are caught by the limits of Days 21 and 22. Whether a well-formed slip is *allowed* is Block 4's question.
+*He rewrites "height: 2.4". If he writes "tall" five times, the office is called.*
+
+**Now it's obvious.** Before any tool runs, the program checks the call against the tool's contract. A call that fails runs nothing and goes back as a note saying exactly what was wrong, so the next attempt can be right.
+
+**Picture.**
+
+![Day 25: a slip is checked against the job list; a wrong one runs nothing and goes back as a note, and the next turn fixes it](diagrams/day-25.png)
+
+**See it yourself (2 minutes).** In a Kilo task where a tool call errored, read the note the model got back: was it a stack trace, or a sentence it could act on?
+
+**In SubhForge:** your mutation boundary already says it: "The boundary must reject invalid proposals even when a model confidently requests them" (Architecture §6.4).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract → calls are checked before they run
+
+**Check yourself:** Why check a call's shape before running it, rather than let the tool fail by itself?
+
+*Tomorrow:* how much should the runner bring back?
+
+*Source:* [Agentway Comparative Harness Notes (book 2), p. 32](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book2-comparing-en.pdf): Codex's approval tree checks "schema validation fails → deny" first, before any rule or sandbox.

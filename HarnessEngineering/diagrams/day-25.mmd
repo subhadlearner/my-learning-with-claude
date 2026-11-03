@@ -1,0 +1,6 @@
+flowchart TD
+    A["builder writes slip"] --> B["checked against job list"]
+    B -->|"matches"| C["runner does job"]
+    B -->|"wrong or missing"| D["note: what was wrong"]
+    D -->|"nothing touched"| E["next turn fixes slip"]
+    E --> A
