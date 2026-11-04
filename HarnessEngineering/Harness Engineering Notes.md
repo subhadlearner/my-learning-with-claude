@@ -1197,3 +1197,44 @@ The builder hands the runner a slip: "Build wall. Height: tall." The job list sa
 *Tomorrow:* how much should the runner bring back?
 
 *Source:* [Agentway Comparative Harness Notes (book 2), p. 32](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book2-comparing-en.pdf): Codex's approval tree checks "schema validation fails → deny" first, before any rule or sandbox.
+
+### Day 26 · 4 Nov: How much should the runner bring back?
+
+**Day 26: How much should the runner bring back?**
+
+*Yesterday:* A half-right call can run and do damage before it fails, and the tool's own error is written for a person; a check in code catches every malformed call the same way, runs nothing, and tells the model exactly what to fix.
+
+The builder sends the runner for the east wall drawing. It is a roll of forty sheets. What should come back?
+
+**Step 1. Where does a tool's result go?** Into the transcript, as the note for that slip, and the transcript is resent on every later turn (Days 18 and 20).
+*Whatever the runner brings is pinned to the clipboard for good.*
+
+**Step 2. How big can a result be?** Tools built for people return a 2,000-line file or 50,000 lines of test log. That spends the budget (Day 8), buries the line that matters, and is paid again every turn.
+*Forty sheets on the clipboard; the cracked lintel is somewhere inside.*
+
+**Step 3. So cut it?** Yes: return a window, say 100 lines of the file or the last 50 of the log.
+*The runner brings one sheet.*
+
+**Step 4. Is a quiet cut safe?** No. The model knows only what it is shown (Day 1). Shown 100 lines with no word of more, it treats them as the whole file and answers confidently about lines it never saw.
+*Handed one unmarked sheet, he concludes the east wall has no window.*
+
+**Step 5. What fixes that?** A frame on every result: "lines 1–100 of 423; ask with offset=100 for more" (offset: where to start). Failures too: "file not found; did you mean config.yaml?" can be acted on; "error" cannot.
+*The sheet says "1 of 5"; sent to a room that does not exist, the runner says which rooms do.*
+
+**Now it's obvious.** A tool's result is resent on every later turn, so it must be bounded and labelled: a window rather than everything, with a plain line saying what was left out and how to get more, and a failure written as what to do next.
+
+**Picture.**
+
+![Day 26: the runner can bring the whole roll (buries the clipboard), one unmarked sheet (taken as the whole), or a sheet marked "1 of 5" (he asks for the next)](diagrams/day-26.png)
+
+**See it yourself (2 minutes).** In an agent run that ran your tests, look at how much of the test output reached the transcript, and whether anything said it had been cut.
+
+**In SubhForge:** your external tool boundary already refuses silent gaps: "Denied/schema-changed/unavailable responses return visible failure" (Architecture §20).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract → calls are checked before they run → results are bounded and labelled
+
+**Check yourself:** Why is a cut the model is not told about more dangerous than one it is told about?
+
+*Tomorrow:* how many kinds of job should be on the list?
+
+*Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 71](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in its minimal harness (Listing 3), read_file takes "offset" and "limit", and any tool result over 25,000 characters is cut and ends "...[truncated]".
