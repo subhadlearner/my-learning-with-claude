@@ -1238,3 +1238,44 @@ The builder sends the runner for the east wall drawing. It is a roll of forty sh
 *Tomorrow:* how many kinds of job should be on the list?
 
 *Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 71](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in its minimal harness (Listing 3), read_file takes "offset" and "limit", and any tool result over 25,000 characters is cut and ends "...[truncated]".
+
+### Day 27 · 5 Nov: How many kinds of job should be on the list?
+
+**Day 27: How many kinds of job should be on the list?**
+
+*Yesterday:* Told about the cut, the model can ask for the rest; not told, it treats the part as the whole and answers confidently about lines it never saw.
+
+To be helpful, the office pins up fifty jobs, including "fetch blue drawing" and "fetch red drawing". The builder reads it all before each slip. Is he helped?
+
+**Step 1. What does each job on the list cost?** Every contract is resent each turn (Days 18 and 24), at 100 to 500 tokens (word-pieces) each. Fifty tools spend 10,000 to 25,000 tokens before any work starts (Day 8).
+*He reads fifty lines before laying a brick.*
+
+**Step 2. Does a longer list make choosing harder?** Yes. Picking is one more dice roll (Day 2). The sources report that picking well falls away steeply past 20 to 50 tools, and similar tools get each other's arguments.
+*Blue and red get swapped.*
+
+**Step 3. How few tools can do the work?** A shell tool (it runs any command) can list files, search and run tests. One harness in the sources solves most of a coding benchmark with only that.
+*One line, "go and do this", covers most jobs.*
+
+**Step 4. Then when does a new tool earn its place?** When it fixes a failure you have actually seen, like Day 26's windowed reader. One added "just in case" costs every turn, fixing nothing.
+*A job goes up only after the general way went wrong.*
+
+**Step 5. What if many tools are truly needed?** Send only names, one-line descriptions and a search tool; load a full contract when asked. Claude Code does this above about fifteen tools.
+*A short list on the wall, a catalogue in the drawer; he asks for a page.*
+
+**Now it's obvious.** Each listed tool costs context every turn and makes choosing harder. So start with a few general tools, add one only for a failure you have seen, and when the list must be long, send an index and load contracts on request.
+
+**Picture.**
+
+![Day 27: fifty jobs on the wall spend the budget and cause wrong picks; a few jobs give a cheap, clear choice, and a rare job is fetched as one catalogue page](diagrams/day-27.png)
+
+**See it yourself (2 minutes).** Count the tools, MCP ones included, a fresh Kilo task sends; multiply by 300 tokens.
+
+**In SubhForge:** your integration baseline says it: "Do not enable every candidate globally. Admit integrations by recurring need, least privilege, tool/context overhead, cost and removability" (Architecture §20.3).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract → calls are checked before they run → results are bounded and labelled → tools are few and earn their place
+
+**Check yourself:** Why not simply give the agent every tool that might help?
+
+*Tomorrow:* how should a slip say which part of a file to change?
+
+*Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 68](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): Recommendation 3, "Begin with just a bash tool. Add more tools only in response to observed failure modes."
