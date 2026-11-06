@@ -1279,3 +1279,44 @@ To be helpful, the office pins up fifty jobs, including "fetch blue drawing" and
 *Tomorrow:* how should a slip say which part of a file to change?
 
 *Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 68](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): Recommendation 3, "Begin with just a bash tool. Add more tools only in response to observed failure modes."
+
+### Day 28 · 6 Nov: How should a slip say which part of a file to change?
+
+**Day 28: How should a slip say which part of a file to change?**
+
+*Yesterday:* Every contract is resent each turn, spending budget, and a longer list makes choosing and filling in tools less reliable; unused tools make useful ones worse.
+
+One cracked brick in a long wall must be swapped. The builder saw the wall this morning; it may have changed since. How should his slip point at the brick?
+
+**Step 1. What are the ways to write the slip?** Rewrite the whole file, give a line number, or quote the exact old text and its new text.
+*Rebuild the wall, count bricks, or describe the brick.*
+
+**Step 2. What is wrong with rewriting it all?** Changing one line of 2,000 spends the whole file in output (Day 8), and every untouched line is recopied by the dice process, so any can come back altered (Days 2 and 4).
+*He rebuilds the wall; a few other bricks come out crooked.*
+
+**Step 3. And "replace line 47"?** The number comes from an earlier reading; any edit since may have shifted the lines, and models count lines badly. The wrong line changes and nothing notices.
+*"Third brick in row 12", but a row was added; a good brick goes.*
+
+**Step 4. And quoting the exact text?** The program searches the file as it is now. No match, or two, and it writes nothing and sends a note back (Day 25). Exactly one: apply.
+*"The cracked brick with the blue mark": none, or two, and the runner comes back instead of guessing.*
+
+**Step 5. Why trust that check?** Finding text is computable, so code does it identically every time (Day 11), against today's file, not a memory (Day 12).
+*The runner looks at today's wall, not this morning's sketch.*
+
+**Now it's obvious.** A safe edit names the exact text it replaces, applied only if that text appears exactly once in the file as it is now. A silent wrong edit becomes a loud refusal.
+
+**Picture.**
+
+![Day 28: a line-number edit silently hits the wrong line when the file shifts; an exact-text edit searches the current file, refuses on none or two matches, and applies only on exactly one](diagrams/day-28.png)
+
+**See it yourself (2 minutes).** In a finished Kilo task, does one file edit carry old and new text, line numbers, or the whole file?
+
+**In SubhForge:** the same rule, larger: "version/fingerprint checks at mutation and completion boundaries, rather than trusting a context packet loaded earlier" (Architecture §4.4).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract → calls are checked before they run → results are bounded and labelled → tools are few and earn their place → edits are anchored to exact text
+
+**Check yourself:** Why does "replace line 47" fail more dangerously than "replace this exact text"?
+
+*Tomorrow:* can the runner carry several slips at once?
+
+*Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 68](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): Recommendation 5, "Avoid line-number-based edits: models drift on line numbers more than on contextual matching."

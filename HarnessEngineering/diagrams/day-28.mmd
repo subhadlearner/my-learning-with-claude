@@ -1,0 +1,5 @@
+flowchart TD
+  L["replace line 47"] -->|"file shifted"| W["wrong line, silently"]
+  A["replace exact text"] --> B["search file now"]
+  B -->|"none or two"| C["refuse, send note"]
+  B -->|"exactly one"| D["apply the edit"]
