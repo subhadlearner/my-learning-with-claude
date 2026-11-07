@@ -1320,3 +1320,44 @@ One cracked brick in a long wall must be swapped. The builder saw the wall this 
 *Tomorrow:* can the runner carry several slips at once?
 
 *Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 68](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): Recommendation 5, "Avoid line-number-based edits: models drift on line numbers more than on contextual matching."
+
+### Day 29 · 7 Nov: Can the runner carry several slips at once?
+
+**Day 29: Can the runner carry several slips at once?**
+
+*Yesterday:* If the file has shifted, the line-number edit quietly changes the wrong line; the exact-text edit finds no match, or two, and refuses before writing anything.
+
+The builder hands over four slips at once: fetch three drawings, then test the wall. There are several runners free. Should they all set off together?
+
+**Step 1. Does the order matter for the three fetches?** No. Reading a file changes nothing, so whichever read runs first, each returns the same thing. Running them together just saves time.
+*Three runners fetch three drawings; nobody's drawing is changed by another.*
+
+**Step 2. Does it matter for "edit the file" and "run the tests"?** Yes. Tests run before the edit test the old file; tests run after test the new one. Two edits to one file can overwrite each other. Different order, different result.
+*One runner tests the wall while another is still rebuilding it.*
+
+**Step 3. Who decides which slips are safe together?** Whether a tool changes anything is a fact about the tool, so it is written in its contract (Day 24), and ordinary code sorts the slips (Day 11), not the dice (Day 2).
+*The job list marks each job "looks only" or "touches the wall"; the office sorts the slips.*
+
+**Step 4. What about a tool nobody has marked?** Treat it as unsafe. A write wrongly run alongside another can corrupt work with no sign; a read wrongly run alone only costs a little time. Pick the cheaper mistake.
+*An unmarked job goes alone until someone writes "looks only" beside it.*
+
+**Step 5. Does running side by side scramble the transcript?** It need not. The notes go back in the order the slips were written, so the transcript reads the same either way (Day 18).
+*The clipboard lists the notes in slip order, whoever came back first.*
+
+**Now it's obvious.** Run side by side only the actions whose contract says they change nothing; run everything that changes something one at a time, in the order written. A tool is unsafe until declared safe.
+
+**Picture.**
+
+![Day 29: slips that change nothing run side by side; slips that change something, or are not declared safe, run one at a time in order; notes come back in slip order](diagrams/day-29.png)
+
+**See it yourself (2 minutes).** In an agent trace, find a turn that asked for several reads and check whether their results came back together.
+
+**In SubhForge:** the same rule for reconciliation: "disjoint REC scopes may proceed independently" but "two different REC packages may never mutate the same effective scope concurrently" (Workflow §16.5).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract → calls are checked before they run → results are bounded and labelled → tools are few and earn their place → edits are anchored to exact text → only reads run side by side
+
+**Check yourself:** Why should a new tool count as unsafe to run in parallel until someone marks it safe?
+
+*Tomorrow:* Block 3 recap: the six links of the runner, put together.
+
+*Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 13](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in Claude Code, "Tools default to isConcurrencySafe = false (the safe default), and must explicitly opt in to parallel execution. Read-only tools (grep, glob, file read) are safe; write tools (edit, bash) are not."

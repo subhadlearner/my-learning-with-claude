@@ -1,0 +1,6 @@
+flowchart TD
+  R["one reply, many slips"] --> S["contract: changes anything?"]
+  S -->|"no, declared safe"| P["run side by side"]
+  S -->|"yes, or not declared"| Q["one at a time, in order"]
+  P --> N["notes back in order"]
+  Q --> N
