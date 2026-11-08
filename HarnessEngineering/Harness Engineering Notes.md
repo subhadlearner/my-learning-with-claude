@@ -33,7 +33,7 @@ Block 1 gives the reasons a harness must exist. Every later block takes one part
 | – | 22–25 Oct | Review days on Block 1 | | Yes |
 | 2 | 26 Oct–1 Nov | The loop in depth: turns, stop conditions, interrupts | how the model acts | Yes |
 | 3 | 2–8 Nov | Tools and actions: interface design, how many tools, file-editing strategies | what it acts with | Yes |
-| 4 | 9–15 Nov | Permissions and sandboxing: what an agent may run, and where | what it is allowed to do | Not yet |
+| 4 | 9–15 Nov | Permissions and sandboxing: what an agent may run, and where | what it is allowed to do | Yes |
 | 5 | 16–22 Nov | Instructions and context: layering, precedence, what goes in front of the model | what it is told | Not yet |
 | 6 | 23–29 Nov | Memory: compaction when the window fills, session memory, persistent memory | what it remembers | Not yet |
 | 7 | 30 Nov–6 Dec | Task specification and decomposition: specs, dependencies, readiness | what it is asked to do | Not yet |
@@ -1384,3 +1384,14 @@ All six open up the slips and the runner of Block 1's link 3 (works through a lo
 3. One reply asks to edit a file and run the tests. Both run at once, and the tests pass. What do the passing tests prove?
 
 Write in your notes what should change in length, depth or pace before Block 4.
+
+## Block 4: Permissions and sandboxing (9–15 Nov)
+
+This block takes up the question Day 25 left open, whether a well-formed slip may be carried out at all: who decides, with what answers, from which written rules, how the shell is judged, what fences in a job that was allowed, and why nothing the model reads can widen what it may do. The recap is on 15 November.
+
+30. The slip is filled in perfectly. Should the runner carry it out?
+31. What should the runner do when the rules cannot settle it?
+32. Where are the rules kept, and which one wins?
+33. What does the runner do with a slip that just says "run this command"?
+34. What if a job that was allowed does more than its slip said?
+35. What if a note left on site tells him to do something?

@@ -23,6 +23,8 @@ On 25 October (Block 2 planning) the blog indexes and the Scratch book site coul
 
 On 1 November (Block 3 planning) the blog indexes and the Scratch book site again could not be opened (no response through the network policy). The Scratch book chapters 4, 6, 11 and 12 were read from its source repository; the blogs were not rechecked. No new files had been added to `../Resources/` or links to `imp-urls.txt` since 4 October.
 
+On 8 November (Block 4 planning) the blog indexes and the Scratch book site again could not be opened (no response through the network policy). The Scratch book chapters 6 and 14 were read from its source repository; the blogs were not rechecked. No new files had been added to `../Resources/` or links to `imp-urls.txt` since 4 October.
+
 ## Topics
 | Topic the sources treat as important | Where the sources cover it | Where this course covers it | Status |
 |---|---|---|---|
@@ -30,8 +32,8 @@ On 1 November (Block 3 planning) the blog indexes and the Scratch book site agai
 | The agent loop | Study 6; Book 1 ch. 3; Book 2 ch. 3 | Block 1, day 3; Block 2, days 18–23 | Covered in Block 1, day 3; deepened in Block 2, days 18–23 |
 | Loop control: stop conditions, interrupts, reflection loops | Study 6.3; Book 1 ch. 3.5–3.7; Scratch book ch. 2, 5; Augment loop engineering | Block 2, days 19–23 | Covered in Block 2: stopping day 19, limits day 20, stuck detection day 21, reflection (fix-and-recheck) day 22, interrupts day 23; refusing a stop without fresh evidence is a recap question; outer loops moved to Block 11 (see below) |
 | Tools and actions: interface design, how many tools, deferred loading, file editing | Study 8, 16.3–16.4; Paper (tool access); Book 1 ch. 4; Scratch book ch. 4, 6, 11, 12 | Block 3, days 24–28 | Covered in Block 3: the tool as a contract day 24, checking calls before they run day 25, bounded and labelled results day 26, how many tools and deferred loading day 27, file editing day 28; execution sandboxing (Study 8.5) is left to Block 4 |
-| Permissions and sandboxing | Study 10, 15.3, 16.6; Paper (permissions); Book 1 ch. 4; Book 2 ch. 4; Scratch book ch. 6, 14 | Block 4 | Planned (gap found 4 Oct) |
-| Human authority and approval | Book 2 ch. 4; Study 10 | Block 1, day 13; Block 4 | Covered, deepened in Block 4 |
+| Permissions and sandboxing | Study 8.5, 10, 15.3, 16.6; Paper (permission boundary); Book 1 ch. 4.4–4.7; Book 2 ch. 4; Scratch book ch. 6, 14 | Block 4, days 30–35 | Covered in Block 4: per-call permission separate from the shape check day 30; allow, deny and ask, and unattended runs day 31; written rules, precedence, modes and a floor day 32; shell commands judged part by part day 33; sandboxing (filesystem, network, credentials) day 34; prompt injection and untrusted content day 35 |
+| Human authority and approval | Book 2 ch. 4; Study 10 | Block 1, day 13; Block 4, days 30–31 | Covered in Block 1, day 13; deepened in Block 4, days 30 and 31 (the 'ask' answer, the scope of an approval, ask becoming deny when no one is present) |
 | Instructions: layering, precedence, why one big file fails | Book 1 ch. 2; Book 2 ch. 2; OpenAI; Course L04; Study 7.2–7.3; Augment AGENTS.md post | Block 5 | Planned |
 | Context as a budget; context selection | Study 9; Paper (context selection); Book 1 ch. 5; OpenAI | Block 1, day 8; Block 5 | Covered, deepened in Block 5 |
 | Retrieval: how the right code and text get found and brought into the window | Scratch book ch. 10; Study 9.7, 13.2; Faros context engineering | Block 5 | Planned, needs its own day (gap found 4 Oct from the Scratch book) |
