@@ -1361,3 +1361,26 @@ The builder hands over four slips at once: fetch three drawings, then test the w
 *Tomorrow:* Block 3 recap: the six links of the runner, put together.
 
 *Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, p. 13](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in Claude Code, "Tools default to isConcurrencySafe = false (the safe default), and must explicitly opt in to parallel execution. Read-only tools (grep, glob, file read) are safe; write tools (edit, bash) are not."
+
+### Block 3 recap · 8 Nov
+
+**Block 3 recap: Can you rebuild the runner, from job list to wall, from the two facts?**
+
+*Yesterday:* Wrongly running a write in parallel can silently corrupt work, while wrongly running a read alone only costs a little time, so the cheaper mistake is the right default.
+
+**The chain**
+24. A tool is a written contract: he orders only from the job list, exactly as worded.
+25. Calls are checked before they run: a slip with the wall height blank goes straight back.
+26. Results are bounded and labelled: one sheet, marked "sheet 1 of 5".
+27. Tools are few and earn their place: a short list on the wall, the catalogue in the drawer.
+28. Edits are anchored to exact text: "the cracked brick with the blue mark", not "row 12, third brick".
+29. Only reads run side by side: three runners may fetch drawings; one at the wall.
+
+All six open up the slips and the runner of Block 1's link 3 (works through a loop), sit on Block 2's link 18 (the transcript is the loop's state), and lean on links 1, 2, 8, 11 and 12.
+
+**Work these out**
+1. An agent makes two edits to config.py by line number, "replace line 12" and then "replace line 30", and the first edit added two lines. What happens, and which links would have turned it into a refusal?
+2. You connect an MCP server with 40 tools. The agent starts picking wrong tools on unrelated tasks, and each run costs more. Why, and what would you change?
+3. One reply asks to edit a file and run the tests. Both run at once, and the tests pass. What do the passing tests prove?
+
+Write in your notes what should change in length, depth or pace before Block 4.
