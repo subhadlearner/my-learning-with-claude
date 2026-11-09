@@ -1395,3 +1395,44 @@ This block takes up the question Day 25 left open, whether a well-formed slip ma
 33. What does the runner do with a slip that just says "run this command"?
 34. What if a job that was allowed does more than its slip said?
 35. What if a note left on site tells him to do something?
+
+### Day 30 · 9 Nov: The slip is filled in perfectly. Should the runner carry it out?
+
+**Day 30: The slip is filled in perfectly. Should the runner carry it out?**
+
+*Yesterday:* The second edit silently hits the wrong line (28 refuses); forty contracts resent every turn spend budget and crowd the choice (24, 27); the tests may have run on the old file (29).
+
+The builder's slip reads "Demolish wall: east wall." Every box is filled; it passes the door check (Day 25). It is also the wall holding up the house. Should the runner pick up the hammer?
+
+**Step 1. What did the door check prove?** Only that the slip is well formed: known tool, required arguments, right types. "delete_folder path='/home/you'" passes perfectly.
+*The office confirmed the slip is complete, not that the wall should come down.*
+
+**Step 2. Does the model asking make it right?** No. The request is text from the dice (Day 2), and the model bears nothing if wrong (Day 13). Understanding what you want is not authority to do it.
+*He wrote it in good faith. Good faith does not hold the roof up.*
+
+**Step 3. Can we judge by the tool alone?** No. One write tool is harmless on a scratch file and ruinous on ~/.ssh/config, which controls how your machine logs into servers. The question is about this call, with these arguments.
+*"Demolish wall" is fine for the garden shed, ruinous for the east wall.*
+
+**Step 4. So who answers?** Ordinary code, after the shape check and before anything runs, asks "may this call, with these arguments, run here?", the same way every time (Day 11).
+*A second check at the door: "may this job be done on this site?"*
+
+**Step 5. Isn't a line in his instructions enough?** "Never delete outside the project" asks the model; obeying is one more roll of the dice. Only the check stops anything.
+*A line in his gate papers is advice. The door check is a lock.*
+
+**Now it's obvious.** Whether a call may run is a second check, separate from whether it is well formed, made by the program on each call with its arguments before it runs. Neither the model's wish nor its instructions make that decision.
+
+**Picture.**
+
+![Day 30: a slip passes two checks at the door, first whether it is filled in properly, then whether this job may run on this site; failing either runs nothing and sends back a note](diagrams/day-30.png)
+
+**See it yourself (2 minutes).** In Kilo's auto-approve settings, does an allowed action depend on a call's arguments, or only on the tool?
+
+**In SubhForge:** your architecture already says so: "Agent instructions alone are not enforcement" (Architecture §6.4).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract → calls are checked before they run → results are bounded and labelled → tools are few and earn their place → edits are anchored to exact text → only reads run side by side → may-do is checked per call
+
+**Check yourself:** The agent's instructions say "never touch files outside the project". Why is that not a permission system?
+
+*Tomorrow:* what should the runner do when the rules cannot settle it?
+
+*Source:* [Harness Engineering Anatomy, p. 37](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in Mistral Vibe "Each tool call is checked against a hierarchy", including validators that pattern-match paths.

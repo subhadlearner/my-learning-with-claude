@@ -1,0 +1,6 @@
+flowchart TD
+  A["builder writes slip"] --> B["slip filled in properly?"]
+  B -->|"no"| C["note: what was wrong"]
+  B -->|"yes"| D["allowed on this site?"]
+  D -->|"no"| E["note: not permitted"]
+  D -->|"yes"| F["runner does job"]
