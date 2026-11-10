@@ -1436,3 +1436,44 @@ The builder's slip reads "Demolish wall: east wall." Every box is filled; it pas
 *Tomorrow:* what should the runner do when the rules cannot settle it?
 
 *Source:* [Harness Engineering Anatomy, p. 37](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in Mistral Vibe "Each tool call is checked against a hierarchy", including validators that pattern-match paths.
+
+### Day 31 · 10 Nov: What should the runner do when the rules cannot settle it?
+
+**Day 31: What should the runner do when the rules cannot settle it?**
+
+*Yesterday:* An instruction is text the model may or may not follow, by the same dice process; a permission is a check the program makes on each call, with its arguments, before it runs, whatever the model writes.
+
+Two slips reach the door's second check (Day 30): "fetch the kitchen drawing" and "knock down the old garden shed". The first is plainly fine; the second may be wanted, or a disaster. Who says?
+
+**Step 1. Can the check settle every slip by itself?** Some, yes. Reading a project file is fine; wiping the disk is not. Code settles those, the same way every time.
+*Fetch a drawing: go. Pull down the house: no.*
+
+**Step 2. What about "delete the branch feature/old"?** (A branch is a named line of work in git.) That depends on what you want today: code cannot compute it, and the model has no standing to decide it (Days 11 and 13).
+*Only the owner knows whether the shed is still wanted.*
+
+**Step 3. So what is the third answer?** Ask. The loop pauses and the person sees the exact call, arguments and all, not a summary.
+*The slip goes, word for word, into the owner's tray.*
+
+**Step 4. What do the owner's answers mean?** A yes covers that call, or a narrow pattern the person picks, never the tool in general, as a sheet covers only the version it checked (Day 12). A no is not a crash but a note in the transcript, "the user declined to delete feature/old" (Days 18 and 25), so the next turn can try another route.
+*"Yes, this shed" is not "yes, any shed"; a "no" reaches him as a note.*
+
+**Step 5. What if nobody is there, say overnight?** Ask becomes deny, with the same note back. Never quietly allow, or "the owner decides" becomes "the owner was out, so yes".
+*Owner away: his tray is not carried, and the builder is told.*
+
+**Now it's obvious.** The permission check has three answers: allow, deny, and ask the person, whose yes covers only the exact call approved. A no returns as a note; with nobody to ask, ask means no.
+
+**Picture.**
+
+![Day 31: the rules answer go, no, or "for the owner"; the owner sees the exact slip and a yes covers only that one; a no, or an absent owner, sends a note back to the builder](diagrams/day-31.png)
+
+**See it yourself (2 minutes).** Decline one approval in a Kilo task; read the note the model got back and what it did next.
+
+**In SubhForge:** "Approval applies only to its recorded scope/revision and does not disable other guards" (Architecture §6.4).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract → calls are checked before they run → results are bounded and labelled → tools are few and earn their place → edits are anchored to exact text → only reads run side by side → may-do is checked per call → allow, deny, or ask the owner
+
+**Check yourself:** An agent running unattended overnight reaches a call whose rule says "ask". What should happen, and why not let it through?
+
+*Tomorrow:* where are the rules kept, and which one wins?
+
+*Source:* [Harness Engineering Anatomy, p. 39](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in OpenCode, "headless runs auto-reject all asks".

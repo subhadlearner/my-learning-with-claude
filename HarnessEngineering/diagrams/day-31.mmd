@@ -1,0 +1,9 @@
+flowchart TD
+  A["slip at the door"] --> B["what do rules say?"]
+  B -->|"go"| C["runner does job"]
+  B -->|"no"| D["note back to builder"]
+  B -->|"for the owner"| E["owner on site?"]
+  E -->|"away"| D
+  E -->|"here"| F["owner reads exact slip"]
+  F -->|"yes, this one"| C
+  F -->|"no"| D
