@@ -1477,3 +1477,44 @@ Two slips reach the door's second check (Day 30): "fetch the kitchen drawing" an
 *Tomorrow:* where are the rules kept, and which one wins?
 
 *Source:* [Harness Engineering Anatomy, p. 39](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in OpenCode, "headless runs auto-reject all asks".
+
+### Day 32 · 11 Nov: Where are the rules kept, and which one wins?
+
+**Day 32: Where are the rules kept, and which one wins?**
+
+*Yesterday:* It is denied and the denial goes back as a note, so the agent can try another way or stop; letting it through would turn "the owner must decide" into "the owner was not there, so yes".
+
+The door now answers go, no, or "for the owner" (Day 31). Where does the doorkeeper look up which answer a slip gets, and when two rules disagree, which counts?
+
+**Step 1. Can the answers live in anyone's head?** No. The same slip must get the same answer every time, readable by the owner. The model forgets and rolls dice (Days 1 and 2), so ordinary code looks it up (Day 11).
+*If the runner kept the rules in memory, he would answer differently tomorrow.*
+
+**Step 2. So where do they live?** In one file, one home (Days 5 and 6), as patterns over the tool and its arguments, each with an answer: read inside the project, allow; edit a file, ask; force-push (overwrite the shared history) or delete outside the project, deny.
+*The rules are painted on one board by the gate.*
+
+**Step 3. Two rules match one call. Which wins?** The strictest: deny beats ask, ask beats allow. If "allow git" and "deny git push --force" both match, the call is refused.
+*A red "never" line beats any green "yes".*
+
+**Step 4. What about a call no rule mentions?** It gets ask: a wrong ask costs seconds; a wrong allow may do damage that cannot be undone.
+*A job not on the board goes to the owner's tray.*
+
+**Step 5. Then what is a "mode"?** "Plan only" or "approve everything" is just a different board swapped in. So a few denials sit beneath every board: actions nobody should be able to switch on by changing a setting.
+*On fast-track days the green lines grow; the red lines stay up.*
+
+**Now it's obvious.** Permission rules are data in one file, read by ordinary code on every call, never left to the model. When rules disagree the strictest wins, an unmatched call is asked about, and a short floor of denials survives every mode.
+
+**Picture.**
+
+![Day 32: every slip is read against one rules board; any "never" means no, any "ask" or a job not on the board goes to the owner, only all-yes means go; red floor lines sit under every mode](diagrams/day-32.png)
+
+**See it yourself (2 minutes).** Open Kilo's allowed and denied command lists, pick a command on neither, and work out what happens to it.
+
+**In SubhForge:** the "authorized tool envelope" each dispatch carries is exactly such a written rule set (Architecture §8.2).
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract → calls are checked before they run → results are bounded and labelled → tools are few and earn their place → edits are anchored to exact text → only reads run side by side → may-do is checked per call → allow, deny, or ask the owner → the rules are written, and deny wins
+
+**Check yourself:** Why should a call that no rule mentions be asked about rather than allowed?
+
+*Tomorrow:* what does the runner do with a slip that just says "run this command"?
+
+*Source:* [Harness Engineering Anatomy, p. 38](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in Hermes, "config.yaml IS the security policy", with a twelve-pattern hardline floor "that survives --yolo".
