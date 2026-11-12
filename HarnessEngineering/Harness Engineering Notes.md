@@ -1518,3 +1518,44 @@ The door now answers go, no, or "for the owner" (Day 31). Where does the doorkee
 *Tomorrow:* what does the runner do with a slip that just says "run this command"?
 
 *Source:* [Harness Engineering Anatomy, p. 38](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in Hermes, "config.yaml IS the security policy", with a twelve-pattern hardline floor "that survives --yolo".
+
+### Day 33 · 12 Nov: What does the runner do with a slip that just says "run this command"?
+
+**Day 33: What does the runner do with a slip that just says "run this command"?**
+
+*Yesterday:* Because a wrong ask costs seconds, while a wrong allow may do damage that cannot be undone.
+
+One job on the list (Day 27) is "general labour: do what is written below". The slip reaches the rules board (Day 32), but this job could be anything. What does the board judge?
+
+**Step 1. Can a rule on the shell tool alone decide?** No. The shell (the program that runs typed commands) can do almost anything, so "shell: allow" allows everything. What matters is the command text, an argument (Day 30).
+*"General labour: yes" says nothing about the work below.*
+
+**Step 2. So match rules on the command text?** Yes: "git status" allow; "git push" (send work to the shared copy) ask. A simple checker reads how the text starts.
+*The office reads the first line under the slip.*
+
+**Step 3. Is the first line enough?** No. "git status && git push --force" starts with "git status". So does "git status; rm -rf build". The shell runs every part: && and ; chain commands, | pipes one into the next, $( ) runs one inside another.
+*Line one: "sweep the yard". Line two: "pull down the wall".*
+
+**Step 4. So what must the checker do?** Split the text exactly as the shell will, then judge each command on the board. The slip runs only if every part is allowed; one deny stops it all (Day 32).
+*Every line is read; one forbidden line stops the slip.*
+
+**Step 5. What if the text cannot be split for certain?** Splitting is ordinary code (Day 11). When it is unsure, it does not guess; the slip goes to the owner (Day 31).
+*A smudged line goes to the owner's tray.*
+
+**Now it's obvious.** One shell command can hold many actions, so its permission is decided on every command inside it, split the way the shell itself would split it. Anything that cannot be split with certainty is asked about.
+
+**Picture.**
+
+![Day 33: a shell slip is split as the shell would split it; each part is judged on the board, one deny refuses the whole slip, and text that cannot be split surely goes to the owner](diagrams/day-33.png)
+
+**See it yourself (2 minutes).** In Kilo, allow commands starting "git status", then ask whether "git status && git push" would pass.
+
+**In SubhForge:** "Classify Git remote and history-affecting operations as well: push, force-push ..." (Architecture §6.4) holds only if a push chained after an allowed command is found.
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract → calls are checked before they run → results are bounded and labelled → tools are few and earn their place → edits are anchored to exact text → only reads run side by side → may-do is checked per call → allow, deny, or ask the owner → the rules are written, and deny wins → the shell is judged command by command
+
+**Check yourself:** Your rules allow any command starting with "npm test". What can slip through, and what would the checker have to do to stop it?
+
+*Tomorrow:* what if a job that was allowed does more than its slip said?
+
+*Source:* [Harness Engineering Anatomy, p. 39](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in OpenCode, "every bash command is parsed with web-tree-sitter".

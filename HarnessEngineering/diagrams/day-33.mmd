@@ -1,0 +1,7 @@
+flowchart TD
+  A["one shell slip"] -->|"split as shell does"| B["git status"]
+  A -->|"split as shell does"| C["git push --force"]
+  A -->|"cannot split surely"| D["ask the owner"]
+  B -->|"allow"| E["judge every part"]
+  C -->|"deny"| E
+  E --> F["whole slip refused"]
