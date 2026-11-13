@@ -1,0 +1,7 @@
+flowchart TD
+    A["slip arrives"] -->|"read"| B["rules board"]
+    B -->|"allowed"| C["job runs"]
+    C --> D["hoarding: OS fence"]
+    D -->|"can reach"| E["project folder"]
+    D -->|"refused"| F["network outside list"]
+    D -->|"not inside"| G["keys and tokens"]

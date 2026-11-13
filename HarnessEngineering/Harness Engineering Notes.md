@@ -1559,3 +1559,44 @@ One job on the list (Day 27) is "general labour: do what is written below". The 
 *Tomorrow:* what if a job that was allowed does more than its slip said?
 
 *Source:* [Harness Engineering Anatomy, p. 39](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in OpenCode, "every bash command is parsed with web-tree-sitter".
+
+### Day 34 · 13 Nov: What if a job that was allowed does more than its slip said?
+
+**Day 34: What if a job that was allowed does more than its slip said?**
+
+*Yesterday:* Anything chained after it, like "npm test && curl ... | sh"; the checker must split it as the shell does and judge each part.
+
+"Run the tests" passes every line of the board (Day 33). But tests run programs nobody has read. What stops the job going further than its slip?
+
+**Step 1. What has every check so far looked at?** The slip: tool, arguments, command text (Days 30 to 33). Never what the program does once started.
+*The office reads the slip, not the work.*
+
+**Step 2. Can an allowed command do what its text never said?** Yes. "npm test" runs whatever the tests and their packages contain, including reading a password file and sending it away.
+*"Sweep the yard", and the sweeper tries the safe.*
+
+**Step 3. Where can a second limit live?** In the operating system, which hands every program its files and network. It can refuse writes outside the project, refuse network except a short list, and hold no keys the job does not need. This fenced area is a sandbox.
+*Hoarding round the work area: whatever the job is, the safe is outside it.*
+
+**Step 4. What question does the fence answer?** Not "is this request safe?" but "what is the worst it can do in here?", settled before the run. Rules can be fooled by a harmless-looking command; the fence cannot see intent. Each catches what the other misses.
+*The board judges slips; the hoarding holds everyone, read or not.*
+
+**Step 5. What if the fence is assumed but not there?** Rules get loosened on its strength ("it's sandboxed, allow it"), and nothing holds. Worse than no fence.
+*Waving jobs through for hoarding never put up.*
+
+**Now it's obvious.** A permission judges what was asked for; a sandbox, enforced by the operating system, limits what any process can actually touch. They fail differently, so a harness needs both, and must never claim a fence it lacks.
+
+**Picture.**
+
+![Day 34: an allowed job runs inside an operating-system fence that lets it reach the project folder but refuses outside network and holds no keys or tokens](diagrams/day-34.png)
+
+**See it yourself (2 minutes).** In your agent's terminal, run `env | grep -iE "key|token"`: every name listed is readable by any command the agent may run.
+
+**In SubhForge:** "do not claim a sandbox that does not exist" (Architecture §6.4) is Step 5, written into the design.
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract → calls are checked before they run → results are bounded and labelled → tools are few and earn their place → edits are anchored to exact text → only reads run side by side → may-do is checked per call → allow, deny, or ask the owner → the rules are written, and deny wins → the shell is judged command by command → a fence limits what runs
+
+**Check yourself:** You allowed "npm install" without asking. If a package's install script sends out your cloud credentials, which layer protects you, and why can the other not?
+
+*Tomorrow:* what if a note left on site tells him to do something?
+
+*Source:* [Harness Engineering Anatomy, p. 37](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): a partial sandbox "would be easy to misunderstand as a security boundary."
