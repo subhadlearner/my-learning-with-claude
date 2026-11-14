@@ -1,0 +1,6 @@
+flowchart TD
+    A["sign on site"] -->|"read"| B["builder's transcript"]
+    B -->|"asks for job"| C["office check"]
+    R["board and owner"] -->|"only authority"| C
+    C -->|"allowed"| D["job inside hoarding"]
+    C -->|"not allowed"| E["refused, note back"]
