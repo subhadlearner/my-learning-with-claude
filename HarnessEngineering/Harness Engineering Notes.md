@@ -34,7 +34,7 @@ Block 1 gives the reasons a harness must exist. Every later block takes one part
 | 2 | 26 Oct–1 Nov | The loop in depth: turns, stop conditions, interrupts | how the model acts | Yes |
 | 3 | 2–8 Nov | Tools and actions: interface design, how many tools, file-editing strategies | what it acts with | Yes |
 | 4 | 9–15 Nov | Permissions and sandboxing: what an agent may run, and where | what it is allowed to do | Yes |
-| 5 | 16–22 Nov | Instructions and context: layering, precedence, what goes in front of the model | what it is told | Not yet |
+| 5 | 16–22 Nov | Instructions and context: layering, precedence, what goes in front of the model | what it is told | Yes |
 | 6 | 23–29 Nov | Memory: compaction when the window fills, session memory, persistent memory | what it remembers | Not yet |
 | 7 | 30 Nov–6 Dec | Task specification and decomposition: specs, dependencies, readiness | what it is asked to do | Not yet |
 | 8 | 7–13 Dec | Verification and evidence: test tiers, independent checking, mechanical enforcement | how we know it is done | Not yet |
@@ -1666,3 +1666,14 @@ All six open up Block 1's link 13 (the human decides) at the point Block 3's lin
 Write in your notes what should change in length, depth or pace before Block 5.
 
 Notes: https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Harness%20Engineering%20Notes.md
+
+## Block 5: Instructions and context (16–22 Nov)
+
+This block opens up Day 8's budget, since he knows only the papers in his hand: what those papers are made of, which one wins when they disagree, why the site rules stay one page, where in the bundle a rule must sit, how the office picks the papers for a job, and how he finds a drawing nobody thought to hand him. The recap is on 22 November.
+
+36. What exactly is in the papers handed to him at the gate?
+37. When two layers disagree, which one wins?
+38. Why not put every rule in one big file?
+39. Does it matter where in the papers a rule sits?
+40. Who decides what goes into the papers for this job?
+41. How does he find a drawing nobody thought to hand him?
