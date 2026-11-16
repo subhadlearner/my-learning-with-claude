@@ -1,0 +1,7 @@
+flowchart TD
+    A["firm's standing orders"] -->|"per release"| F["office joins, same order"]
+    B["site rules file"] -->|"per commit"| F
+    C["role and work order"] -->|"per job"| F
+    D["runner's job list"] -->|"per tool setup"| F
+    E["clipboard so far"] -->|"every turn"| F
+    F --> G["bundle for this turn"]

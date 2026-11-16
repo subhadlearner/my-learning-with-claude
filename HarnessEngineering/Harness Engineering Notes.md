@@ -1677,3 +1677,44 @@ This block opens up Day 8's budget, since he knows only the papers in his hand: 
 39. Does it matter where in the papers a rule sits?
 40. Who decides what goes into the papers for this job?
 41. How does he find a drawing nobody thought to hand him?
+
+### Day 36 · 16 Nov: What exactly is in the papers handed to him at the gate?
+
+**Day 36: What exactly is in the papers handed to him at the gate?**
+
+*Yesterday:* (1) The fence (34): no credentials, no network, nothing to take. (2) Denied, sent back as a note (31), and recorded with what happened next (23). (3) Nothing stopped it (35): an unknown script should be "ask" (32), the data outside the fence (34).
+
+Each time he returns to the gate, he is handed a bundle and works only from that. You wrote one page. Who wrote the rest?
+
+**Step 1. What does the model receive?** Only text (Day 1), and the whole transcript is resent every turn (Day 18). So "the prompt" is rebuilt every turn.
+*The bundle is made up fresh at each return.*
+
+**Step 2. Who writes the parts?** The harness's makers wrote rules for all projects. You wrote a project file (AGENTS.md in Kilo). The job brings a role ("you are the reviewer") and a task. Tool contracts come from the tool list (Day 24); past turns, from the loop.
+*Firm's orders, site rules, role and work order, the runner's job list, the clipboard: each from a different office.*
+
+**Step 3. Do the parts change at the same pace?** No. Harness rules change with a release, your file with a commit, the task per job, the transcript every turn.
+*The firm's orders change yearly; the clipboard by the minute.*
+
+**Step 4. So can it be one hand-written text?** No: nobody can rewrite one document at four speeds. The program keeps the layers apart and joins them each turn, in a fixed order, by ordinary code (Day 11).
+*The office never retypes the bundle; it stacks the papers in order.*
+
+**Step 5. What does that buy you?** Each layer can be read, changed and blamed alone. When the agent acts oddly, ask which layer told it to, and whether it was sent that turn.
+*If he paints the wrong wall, pull that turn's bundle and find the paper.*
+
+**Now it's obvious.** "The prompt" is not one thing anyone wrote: the program assembles it every turn from separate layers, each with its own author, lifetime and job. To explain an action, look at the layers actually sent.
+
+**Picture.**
+
+![Day 36: five layers, each changing at its own pace, joined by the office in a fixed order into the bundle for this turn](diagrams/day-36.png)
+
+**See it yourself (2 minutes).** In a Kilo task, find the project file it loaded; then guess which layer its "be concise" habit came from.
+
+**In SubhForge:** "Logical agent definitions contain role identity, instructions, input/output contracts and required capabilities" (Architecture §7) is the role layer.
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract → calls are checked before they run → results are bounded and labelled → tools are few and earn their place → edits are anchored to exact text → only reads run side by side → may-do is checked per call → allow, deny, or ask the owner → the rules are written, and deny wins → the shell is judged command by command → a fence limits what runs → nothing it reads grants authority → what he is told is built in layers
+
+**Check yourself:** The agent ignores a rule you are sure you gave it. What is the first thing to find out, now that you know the prompt is layers?
+
+*Tomorrow:* when two layers disagree, which one wins?
+
+*Source:* [Harness Engineering Anatomy, p. 21](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): "Claude Code's prompt is assembled from a dozen-plus named sections."
