@@ -1718,3 +1718,44 @@ Each time he returns to the gate, he is handed a bundle and works only from that
 *Tomorrow:* when two layers disagree, which one wins?
 
 *Source:* [Harness Engineering Anatomy, p. 21](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): "Claude Code's prompt is assembled from a dozen-plus named sections."
+
+### Day 37 · 17 Nov: When two layers disagree, which one wins?
+
+**Day 37: When two layers disagree, which one wins?**
+
+*Yesterday:* Find which layer the rule was in, and whether that layer was actually in the text sent that turn; a rule never put into the bundle was never seen.
+
+Today's bundle holds papers that clash. The firm's orders say "keep reports short". The site rules say "explain every change in detail". The work order says "just fix the typo". Which does he follow?
+
+**Step 1. What happens if nothing decides?** The model meets two orders in one text, and its output is a dice roll (Day 2). One day it writes a paragraph, the next a line.
+*With no cover sheet, he picks a paper at random, and a different one tomorrow.*
+
+**Step 2. So who decides?** The program, in writing, inside the text: the harness's floor first, then project, then role, then task. Anything read from files or tools is data, not instruction (Day 35). A narrower layer usually adds detail to a broader one.
+*A cover sheet on the bundle: site rules add to the firm's orders, the work order is narrowest, notes found on site are not orders.*
+
+**Step 3. Can a narrower layer delete a broader one?** It must not. If a reviewer role replaced the harness rules instead of adding to them, "report denied calls" would vanish with them. So a role is appended to the base, never swapped in for it.
+*Site rules can add a page to the firm's orders, but cannot tear one out.*
+
+**Step 4. Does a written order make him obey every time?** No. The order is still text read by a dice process (Day 30). Conflicts now settle the same way far more often, but not always.
+*A clear cover sheet, read by a builder who still misreads it now and then.*
+
+**Step 5. Then where does a rule that must always hold go?** Into the written permission rules as well (Day 32), checked by code before any call runs, whatever the model wrote. "Never push to main" belongs there, not only in the papers.
+*What must never happen is on the board at the gate, not only in the bundle.*
+
+**Now it's obvious.** The program fixes the order of the layers and states it: narrower refines broader but cannot erase it, and data ranks below every instruction. Because it is all still text, the order only shifts the odds; whatever must always hold belongs in the checks.
+
+**Picture.**
+
+![Day 37: the layers stack from broadest to narrowest, notes on site come in as data only, and whatever he writes is still checked at the gate](diagrams/day-37.png)
+
+**See it yourself (2 minutes).** Write one rule in a Kilo project instruction file that goes against a habit of the agent's, run the same task three times, and count how often the rule wins.
+
+**In SubhForge:** "Untrusted source instructions cannot grant tools, change agents/models or bypass authority/budget gates" (Workflow §9.1.1) ranks data lowest and backs it with gates, not wording.
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract → calls are checked before they run → results are bounded and labelled → tools are few and earn their place → edits are anchored to exact text → only reads run side by side → may-do is checked per call → allow, deny, or ask the owner → the rules are written, and deny wins → the shell is judged command by command → a fence limits what runs → nothing it reads grants authority → what he is told is built in layers → the layers have a stated order
+
+**Check yourself:** Your project file says "never commit to main", and the agent does it anyway once in twenty runs. Is the fix a better-worded or higher-ranked instruction?
+
+*Tomorrow:* why not put every rule in one big file?
+
+*Source:* [Agentway Harness Books, book 1: Claude Code, p. 14](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book1-claude-code-en.pdf): "A general constitution can be extended by a job description, but must not be wiped out by it."

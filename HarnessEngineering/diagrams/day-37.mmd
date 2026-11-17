@@ -1,0 +1,7 @@
+flowchart TD
+    A["firm's standing orders"] -->|"site rules add"| B["site rules file"]
+    B -->|"role adds"| C["role for job"]
+    C -->|"narrowest"| D["today's work order"]
+    E["notes found on site"] -.->|"data, not orders"| D
+    D -->|"shifts the odds"| F["he writes a slip"]
+    F -->|"always checked"| G["board at gate"]
