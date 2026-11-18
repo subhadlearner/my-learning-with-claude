@@ -1759,3 +1759,44 @@ Today's bundle holds papers that clash. The firm's orders say "keep reports shor
 *Tomorrow:* why not put every rule in one big file?
 
 *Source:* [Agentway Harness Books, book 1: Claude Code, p. 14](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book1-claude-code-en.pdf): "A general constitution can be extended by a job description, but must not be wiped out by it."
+
+### Day 38 · 18 Nov: Why not put every rule in one big file?
+
+**Day 38: Why not put every rule in one big file?**
+
+*Yesterday:* No: wording and rank only shift the odds, because it is still text read by the dice; a rule that must hold every time goes into the permission check, which holds whatever the model writes.
+
+Every time the builder slips, the office adds a line to the site rules pinned inside the gate. A year on, they run to 600 lines, and he breaks more rules, not fewer. Why would more rules make things worse?
+
+**Step 1. How often is that file read?** On every turn of every job: the project file is one layer of the bundle (Day 36), and the bundle is resent each turn (Day 18). Every line is paid for again each time, and takes room from the task and the code (Day 8).
+*He rereads all 600 lines before every slip, even on a painting day.*
+
+**Step 2. Does each rule get the same attention in a longer file?** No. Among more text, each line gets less weight (Day 8). Today's one relevant rule is one line in 600, and when every line is marked "important", none stands out.
+*The rule that matters today is buried under the drains rules.*
+
+**Step 3. What happens to a big file over time?** It rots. Nobody rereads 600 lines when the code changes, so stale rules stay, and the model cannot tell them from live ones. A rule copied into the file and into a topic document is one fact in two homes (Day 6), and the copies drift apart.
+*Last year's scaffolding rule is still pinned up beside this year's.*
+
+**Step 4. So what must every job see?** Only a little: what the project is, how to build and test it, the few hard rules, and where the rest lives ("database rules: docs/db.md").
+*One page: what we are building, where the first-aid box is, the three never-dos, and which drawer holds what.*
+
+**Step 5. And the rest?** Each topic gets one document, its single home, read when a job touches that topic. So each job carries the rules it needs and no others.
+*The electrics drawer is opened on a wiring day, and only then.*
+
+**Now it's obvious.** The always-loaded instruction file stays short: a map with the few rules every job needs and pointers to topic documents. The detail lives in those documents, each the one home of its subject, read when a job needs it.
+
+**Picture.**
+
+![Day 38: a one-page site rules sheet goes to the builder every turn and points to topic drawers; only the drawer for the job is opened](diagrams/day-38.png)
+
+**See it yourself (2 minutes).** Count the lines in the instruction files your Kilo project loads on every task, and mark the ones that matter to today's job.
+
+**In SubhForge:** "Broad project history shall not be loaded by default" (PRD FR-018) makes the same choice for history: load what the job needs, not everything.
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract → calls are checked before they run → results are bounded and labelled → tools are few and earn their place → edits are anchored to exact text → only reads run side by side → may-do is checked per call → allow, deny, or ask the owner → the rules are written, and deny wins → the shell is judged command by command → a fence limits what runs → nothing it reads grants authority → what he is told is built in layers → the layers have a stated order → the entry file is a map
+
+**Check yourself:** Your AGENTS.md has grown to 800 lines and the agent misses rules in it. Name two reasons a longer file makes it worse, not better.
+
+*Tomorrow:* does it matter where in the papers a rule sits?
+
+*Source:* [OpenAI, Harness engineering: leveraging Codex in an agent-first world, p. 4](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf): "give Codex a map, not a 1,000-page instruction manual."
