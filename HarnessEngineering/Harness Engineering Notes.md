@@ -1800,3 +1800,44 @@ Every time the builder slips, the office adds a line to the site rules pinned in
 *Tomorrow:* does it matter where in the papers a rule sits?
 
 *Source:* [OpenAI, Harness engineering: leveraging Codex in an agent-first world, p. 4](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20engineering_%20leveraging%20Codex%20in%20an%20agent-first%20world%20_%20OpenAI.pdf): "give Codex a map, not a 1,000-page instruction manual."
+
+### Day 39 · 19 Nov: Does it matter where in the papers a rule sits?
+
+**Day 39: Does it matter where in the papers a rule sits?**
+
+*Yesterday:* Each rule gets less weight among more text, and the file takes budget from the task on every turn; and a long file rots, so stale rules sit beside live ones and the same rule ends up in two homes that drift apart.
+
+The site rules are one page now. He keeps them on short jobs, yet breaks them late on long days, and not a word has changed. What did?
+
+**Step 1. Is every line of a long text used equally?** No. Researchers placed one fact at different points in a long text and asked about it. At the start or end it was used far more often than in the middle: the "lost in the middle" effect.
+*He reads the top sheet and the last sheet of the bundle closely, and skims what lies between.*
+
+**Step 2. Can you check that yourself?** Yes. Put one hard rule at the top, middle, then bottom of a long instruction file, run the same task a few times each, and count how often it is kept.
+*Clip the rule on top, then bury it halfway down, and compare.*
+
+**Step 3. Where does the project file sit as a run goes on?** The transcript grows only at the end (Day 18), so the project file drifts further from the end each turn while old tool results pile up in the middle.
+*By late afternoon the site rules are under a hundred clipboard pages.*
+
+**Step 4. So how should the layers be ordered?** On purpose, by position: framing rules first; the current task and anything just fetched last, right before the model writes.
+*Rules clipped on top; today's work order and the fresh drawing handed over last.*
+
+**Step 5. And on a long run?** The few rules that must not fade are restated as a short reminder near the end, rather than trusted from hundreds of turns back.
+*At lunch, the foreman says the three never-dos again.*
+
+**Now it's obvious.** In a long text the model uses the start and the end more reliably than the middle, so the harness places things by position: standing rules first, the current task and fresh material last. A rule that must not be lost is repeated near the end, not left in the middle.
+
+**Picture.**
+
+![Day 39: the bundle from top to end; the top and end are used well, the middle is often missed, so the rules are repeated near the end beside the work order](diagrams/day-39.png)
+
+**See it yourself (2 minutes).** Step 2's test, or: in a long Kilo task, see whether a project-file rule obeyed early still holds after many turns.
+
+**In SubhForge:** the "normal working context: approximately 20–40k tokens" target (PRD NFR-003) keeps the middle of the window from swelling in the first place.
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract → calls are checked before they run → results are bounded and labelled → tools are few and earn their place → edits are anchored to exact text → only reads run side by side → may-do is checked per call → allow, deny, or ask the owner → the rules are written, and deny wins → the shell is judged command by command → a fence limits what runs → nothing it reads grants authority → what he is told is built in layers → the layers have a stated order → the entry file is a map → where a rule sits matters
+
+**Check yourself:** A rule sits at line 300 of a 600-line instruction file. It is obeyed in short tasks but ignored in long ones. Why, without changing a word of it?
+
+*Tomorrow:* who decides what goes into the papers for this job?
+
+*Source:* [learn-harness-engineering, Lecture 4: Why one giant instruction file fails](https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/en/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md): "LLMs utilize information at the extremes of a long text significantly better than in the center."
