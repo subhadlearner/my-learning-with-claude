@@ -1841,3 +1841,44 @@ The site rules are one page now. He keeps them on short jobs, yet breaks them la
 *Tomorrow:* who decides what goes into the papers for this job?
 
 *Source:* [learn-harness-engineering, Lecture 4: Why one giant instruction file fails](https://github.com/walkinglabs/learn-harness-engineering/blob/main/docs/en/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md): "LLMs utilize information at the extremes of a long text significantly better than in the center."
+
+### Day 40 · 20 Nov: Who decides what goes into the papers for this job?
+
+**Day 40: Who decides what goes into the papers for this job?**
+
+*Yesterday:* It sits in the middle, the weakest place, and a long task's growing transcript pushes it further from where the model writes; moving it to the top or repeating it near the end changes the odds.
+
+The plan chest holds three hundred drawings; today's job is one bathroom wall. Who picks the sheets for his bundle, and how?
+
+**Step 1. Why must anyone choose?** The truth lives in files (Day 5), and his papers have a fixed size (Day 8). Not everything fits.
+*The runner carries one folder, not the plan chest.*
+
+**Step 2. Could the model pick?** It could ask, but each request costs a turn and its pick is a dice roll (Day 2).
+*Ask a man with no memory of the site what he needs, and he guesses.*
+
+**Step 3. Is there a surer way?** The work item names its parent, the contracts it must meet, its rules and the files it changes. Ordinary code can follow those written references the same way every time (Day 11).
+*The office reads the order (east wall, meets the shower, plumbing rules) and pulls exactly those sheets.*
+
+**Step 4. What if the folder is still too full?** Split the packet (this job's bundle of text) in two: required (the job, its contracts, its rules) and optional (nearby code, examples). Trim optional; never required, because work done without its contract is wrong, however neat. If required alone will not fit, the job is too big and goes back to be cut (Day 9).
+*Spare drawings only if there is room; the shower drawing always.*
+
+**Step 5. How do we know later what he saw?** The packet lists each item and its revision (Day 12), so a result traces back to what the model saw (Day 16).
+*The cover sheet reads: "east wall rev C, shower rev B, plumbing rules rev 7".*
+
+**Now it's obvious.** Ordinary code builds each job's packet by following its written references, trimming only optional material, never the required. The packet records what it held, at which revision.
+
+**Picture.**
+
+![Day 40: code follows the work order's references; required drawings always go in the packet, optional extras are trimmed if over, required that will not fit sends the job back to be cut, and the packet carries a cover sheet with revisions](diagrams/day-40.png)
+
+**See it yourself (2 minutes).** List what one Kilo task was given at the start; mark each item required or optional.
+
+**In SubhForge:** this is Architecture §21's assembler, which walks the target's ancestors and declared dependencies and returns a bounded packet.
+
+**Chain so far:** remembers nothing → output varies → works through a loop → errors compound → truth written outside → one home per fact → kinds of truth kept apart → context is a budget → work cut to fit → claims need evidence → code checks what code can prove → evidence expires → the human decides → change is reconciled → safe to repeat → a trace is kept → one argument → the transcript is the loop's state → stopping is the model's claim → the loop is bounded from outside → circling is caught by counting → checks feed back, within a limit → every stop is closed and labelled → a tool is a written contract → calls are checked before they run → results are bounded and labelled → tools are few and earn their place → edits are anchored to exact text → only reads run side by side → may-do is checked per call → allow, deny, or ask the owner → the rules are written, and deny wins → the shell is judged command by command → a fence limits what runs → nothing it reads grants authority → what he is told is built in layers → the layers have a stated order → the entry file is a map → where a rule sits matters → the job's packet is built by code
+
+**Check yourself:** The packet for a job is over budget. Why trim the example code before the interface contract, and what if the contract alone does not fit?
+
+*Tomorrow:* how does he find a drawing nobody thought to hand him?
+
+*Source:* [SubhForge V0.2 Architecture, §21 Context Assembly and Freshness](https://raw.githubusercontent.com/subhadlearner/SubhForge/feature/v0.2.0/design/architecture/SUBHFORGE-V0.2-ARCHITECTURE.md): "Optional material may be trimmed; mandatory authority cannot."

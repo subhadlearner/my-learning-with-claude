@@ -1,0 +1,7 @@
+flowchart TD
+  A["work order"] -->|"code follows references"| B["required drawings"]
+  A -->|"code follows references"| C["optional extras"]
+  B -->|"always in"| D["the packet"]
+  C -->|"trimmed if over"| D
+  B -->|"too big alone"| F["cut the job"]
+  D --> E["cover sheet with revisions"]
