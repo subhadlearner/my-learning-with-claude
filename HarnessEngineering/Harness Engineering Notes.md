@@ -1882,3 +1882,44 @@ The plan chest holds three hundred drawings; today's job is one bathroom wall. W
 *Tomorrow:* how does he find a drawing nobody thought to hand him?
 
 *Source:* [SubhForge V0.2 Architecture, §21 Context Assembly and Freshness](https://raw.githubusercontent.com/subhadlearner/SubhForge/feature/v0.2.0/design/architecture/SUBHFORGE-V0.2-ARCHITECTURE.md): "Optional material may be trimmed; mandatory authority cannot."
+
+### Day 41 · 21 Nov: How does he find a drawing nobody thought to hand him?
+
+**Day 41: How does he find a drawing nobody thought to hand him?**
+
+*Yesterday:* The example is optional and the work can be done without it, but work done without its contract is wrong however good it looks; if the contract alone does not fit, the job is too big and must be cut, not squeezed.
+
+Halfway through the bathroom wall, he finds an old drain running under it. No sheet in his folder mentions it. How does he get the drains drawing?
+
+**Step 1. Why wasn't it in the packet?** Yesterday's code can only follow references someone wrote down (Day 40). Nobody wrote "drains"; the need appeared while working.
+*The office pulled every sheet the work order named. The drain was not on the order.*
+
+**Step 2. Could the office guess ahead?** One way: before every turn, search a store of the codebase for passages that look similar to the request and paste the top few in (this is called RAG, retrieval-augmented generation). But the guess is made before the model knows what it needs, so it is often wrong, and the pasted text costs budget every turn, needed or not (Day 8).
+*Each morning the office sends ten sheets that "look related". Usually not the drains, and his folder is fuller every day.*
+
+**Step 3. What if he asks instead?** Give the model search tools (Day 24): "find files named *drain*", "search for 'def parse_date'". It asks, sees a small bounded result (Day 26), and asks again more precisely.
+*He gets the key to the index, looks up "drains", and sends the runner for that one sheet.*
+
+**Step 4. Why is asking better?** He asks only once he knows the need. The result is exact text from the current files, not an old copy (Day 12). A dead end costs one turn. And what comes back is data, never an order (Day 35).
+*The runner brings today's revision from the chest. A wrong sheet goes back; nothing is lost but one trip.*
+
+**Step 5. Do real agents work this way?** A study of eleven coding agents found none use similarity search over code; all search with tools, guided by the entry file's map (Day 38).
+*Every well-run site does it: index on the wall, runner at the gate.*
+
+**Now it's obvious.** What the packet could not foresee, the model finds by searching with tools, one bounded result at a time. Searching once the need is known beats the office guessing ahead.
+
+**Picture.**
+
+![Day 41: when he needs a drawing nobody handed him, the office guessing ten likely sheets ahead is often wrong and paid daily; searching the index and fetching one sheet, refining if wrong, gets the exact current sheet](diagrams/day-41.png)
+
+**See it yourself (2 minutes).** In a Kilo task, count the search and read calls before its first edit, and how many came back empty.
+
+**In SubhForge:** Architecture §21 already says "No vector database or long chat transcript is needed for normal reconstruction."
+
+**Chain so far:** … → what he is told is built in layers → the layers have a stated order → the entry file is a map → where a rule sits matters → the job's packet is built by code → the rest is found by searching
+
+**Check yourself:** Why do the coding agents studied prefer letting the model search with tools over pasting in the most similar passages before each turn?
+
+*Tomorrow:* the Block 5 recap: six links, one budget.
+
+*Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, §13.2 "The Twin Absences", p. 56](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): "Code changes minute to minute, so pre-indexed embeddings are stale almost by construction."
