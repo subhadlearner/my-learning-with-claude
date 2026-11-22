@@ -35,7 +35,7 @@ Block 1 gives the reasons a harness must exist. Every later block takes one part
 | 3 | 2–8 Nov | Tools and actions: interface design, how many tools, file-editing strategies | what it acts with | Yes |
 | 4 | 9–15 Nov | Permissions and sandboxing: what an agent may run, and where | what it is allowed to do | Yes |
 | 5 | 16–22 Nov | Instructions and context: layering, precedence, what goes in front of the model | what it is told | Yes |
-| 6 | 23–29 Nov | Memory: compaction when the window fills, session memory, persistent memory | what it remembers | Not yet |
+| 6 | 23–29 Nov | Memory: compaction when the window fills, session memory, persistent memory | what it remembers | Yes |
 | 7 | 30 Nov–6 Dec | Task specification and decomposition: specs, dependencies, readiness | what it is asked to do | Not yet |
 | 8 | 7–13 Dec | Verification and evidence: test tiers, independent checking, mechanical enforcement | how we know it is done | Not yet |
 | 9 | 14–20 Dec | Change and reconciliation: impact analysis, where propagation stops, drift | what happens when things change | Not yet |
@@ -1948,3 +1948,14 @@ All six open up Block 1's link 8 (context is a budget), rest on link 1 (remember
 Write in your notes what should change in length, depth or pace before Block 6.
 
 Notes: https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Harness%20Engineering%20Notes.md
+
+## Block 6: Memory (23–29 Nov)
+
+This block takes up what happens when the clipboard outgrows his hands, since he remembers nothing and the window does not grow: when the office must act, what can be swapped for a pointer, what a summary must keep, the notebook he writes in as he goes, starting a fresh clipboard from a handoff, and the small book he carries from site to site. The recap is on 29 November.
+
+42. What happens when the clipboard no longer fits in his hands?
+43. What can be taken off the clipboard without losing anything?
+44. When pointers are not enough, what must the summary keep?
+45. What should he write down before he is made to forget?
+46. Is it better to cut down the clipboard or start a fresh one?
+47. What should he carry from one site to the next?
