@@ -1923,3 +1923,28 @@ Halfway through the bathroom wall, he finds an old drain under it. No sheet ment
 *Tomorrow:* the Block 5 recap.
 
 *Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, §13.2 "The Twin Absences", p. 56](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): "Code changes minute to minute, so pre-indexed embeddings are stale almost by construction."
+
+### Block 5 recap · 22 Nov
+
+**Block 5 recap: Can you rebuild the papers at the gate, from bundle to plan chest, from the two facts?**
+
+*Yesterday:* He learns what he needs as he works, so he can search for exactly that, see a small exact result from the current files, and refine; pasting in ahead is a guess made before the need is known, often wrong, and paid for every turn.
+
+**The chain**
+36. What he is told is built in layers: the bundle comes from different offices, one paper each.
+37. The layers have a stated order: the cover sheet says which paper wins; site rules add to the firm's orders but cannot tear them out.
+38. The entry file is a map: the site rules are one page, with drawers for the rest.
+39. Where a rule sits matters: the never-do rules go on top, the work order last, and the foreman repeats them at lunch.
+40. The job's packet is built by code: the office pulls the sheets the order names; spares only if there is room.
+41. The rest is found by searching: the index and the runner, one sheet at a time.
+
+All six open up Block 1's link 8 (context is a budget), rest on link 1 (remembers nothing), and lean on links 2, 5, 6, 9, 11 and 12 and on Days 18, 24, 26, 30, 32 and 35.
+
+**Work these out**
+1. After a long session the agent starts using a deprecated API that your AGENTS.md forbids on line 410. Which links explain it, and what would you change without adding a single new rule?
+2. A reviewer agent's role prompt replaced the harness's base rules, and it stopped reporting denied calls. Which link was broken, and what should the assembly have done?
+3. A job fails review because the agent never saw the interface contract it had to meet, and its packet was full of example code. Which links were broken?
+
+Write in your notes what should change in length, depth or pace before Block 6.
+
+Notes: https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Harness%20Engineering%20Notes.md
