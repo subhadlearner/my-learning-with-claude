@@ -1959,3 +1959,44 @@ This block takes up what happens when the clipboard outgrows his hands, since he
 45. What should he write down before he is made to forget?
 46. Is it better to cut down the clipboard or start a fresh one?
 47. What should he carry from one site to the next?
+
+### Day 42 · 23 Nov: What happens when the clipboard no longer fits in his hands?
+
+**Day 42: What happens when the clipboard no longer fits in his hands?**
+
+*Yesterday:* (1) 38, 39, 8: the rule was buried mid-file in a long transcript; move it to a short entry file's top or the job's topic document, and remind near the end. (2) 37: a role is added to the base, never swapped in. (3) 40: trim the optional examples, not the required contract; if that alone does not fit, cut the job (9).
+
+Mid-afternoon on a long job, the clipboard handed to him is so thick he can barely hold it. What happens when it no longer fits?
+
+**Step 1. Does it ever get thinner by itself?** No. The whole transcript is sent every turn, and each turn adds a slip and note (Day 18). The window, the most text the model accepts at once, has a fixed size (Day 8).
+*Every trip adds pages; his hands do not grow.*
+
+**Step 2. How soon is it full?** Start at 10k tokens (word-pieces) and add 2k a turn: a 200k window is full at turn 95. One afternoon.
+*Ninety-five trips and he cannot hold more.*
+
+**Step 3. What happens at the limit?** Nothing graceful. The provider refuses the call; the run stops mid-task (Day 23).
+*The clipboard slips from his hands halfway up the ladder.*
+
+**Step 4. So act before it. How?** Stop cleanly, or shorten the transcript. Shortening takes a model call of its own (next days), which needs room for its input and answer.
+*Sorting the clipboard needs table space.*
+
+**Step 5. Who watches, and where is the line?** Counting tokens is arithmetic, so code does it every turn (Day 11). Claude Code holds back 20k for writing a summary plus a 13k buffer, so it acts near 167k, not 200k. Quality already falls as it fills (Day 39), so early costs little.
+*The office weighs it at every handover and acts at a marked line.*
+
+**Now it's obvious.** The transcript grows every turn and the window does not, so the program counts every turn and acts at a line well below the limit, holding back room for the shrinking itself.
+
+**Picture.**
+
+![Day 42: the clipboard grows 2k a turn and the office weighs it each turn; with a line at 167k it acts and keeps 33k for the rescue, with no line it hits 200k, the call is refused and the run stops mid-task](diagrams/day-42.png)
+
+**See it yourself (2 minutes).** At 10k plus 2k a turn, when does a run cross 167k, where Claude Code acts? Compare with 95.
+
+**In SubhForge:** NFR-003 in the PRD already draws two marks, not one: "40k: pressure threshold;" and "100k: hard ceiling."
+
+**Chain so far:** … → the rest is found by searching → the window is watched and acted on early
+
+**Check yourself:** Why must the program act before the window is full, rather than at the moment it is?
+
+*Tomorrow:* what can be taken off the clipboard without losing anything?
+
+*Source:* [Agentway Harness Books, book 1: Claude Code, §5.5 "Autocompact", p. 42](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book1-claude-code-en.pdf): "Runtime assumes compact itself costs budget and never waits until oxygen is almost gone."
