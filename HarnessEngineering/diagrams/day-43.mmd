@@ -1,0 +1,7 @@
+flowchart TD
+    A["old note on clipboard"] --> B["same if fetched again"]
+    B -->|"yes: drawing B-4"| C["swap for a pointer"]
+    B -->|"no: gate head count"| D["keep the note"]
+    E["slip: wall knocked down"] -->|"never removed"| F["nothing is lost"]
+    C --> F
+    D --> F

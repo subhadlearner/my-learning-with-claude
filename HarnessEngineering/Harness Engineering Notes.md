@@ -2000,3 +2000,44 @@ Mid-afternoon on a long job, the clipboard handed to him is so thick he can bare
 *Tomorrow:* what can be taken off the clipboard without losing anything?
 
 *Source:* [Agentway Harness Books, book 1: Claude Code, §5.5 "Autocompact", p. 42](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book1-claude-code-en.pdf): "Runtime assumes compact itself costs budget and never waits until oxygen is almost gone."
+
+### Day 43 · 24 Nov: What can be taken off the clipboard without losing anything?
+
+**Day 43: What can be taken off the clipboard without losing anything?**
+
+*Yesterday:* At the limit the next call is refused and the run stops mid-task, and shrinking the transcript needs a model call with room of its own, so the line is drawn early, with space held back for the rescue.
+
+The office has reached its marked line on the clipboard. Something must come off. What can go without him losing anything at all?
+
+**Step 1. What makes the clipboard thick?** Mostly notes, not slips. A slip (the model's request to run a tool) is one line; the note that comes back (the tool's result) can be a whole file or a test log (Day 26). By turn ten, notes are often 70 to 90 per cent of the transcript.
+*The runner's sheets outweigh his own requests a hundred to one.*
+
+**Step 2. Where did those notes come from?** Mostly from things that still exist outside: the file is still on disk, and the search can be run again (Day 41).
+*Drawing B-4 is still in the plan chest.*
+
+**Step 3. So what can replace an old note?** A short pointer: "[result of read_file config.py, 8,143 tokens, removed; read it again if needed]". If the model needs it, it asks again and gets the current version, which beats an old copy anyway (Day 12). This is called masking.
+*The sheet is swapped for a line: "B-4 was read here; it is in the plan chest."*
+
+**Step 4. Does that work for every note?** No. Only for notes that give the same answer when fetched again. "Who is logged in now", asked an hour ago, or the output of a command that changed something, cannot be reproduced; asking again gives a different answer.
+*Yesterday's head count at the gate is not in the plan chest.*
+
+**Step 5. And the slips?** Never removed. A transcript that no longer shows "sent the email" or "ran the migration" invites doing it twice (Day 15).
+*The line "knocked down the east wall" stays on the clipboard for good.*
+
+**Now it's obvious.** Old notes that can be fetched again unchanged are swapped for pointers, and the slips recording what was done always stay. Nothing is lost, so this comes first, before anything lossy.
+
+**Picture.**
+
+![Day 43: an old note on the clipboard is swapped for a pointer only if fetching it again gives the same answer (drawing B-4), kept if not (gate head count); the slip recording a wall knocked down is never removed, so nothing is lost](diagrams/day-43.png)
+
+**See it yourself (2 minutes).** In a long Kilo task, find the biggest tool result early in the run and ask: could it be fetched again exactly as it was?
+
+**In SubhForge:** PRD FR-017 already holds the same rule for actions whose outcome is unknown: "An uncertain write result must be resolved from authoritative state before retrying or reporting success."
+
+**Chain so far:** … → the rest is found by searching → the window is watched and acted on early → old notes become pointers
+
+**Check yourself:** Masking a file read is safe; masking the output of "ls /tmp/uploads" from an hour ago may not be. Why?
+
+*Tomorrow:* when pointers are not enough, what must the summary keep?
+
+*Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, §9.5 "Threshold Compaction", p. 33](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in OpenCode, "opt-in pruning soft-deletes old tool outputs, protecting the newest 40K tokens".
