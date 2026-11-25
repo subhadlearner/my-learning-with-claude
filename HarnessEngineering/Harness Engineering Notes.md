@@ -2041,3 +2041,44 @@ The office has reached its marked line on the clipboard. Something must come off
 *Tomorrow:* when pointers are not enough, what must the summary keep?
 
 *Source:* [Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents, §9.5 "Threshold Compaction", p. 33](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/Harness%20Engineering%20Anatomy%20Architecture%20%20and%20Evolution%20of%20Coding%20Agents.pdf): in OpenCode, "opt-in pruning soft-deletes old tool outputs, protecting the newest 40K tokens".
+
+### Day 44 · 25 Nov: When pointers are not enough, what must the summary keep?
+
+**Day 44: When pointers are not enough, what must the summary keep?**
+
+*Yesterday:* The file reads back the same, but the folder may have changed, so the model loses what it acted on; a pointer is lossless only if its target can be fetched again.
+
+Every possible pointer is in place, and the clipboard is still over the line. Something must now be lost. Who decides what?
+
+**Step 1. What option is left?** Replace turns 5 to 60 with a short written account, made by a model call (Day 42).
+*Forty pages become one summary sheet.*
+
+**Step 2. Can that account be trusted?** It comes from the dice (Day 2), so it is a claim (Day 10). What it leaves out is gone: the model remembers nothing else (Day 1).
+*Once the pages are binned, the sheet is all there is.*
+
+**Step 3. What tends to go missing?** The exact things. "src/config.py" becomes "a config file". Choosing B survives; the reason is lost. "Sent the email" becomes "discussed the email".
+*"Moved the north beam because of the drain" becomes "worked on beams".*
+
+**Step 4. So who should decide the shape?** The program. The first request stays word for word, since the work must satisfy it; so do the last few turns. The summary fills fixed headings: objective, every action that changed something, decisions and why, files touched, errors, next step.
+*A printed form with fixed boxes, the original work order stapled on top.*
+
+**Step 5. What about things that already live in files?** Not summarised. The plan, rules and edited files are reloaded from their homes after the cut (Days 5 and 40).
+*Current drawings come fresh from the plan chest, never redrawn from memory.*
+
+**Now it's obvious.** A summary is lossy and a claim, so the harness, not the summariser, fixes what survives: request and latest turns word for word, fixed headings for the rest. Anything with a home in a file is reloaded, not summarised.
+
+**Picture.**
+
+![Day 44: when the clipboard is over the line, the original work order and last few notes are kept word for word, the middle turns become a summary on a fixed form, and the drawings are fetched fresh from the plan chest rather than copied](diagrams/day-44.png)
+
+**See it yourself (2 minutes).** In a compacted Kilo task's summary, look for one exact file path and one "because".
+
+**In SubhForge:** PRD NFR-003 says "Required authority must never be dropped merely to fit context."
+
+**Chain so far:** … → the window is watched and acted on early → old notes become pointers → the summary has a fixed shape
+
+**Check yourself:** After compaction the agent rewrites a function you agreed to leave alone. What went missing, and which part of the summary's shape should have kept it?
+
+*Tomorrow:* what should he write down before he is made to forget?
+
+*Source:* [Agentway Harness Books, book 1: Claude Code, §5.6, pp. 44–45](https://github.com/subhadlearner/my-learning-with-claude/blob/main/HarnessEngineering/Resources/book1-claude-code-en.pdf): "compact in Claude Code is controlled reboot, not chat recap."
